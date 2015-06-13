@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D769603B1B2B66DC0095566B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D769603A1B2B66DC0095566B /* AppDelegate.swift */; };
+		D769603E1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D769603C1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld */; };
+		D76960401B2B66DC0095566B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D769603F1B2B66DC0095566B /* ViewController.swift */; };
+		D76960431B2B66DC0095566B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76960411B2B66DC0095566B /* Main.storyboard */; };
+		D76960451B2B66DC0095566B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D76960441B2B66DC0095566B /* Images.xcassets */; };
+		D76960481B2B66DC0095566B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D76960461B2B66DC0095566B /* LaunchScreen.xib */; };
+		D76960541B2B66DC0095566B /* ReachFit_Teacher_BetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76960531B2B66DC0095566B /* ReachFit_Teacher_BetaTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D769604E1B2B66DC0095566B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D769602D1B2B66DC0095566B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D76960341B2B66DC0095566B;
+			remoteInfo = "ReachFit Teacher Beta";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D76960351B2B66DC0095566B /* ReachFit Teacher Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReachFit Teacher Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76960391B2B66DC0095566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D769603A1B2B66DC0095566B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D769603D1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReachFit_Teacher_Beta.xcdatamodel; sourceTree = "<group>"; };
+		D769603F1B2B66DC0095566B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D76960421B2B66DC0095566B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D76960441B2B66DC0095566B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D76960471B2B66DC0095566B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D769604D1B2B66DC0095566B /* ReachFit Teacher BetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReachFit Teacher BetaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D76960521B2B66DC0095566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D76960531B2B66DC0095566B /* ReachFit_Teacher_BetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachFit_Teacher_BetaTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D76960321B2B66DC0095566B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D769604A1B2B66DC0095566B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D769602C1B2B66DC0095566B = {
+			isa = PBXGroup;
+			children = (
+				D76960371B2B66DC0095566B /* ReachFit Teacher Beta */,
+				D76960501B2B66DC0095566B /* ReachFit Teacher BetaTests */,
+				D76960361B2B66DC0095566B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D76960361B2B66DC0095566B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D76960351B2B66DC0095566B /* ReachFit Teacher Beta.app */,
+				D769604D1B2B66DC0095566B /* ReachFit Teacher BetaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D76960371B2B66DC0095566B /* ReachFit Teacher Beta */ = {
+			isa = PBXGroup;
+			children = (
+				D769603A1B2B66DC0095566B /* AppDelegate.swift */,
+				D769603F1B2B66DC0095566B /* ViewController.swift */,
+				D76960411B2B66DC0095566B /* Main.storyboard */,
+				D76960441B2B66DC0095566B /* Images.xcassets */,
+				D76960461B2B66DC0095566B /* LaunchScreen.xib */,
+				D769603C1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld */,
+				D76960381B2B66DC0095566B /* Supporting Files */,
+			);
+			path = "ReachFit Teacher Beta";
+			sourceTree = "<group>";
+		};
+		D76960381B2B66DC0095566B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D76960391B2B66DC0095566B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D76960501B2B66DC0095566B /* ReachFit Teacher BetaTests */ = {
+			isa = PBXGroup;
+			children = (
+				D76960531B2B66DC0095566B /* ReachFit_Teacher_BetaTests.swift */,
+				D76960511B2B66DC0095566B /* Supporting Files */,
+			);
+			path = "ReachFit Teacher BetaTests";
+			sourceTree = "<group>";
+		};
+		D76960511B2B66DC0095566B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D76960521B2B66DC0095566B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D76960341B2B66DC0095566B /* ReachFit Teacher Beta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D76960571B2B66DC0095566B /* Build configuration list for PBXNativeTarget "ReachFit Teacher Beta" */;
+			buildPhases = (
+				D76960311B2B66DC0095566B /* Sources */,
+				D76960321B2B66DC0095566B /* Frameworks */,
+				D76960331B2B66DC0095566B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ReachFit Teacher Beta";
+			productName = "ReachFit Teacher Beta";
+			productReference = D76960351B2B66DC0095566B /* ReachFit Teacher Beta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D769604C1B2B66DC0095566B /* ReachFit Teacher BetaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D769605A1B2B66DC0095566B /* Build configuration list for PBXNativeTarget "ReachFit Teacher BetaTests" */;
+			buildPhases = (
+				D76960491B2B66DC0095566B /* Sources */,
+				D769604A1B2B66DC0095566B /* Frameworks */,
+				D769604B1B2B66DC0095566B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D769604F1B2B66DC0095566B /* PBXTargetDependency */,
+			);
+			name = "ReachFit Teacher BetaTests";
+			productName = "ReachFit Teacher BetaTests";
+			productReference = D769604D1B2B66DC0095566B /* ReachFit Teacher BetaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D769602D1B2B66DC0095566B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = ReachFit;
+				TargetAttributes = {
+					D76960341B2B66DC0095566B = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					D769604C1B2B66DC0095566B = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = D76960341B2B66DC0095566B;
+					};
+				};
+			};
+			buildConfigurationList = D76960301B2B66DC0095566B /* Build configuration list for PBXProject "ReachFit Teacher Beta" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D769602C1B2B66DC0095566B;
+			productRefGroup = D76960361B2B66DC0095566B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D76960341B2B66DC0095566B /* ReachFit Teacher Beta */,
+				D769604C1B2B66DC0095566B /* ReachFit Teacher BetaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D76960331B2B66DC0095566B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D76960431B2B66DC0095566B /* Main.storyboard in Resources */,
+				D76960481B2B66DC0095566B /* LaunchScreen.xib in Resources */,
+				D76960451B2B66DC0095566B /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D769604B1B2B66DC0095566B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D76960311B2B66DC0095566B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D76960401B2B66DC0095566B /* ViewController.swift in Sources */,
+				D769603E1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld in Sources */,
+				D769603B1B2B66DC0095566B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D76960491B2B66DC0095566B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D76960541B2B66DC0095566B /* ReachFit_Teacher_BetaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D769604F1B2B66DC0095566B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D76960341B2B66DC0095566B /* ReachFit Teacher Beta */;
+			targetProxy = D769604E1B2B66DC0095566B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D76960411B2B66DC0095566B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D76960421B2B66DC0095566B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D76960461B2B66DC0095566B /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D76960471B2B66DC0095566B /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D76960551B2B66DC0095566B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D76960561B2B66DC0095566B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D76960581B2B66DC0095566B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ReachFit Teacher Beta/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D76960591B2B66DC0095566B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ReachFit Teacher Beta/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D769605B1B2B66DC0095566B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ReachFit Teacher BetaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReachFit Teacher Beta.app/ReachFit Teacher Beta";
+			};
+			name = Debug;
+		};
+		D769605C1B2B66DC0095566B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "ReachFit Teacher BetaTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReachFit Teacher Beta.app/ReachFit Teacher Beta";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D76960301B2B66DC0095566B /* Build configuration list for PBXProject "ReachFit Teacher Beta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D76960551B2B66DC0095566B /* Debug */,
+				D76960561B2B66DC0095566B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D76960571B2B66DC0095566B /* Build configuration list for PBXNativeTarget "ReachFit Teacher Beta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D76960581B2B66DC0095566B /* Debug */,
+				D76960591B2B66DC0095566B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D769605A1B2B66DC0095566B /* Build configuration list for PBXNativeTarget "ReachFit Teacher BetaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D769605B1B2B66DC0095566B /* Debug */,
+				D769605C1B2B66DC0095566B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D769603C1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D769603D1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodel */,
+			);
+			currentVersion = D769603D1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodel */;
+			path = ReachFit_Teacher_Beta.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D769602D1B2B66DC0095566B /* Project object */;
+}

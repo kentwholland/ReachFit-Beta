@@ -24,6 +24,8 @@
 		D72BC4111B2CB9D900DB0FA7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72BC4101B2CB9D900DB0FA7 /* Accounts.framework */; };
 		D72BC4131B2CB9DD00DB0FA7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72BC4121B2CB9DD00DB0FA7 /* Social.framework */; };
 		D72BC4151B2CBA0F00DB0FA7 /* ReachFitLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D72BC4141B2CBA0F00DB0FA7 /* ReachFitLogo.png */; };
+		D72BC4191B2CBBCC00DB0FA7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BC4181B2CBBCC00DB0FA7 /* SignUpViewController.swift */; };
+		D72BC41B1B2CBBD100DB0FA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BC41A1B2CBBD100DB0FA7 /* LoginViewController.swift */; };
 		D769603B1B2B66DC0095566B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D769603A1B2B66DC0095566B /* AppDelegate.swift */; };
 		D769603E1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D769603C1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld */; };
 		D76960401B2B66DC0095566B /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D769603F1B2B66DC0095566B /* StartingViewController.swift */; };
@@ -61,6 +63,8 @@
 		D72BC4101B2CB9D900DB0FA7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D72BC4121B2CB9DD00DB0FA7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D72BC4141B2CBA0F00DB0FA7 /* ReachFitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReachFitLogo.png; sourceTree = "<group>"; };
+		D72BC4181B2CBBCC00DB0FA7 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D72BC41A1B2CBBD100DB0FA7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D76960351B2B66DC0095566B /* ReachFit Teacher Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReachFit Teacher Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76960391B2B66DC0095566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D769603A1B2B66DC0095566B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +135,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D72BC4161B2CBBA200DB0FA7 /* Sign Up/Login */ = {
+			isa = PBXGroup;
+			children = (
+				D769603F1B2B66DC0095566B /* StartingViewController.swift */,
+				D72BC4181B2CBBCC00DB0FA7 /* SignUpViewController.swift */,
+				D72BC41A1B2CBBD100DB0FA7 /* LoginViewController.swift */,
+			);
+			name = "Sign Up/Login";
+			sourceTree = "<group>";
+		};
 		D769602C1B2B66DC0095566B = {
 			isa = PBXGroup;
 			children = (
@@ -154,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				D769603A1B2B66DC0095566B /* AppDelegate.swift */,
-				D769603F1B2B66DC0095566B /* StartingViewController.swift */,
+				D72BC4161B2CBBA200DB0FA7 /* Sign Up/Login */,
 				D76960411B2B66DC0095566B /* Main.storyboard */,
 				D76960381B2B66DC0095566B /* Supporting Files */,
 			);
@@ -293,6 +307,8 @@
 			files = (
 				D76960401B2B66DC0095566B /* StartingViewController.swift in Sources */,
 				D769603E1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld in Sources */,
+				D72BC4191B2CBBCC00DB0FA7 /* SignUpViewController.swift in Sources */,
+				D72BC41B1B2CBBD100DB0FA7 /* LoginViewController.swift in Sources */,
 				D769603B1B2B66DC0095566B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

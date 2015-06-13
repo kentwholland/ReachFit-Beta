@@ -26,6 +26,7 @@
 		D72BC4151B2CBA0F00DB0FA7 /* ReachFitLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D72BC4141B2CBA0F00DB0FA7 /* ReachFitLogo.png */; };
 		D72BC4191B2CBBCC00DB0FA7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BC4181B2CBBCC00DB0FA7 /* SignUpViewController.swift */; };
 		D72BC41B1B2CBBD100DB0FA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BC41A1B2CBBD100DB0FA7 /* LoginViewController.swift */; };
+		D72BC41D1B2CBF5600DB0FA7 /* CurrentUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BC41C1B2CBF5600DB0FA7 /* CurrentUserInformation.swift */; };
 		D769603B1B2B66DC0095566B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D769603A1B2B66DC0095566B /* AppDelegate.swift */; };
 		D769603E1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D769603C1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld */; };
 		D76960401B2B66DC0095566B /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D769603F1B2B66DC0095566B /* StartingViewController.swift */; };
@@ -65,6 +66,7 @@
 		D72BC4141B2CBA0F00DB0FA7 /* ReachFitLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReachFitLogo.png; sourceTree = "<group>"; };
 		D72BC4181B2CBBCC00DB0FA7 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D72BC41A1B2CBBD100DB0FA7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D72BC41C1B2CBF5600DB0FA7 /* CurrentUserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserInformation.swift; sourceTree = "<group>"; };
 		D76960351B2B66DC0095566B /* ReachFit Teacher Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReachFit Teacher Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76960391B2B66DC0095566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D769603A1B2B66DC0095566B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 			name = "Sign Up/Login";
 			sourceTree = "<group>";
 		};
+		D72BC41E1B2CBF9000DB0FA7 /* User Info */ = {
+			isa = PBXGroup;
+			children = (
+				D72BC41C1B2CBF5600DB0FA7 /* CurrentUserInformation.swift */,
+			);
+			name = "User Info";
+			sourceTree = "<group>";
+		};
 		D769602C1B2B66DC0095566B = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +179,7 @@
 			children = (
 				D769603A1B2B66DC0095566B /* AppDelegate.swift */,
 				D72BC4161B2CBBA200DB0FA7 /* Sign Up/Login */,
+				D72BC41E1B2CBF9000DB0FA7 /* User Info */,
 				D76960411B2B66DC0095566B /* Main.storyboard */,
 				D76960381B2B66DC0095566B /* Supporting Files */,
 			);
@@ -308,6 +319,7 @@
 				D76960401B2B66DC0095566B /* StartingViewController.swift in Sources */,
 				D769603E1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld in Sources */,
 				D72BC4191B2CBBCC00DB0FA7 /* SignUpViewController.swift in Sources */,
+				D72BC41D1B2CBF5600DB0FA7 /* CurrentUserInformation.swift in Sources */,
 				D72BC41B1B2CBBD100DB0FA7 /* LoginViewController.swift in Sources */,
 				D769603B1B2B66DC0095566B /* AppDelegate.swift in Sources */,
 			);

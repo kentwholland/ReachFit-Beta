@@ -39,7 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.performSegueWithIdentifier("finishLogin", sender: self)
                 } else  {
                     let alertController = UIAlertController(title: "Alert", message:
-                        "You do not have a student account, please sign in using the teacher account.", preferredStyle: UIAlertControllerStyle.Alert)
+                        "You do not have a student account, please sign in using a teacher account.", preferredStyle: UIAlertControllerStyle.Alert)
                     alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
                     
                     self.presentViewController(alertController, animated: true, completion: nil)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oS8-tO-08Z">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -8,7 +8,7 @@
         <!--Student-->
         <scene sceneID="pFb-vz-UH7">
             <objects>
-                <viewController id="I7G-uM-H9d" customClass="StartingViewController" customModule="ReachFit_Beta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="I7G-uM-H9d" customClass="StartingViewController" customModule="ReachFit_Teacher_Beta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cBC-4a-gN2"/>
                         <viewControllerLayoutGuide type="bottom" id="7AH-Qh-V63"/>
@@ -73,7 +73,7 @@
         <!--Login-->
         <scene sceneID="IRR-wA-4ZH">
             <objects>
-                <viewController id="79e-da-XaT" customClass="LoginViewController" customModule="ReachFit_Beta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="79e-da-XaT" customClass="LoginViewController" customModule="ReachFit_Teacher_Beta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eAz-Gf-CLE"/>
                         <viewControllerLayoutGuide type="bottom" id="AVA-j0-ZWf"/>
@@ -122,7 +122,7 @@
         <!--Sign Up-->
         <scene sceneID="tS5-0e-jg4">
             <objects>
-                <viewController id="2Hu-lu-QYw" customClass="SignUpViewController" customModule="ReachFit_Beta" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="2Hu-lu-QYw" customClass="SignUpViewController" customModule="ReachFit_Teacher_Beta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WDl-1W-Xcj"/>
                         <viewControllerLayoutGuide type="bottom" id="yvT-nm-uLl"/>

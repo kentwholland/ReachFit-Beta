@@ -21,6 +21,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.setApplicationId("udSZXI5orDFYqwradcyyXGvvFqP5FLgJbUcWCaBx", clientKey: "9S9EmNafwvOFxXj3PHxRK8lPMv51fm19T3aDpeul")
         PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
         
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            
+            CurrentUserInfo.currentUserUsername = currentUser!.objectForKey("username") as! String
+            CurrentUserInfo.currentUserEmail = currentUser!.objectForKey("email") as! String
+            CurrentUserInfo.currentUserAge = currentUser!.objectForKey("userAge") as! String
+            
+            var test1 = currentUser!.objectForKey("username") as! String
+            var test2 = currentUser!.objectForKey("email") as! String
+            var test3 = currentUser!.objectForKey("userAge") as! String
+            
+            println("username: \(test1), email: \(test2), age: \(test3)")
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("ReachFitMainHome") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("ReachFitSignUp") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 

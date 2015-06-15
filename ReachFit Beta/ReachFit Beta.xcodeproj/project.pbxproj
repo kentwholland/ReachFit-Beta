@@ -102,8 +102,8 @@
 				D7342EEF1B2683EA008B3E6B /* SystemConfiguration.framework in Frameworks */,
 				D7342EED1B2683E6008B3E6B /* StoreKit.framework in Frameworks */,
 				D7342EEB1B2683E1008B3E6B /* Social.framework in Frameworks */,
-				D7342ED71B2683A8008B3E6B /* Parse.framework in Frameworks */,
 				D7342EE91B2683DD008B3E6B /* Security.framework in Frameworks */,
+				D7342ED71B2683A8008B3E6B /* Parse.framework in Frameworks */,
 				D7342EE71B2683D9008B3E6B /* QuartzCore.framework in Frameworks */,
 				D7342EE51B2683D5008B3E6B /* MobileCoreServices.framework in Frameworks */,
 				D7342EE31B2683D0008B3E6B /* CoreLocation.framework in Frameworks */,
@@ -502,6 +502,8 @@
 					Beta,
 					"$(PROJECT_DIR)/ReachFit",
 					Beta,
+					"$(PROJECT_DIR)/ReachFit",
+					Beta,
 				);
 				INFOPLIST_FILE = "ReachFit Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -515,6 +517,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/ReachFit",
+					Beta,
 					"$(PROJECT_DIR)/ReachFit",
 					Beta,
 					"$(PROJECT_DIR)/ReachFit",

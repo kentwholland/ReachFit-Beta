@@ -292,7 +292,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-OF-TYk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-OF-TYk">
                                 <rect key="frame" x="16" y="191" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -301,12 +301,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Class" id="ECC-TC-DSh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rYf-9o-YLu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rYf-9o-YLu">
+                            <connections>
+                                <action selector="dateTextField:" destination="PSC-Ri-URE" id="JPm-mQ-6N1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="classNameTextField" destination="NyX-pv-aeF" id="30f-aZ-aZj"/>
+                        <outlet property="dateTextField" destination="iqp-OF-TYk" id="FBk-hl-GJT"/>
                         <outlet property="descriptionTextField" destination="2kn-Bm-Gop" id="35o-c0-9oZ"/>
-                        <outlet property="timeTextField" destination="iqp-OF-TYk" id="qwq-dq-kJR"/>
                         <outlet property="workoutTypeTextField" destination="BVK-6I-Awh" id="pCi-eF-8F3"/>
                     </connections>
                 </viewController>

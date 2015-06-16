@@ -27,6 +27,7 @@
 		D72BC4191B2CBBCC00DB0FA7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BC4181B2CBBCC00DB0FA7 /* SignUpViewController.swift */; };
 		D72BC41B1B2CBBD100DB0FA7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BC41A1B2CBBD100DB0FA7 /* LoginViewController.swift */; };
 		D72BC41D1B2CBF5600DB0FA7 /* CurrentUserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BC41C1B2CBF5600DB0FA7 /* CurrentUserInformation.swift */; };
+		D72BF62A1B30C2E10047C12B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72BF6291B30C2E10047C12B /* AddViewController.swift */; };
 		D769603B1B2B66DC0095566B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D769603A1B2B66DC0095566B /* AppDelegate.swift */; };
 		D769603E1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D769603C1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld */; };
 		D76960401B2B66DC0095566B /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D769603F1B2B66DC0095566B /* StartingViewController.swift */; };
@@ -70,6 +71,7 @@
 		D72BC4181B2CBBCC00DB0FA7 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D72BC41A1B2CBBD100DB0FA7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D72BC41C1B2CBF5600DB0FA7 /* CurrentUserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserInformation.swift; sourceTree = "<group>"; };
+		D72BF6291B30C2E10047C12B /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		D76960351B2B66DC0095566B /* ReachFit Teacher Beta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReachFit Teacher Beta.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76960391B2B66DC0095566B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D769603A1B2B66DC0095566B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,14 @@
 			name = "User Info";
 			sourceTree = "<group>";
 		};
+		D72BF6281B30C00D0047C12B /* Add Class */ = {
+			isa = PBXGroup;
+			children = (
+				D72BF6291B30C2E10047C12B /* AddViewController.swift */,
+			);
+			name = "Add Class";
+			sourceTree = "<group>";
+		};
 		D769602C1B2B66DC0095566B = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				D769603A1B2B66DC0095566B /* AppDelegate.swift */,
+				D72BF6281B30C00D0047C12B /* Add Class */,
 				D7A7B44B1B2E97B600430062 /* Your Classes */,
 				D72BC4161B2CBBA200DB0FA7 /* Sign Up/Login */,
 				D72BC41E1B2CBF9000DB0FA7 /* User Info */,
@@ -333,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D72BF62A1B30C2E10047C12B /* AddViewController.swift in Sources */,
 				D76960401B2B66DC0095566B /* StartingViewController.swift in Sources */,
 				D769603E1B2B66DC0095566B /* ReachFit_Teacher_Beta.xcdatamodeld in Sources */,
 				D7A7B44F1B2E97C000430062 /* YouClassesDetailVCViewController.swift in Sources */,

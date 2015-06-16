@@ -268,7 +268,7 @@
         <!--Create Class-->
         <scene sceneID="2dy-ZT-sk9">
             <objects>
-                <viewController id="PSC-Ri-URE" sceneMemberID="viewController">
+                <viewController id="PSC-Ri-URE" customClass="AddViewController" customModule="ReachFit_Teacher_Beta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pTb-mO-R71"/>
                         <viewControllerLayoutGuide type="bottom" id="zZV-VS-mOr"/>
@@ -292,36 +292,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EsM-60-ueo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-OF-TYk">
                                 <rect key="frame" x="16" y="191" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-OF-TYk">
-                                <rect key="frame" x="17" y="229" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Length" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAE-dA-woq">
-                                <rect key="frame" x="16" y="269" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Max Number of Attendants" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N4y-e3-ocF">
-                                <rect key="frame" x="16" y="307" width="288" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ehF-Td-uam">
-                                <rect key="frame" x="0.0" y="406" width="320" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="456179272.395805">
-                                    <!--2015-06-16 20:27:52 +0000-->
-                                </date>
-                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Create Class" id="ECC-TC-DSh"/>
+                    <navigationItem key="navigationItem" title="Create Class" id="ECC-TC-DSh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="rYf-9o-YLu"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="classNameTextField" destination="NyX-pv-aeF" id="30f-aZ-aZj"/>
+                        <outlet property="descriptionTextField" destination="2kn-Bm-Gop" id="35o-c0-9oZ"/>
+                        <outlet property="timeTextField" destination="iqp-OF-TYk" id="qwq-dq-kJR"/>
+                        <outlet property="workoutTypeTextField" destination="BVK-6I-Awh" id="pCi-eF-8F3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUb-JI-cJ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

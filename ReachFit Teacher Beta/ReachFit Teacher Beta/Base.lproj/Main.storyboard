@@ -252,7 +252,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Classes" id="cYp-j2-3Re">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Lu1-i9-M46"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Lu1-i9-M46">
+                            <connections>
+                                <segue destination="PSC-Ri-URE" kind="push" id="e5c-mq-s6z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="blm-Fd-Pe7">
                         <autoresizingMask key="autoresizingMask"/>
@@ -277,39 +281,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NyX-pv-aeF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NyX-pv-aeF">
                                 <rect key="frame" x="16" y="77" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Workout Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVK-6I-Awh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Workout Type" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BVK-6I-Awh">
                                 <rect key="frame" x="16" y="115" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2kn-Bm-Gop">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2kn-Bm-Gop">
                                 <rect key="frame" x="16" y="153" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-OF-TYk">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iqp-OF-TYk">
                                 <rect key="frame" x="16" y="191" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2kn-Bm-Gop" firstAttribute="leading" secondItem="Tib-8t-5Gh" secondAttribute="leadingMargin" id="027-NV-lNm"/>
+                            <constraint firstItem="2kn-Bm-Gop" firstAttribute="top" secondItem="BVK-6I-Awh" secondAttribute="bottom" constant="8" id="3Ct-jj-rgC"/>
+                            <constraint firstItem="BVK-6I-Awh" firstAttribute="trailing" secondItem="Tib-8t-5Gh" secondAttribute="trailingMargin" id="4iN-KJ-M6U"/>
+                            <constraint firstItem="NyX-pv-aeF" firstAttribute="top" secondItem="pTb-mO-R71" secondAttribute="bottom" constant="13" id="6eO-4y-6AN"/>
+                            <constraint firstItem="2kn-Bm-Gop" firstAttribute="trailing" secondItem="Tib-8t-5Gh" secondAttribute="trailingMargin" id="Csg-qa-FCz"/>
+                            <constraint firstItem="NyX-pv-aeF" firstAttribute="trailing" secondItem="Tib-8t-5Gh" secondAttribute="trailingMargin" id="IKA-Zf-0BQ"/>
+                            <constraint firstItem="iqp-OF-TYk" firstAttribute="leading" secondItem="Tib-8t-5Gh" secondAttribute="leadingMargin" id="IP8-Xd-1gS"/>
+                            <constraint firstItem="BVK-6I-Awh" firstAttribute="leading" secondItem="Tib-8t-5Gh" secondAttribute="leadingMargin" id="dx8-lW-LVb"/>
+                            <constraint firstItem="NyX-pv-aeF" firstAttribute="leading" secondItem="Tib-8t-5Gh" secondAttribute="leadingMargin" id="hgq-ea-9va"/>
+                            <constraint firstItem="BVK-6I-Awh" firstAttribute="top" secondItem="NyX-pv-aeF" secondAttribute="bottom" constant="8" id="p0E-m2-ZNn"/>
+                            <constraint firstItem="iqp-OF-TYk" firstAttribute="top" secondItem="2kn-Bm-Gop" secondAttribute="bottom" constant="8" id="p9C-bb-fif"/>
+                            <constraint firstItem="iqp-OF-TYk" firstAttribute="trailing" secondItem="Tib-8t-5Gh" secondAttribute="trailingMargin" id="wR8-Dm-2GW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create Class" id="ECC-TC-DSh">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="rYf-9o-YLu">
                             <connections>
-                                <action selector="dateTextField:" destination="PSC-Ri-URE" id="JPm-mQ-6N1"/>
+                                <action selector="done:" destination="PSC-Ri-URE" id="LbP-lq-E1u"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="classNameTextField" destination="NyX-pv-aeF" id="30f-aZ-aZj"/>
-                        <outlet property="dateTextField" destination="iqp-OF-TYk" id="FBk-hl-GJT"/>
+                        <outlet property="dateTextField" destination="iqp-OF-TYk" id="sVd-av-n2j"/>
                         <outlet property="descriptionTextField" destination="2kn-Bm-Gop" id="35o-c0-9oZ"/>
                         <outlet property="workoutTypeTextField" destination="BVK-6I-Awh" id="pCi-eF-8F3"/>
                     </connections>
@@ -481,24 +499,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cqu-w0-RZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1935" y="702"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3kO-ph-400">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N0o-Gs-wVM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IMR-nf-Wf9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="PSC-Ri-URE" kind="relationship" relationship="rootViewController" id="Ila-eP-dEp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vqo-wp-beY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2380" y="-706"/>
         </scene>
     </scenes>
     <resources>

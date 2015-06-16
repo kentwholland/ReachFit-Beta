@@ -16,12 +16,14 @@ class AddViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
     
-    @IBAction func dateTextField(sender: AnyObject) {
+    @IBAction func done(sender: AnyObject) {
         
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        var frameRect: CGRect = descriptionTextField.frame;
+        frameRect.size.height = 53;
+        descriptionTextField.frame = frameRect;
     }
     
     override func viewDidLoad() {

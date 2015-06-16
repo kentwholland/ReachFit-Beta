@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    @IBAction func login(sender: AnyObject) {
+    @IBAction func login(sender: AnyObject) {   
         
         PFUser.logInWithUsernameInBackground(emailTextField.text, password:passwordTextField.text) {
             (user: PFUser?, error: NSError?) -> Void in

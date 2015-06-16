@@ -15,7 +15,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var workoutTypeTextField: UITextField!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var dateTextField: UITextField!
-    
+     
     @IBAction func done(sender: AnyObject) {
         
     }

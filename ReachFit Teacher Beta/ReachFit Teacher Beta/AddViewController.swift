@@ -17,6 +17,7 @@ class AddViewController: UIViewController {
     @IBOutlet weak var dateTextField: UITextField!
     
     @IBAction func dateTextField(sender: AnyObject) {
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -25,6 +26,7 @@ class AddViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
 }

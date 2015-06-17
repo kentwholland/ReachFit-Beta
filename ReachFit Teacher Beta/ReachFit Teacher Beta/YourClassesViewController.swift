@@ -12,26 +12,25 @@ import ParseUI
 
 class YourClassesViewController: UITableViewController, UITableViewDataSource {
     
-    var listOfSubscribedClass: [String] = [String]()
-    var listOfSubscribedTopic: [String] = [String]()
-    var listOfSubscribedInstructor: [String] = [String]()
-    var listOfSubscribedDate: [String] = [String]()
-    var listOfSubscribedDescription: [String] = [String]()
+    var listOfYourClassNames: [String] = [String]()
+    var listOfYouClassTopics: [String] = [String]()
+    var listOfYourClassDates: [String] = [String]()
+    var listOfYourClassDescriptions: [String] = [String]()
     
-    var query = PFQuery(className:"currentClassSelection")
+    var query = PFQuery(className:"Classes")
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listOfSubscribedClass.count
+        return listOfYourClassNames.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = listOfSubscribedClass[indexPath.row]
+        cell.textLabel?.text = listOfYourClassNames[indexPath.row]
         return cell
         
     }
@@ -41,10 +40,9 @@ class YourClassesViewController: UITableViewController, UITableViewDataSource {
         let indexPath = tableView.indexPathForSelectedRow()
         let currentCell = tableView.cellForRowAtIndexPath(indexPath!)
         classFullNameLabelSubscribed = currentCell?.textLabel!.text as String!
-        classTopicLabelSubscribed = self.listOfSubscribedTopic[indexPath!.row]
-        instructorLabelSubscribed = self.listOfSubscribedInstructor[indexPath!.row]
-        classDateLabelSubscribed = self.listOfSubscribedDate[indexPath!.row]
-        classDescriptionLabelSubscribed = self.listOfSubscribedDescription[indexPath!.row]
+        classTopicLabelSubscribed = self.listOfYouClassTopics[indexPath!.row]
+        classDateLabelSubscribed = self.listOfYourClassDates[indexPath!.row]
+        classDescriptionLabelSubscribed = self.listOfYourClassDescriptions[indexPath!.row]
         
     }
     
@@ -67,19 +65,17 @@ class YourClassesViewController: UITableViewController, UITableViewDataSource {
                 // Do something with the found objects
                 if let objects = objects as? [PFObject] {
                     
-                    self.listOfSubscribedClass = []
-                    self.listOfSubscribedInstructor = []
-                    self.listOfSubscribedTopic = []
-                    self.listOfSubscribedDescription = []
-                    self.listOfSubscribedDate = []
+                    self.listOfYourClassNames = []
+                    self.listOfYouClassTopics = []
+                    self.listOfYourClassDescriptions = []
+                    self.listOfYourClassDates = []
                     
                     for object in objects {
                         
-                        self.listOfSubscribedClass.append(object.objectForKey("classFullName") as! String)
-                        self.listOfSubscribedInstructor.append(object.objectForKey("instructor") as! String)
-                        self.listOfSubscribedTopic.append(object.objectForKey("classTopic") as! String)
-                        self.listOfSubscribedDescription.append(object.objectForKey("classDescription") as! String)
-                        self.listOfSubscribedDate.append(object.objectForKey("classDate") as! String)
+                        self.listOfYourClassNames.append(object.objectForKey("classFullName") as! String)
+                        self.listOfYouClassTopics.append(object.objectForKey("classTopic") as! String)
+                        self.listOfYourClassDescriptions.append(object.objectForKey("classDescription") as! String)
+                        self.listOfYourClassDates.append(object.objectForKey("classDate") as! String)
                         
                     }
                 }
@@ -107,11 +103,10 @@ class YourClassesViewController: UITableViewController, UITableViewDataSource {
                 // Do something with the found objects
                 if let objects = objects as? [PFObject] {
                     for object in objects {
-                        self.listOfSubscribedClass.append(object.objectForKey("classFullName") as! String)
-                        self.listOfSubscribedInstructor.append(object.objectForKey("instructor") as! String)
-                        self.listOfSubscribedTopic.append(object.objectForKey("classTopic") as! String)
-                        self.listOfSubscribedDescription.append(object.objectForKey("classDescription") as! String)
-                        self.listOfSubscribedDate.append(object.objectForKey("classDate") as! String)
+                        self.listOfYourClassNames.append(object.objectForKey("classFullName") as! String)
+                        self.listOfYouClassTopics.append(object.objectForKey("classTopic") as! String)
+                        self.listOfYourClassDescriptions.append(object.objectForKey("classDescription") as! String)
+                        self.listOfYourClassDates.append(object.objectForKey("classDate") as! String)
                     }
                 }
             }

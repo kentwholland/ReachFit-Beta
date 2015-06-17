@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3167C85A-C287-434A-B175-5248A24676F6</string>
 	<key>IDESourceControlProjectName</key>
-	<string>ReachFit Teacher Beta</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EAA68A96F23A0EE0342F2B447406612C92C8343F</key>
 		<string>https://github.com/stefandeclerck/ReachFit-Beta.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ReachFit Teacher Beta/ReachFit Teacher Beta.xcodeproj</string>
+	<string>ReachFit Teacher Beta/ReachFit Teacher Beta.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EAA68A96F23A0EE0342F2B447406612C92C8343F</key>

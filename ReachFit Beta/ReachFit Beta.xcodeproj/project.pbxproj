@@ -508,6 +508,8 @@
 					Beta,
 					"$(PROJECT_DIR)/ReachFit",
 					Beta,
+					"$(PROJECT_DIR)/ReachFit",
+					Beta,
 				);
 				INFOPLIST_FILE = "ReachFit Beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -521,6 +523,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(PROJECT_DIR)/ReachFit",
+					Beta,
 					"$(PROJECT_DIR)/ReachFit",
 					Beta,
 					"$(PROJECT_DIR)/ReachFit",

@@ -55,7 +55,7 @@ class YourClassesViewController: UITableViewController, UITableViewDataSource {
         var currentUser = PFUser.currentUser()
         var currentUsername = currentUser?.username
         
-        query.whereKey("CurrentUsername", equalTo:currentUsername!)
+        query.whereKey("instructor", equalTo:currentUsername!)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             
@@ -92,8 +92,9 @@ class YourClassesViewController: UITableViewController, UITableViewDataSource {
         
         var currentUser = PFUser.currentUser()
         var currentUsername = currentUser?.username
+        println(currentUsername)
         
-        query.whereKey("CurrentUsername", equalTo:currentUsername!)
+        query.whereKey("instructor", equalTo:currentUsername!)
         query.findObjectsInBackgroundWithBlock {
             (objects: [AnyObject]?, error: NSError?) -> Void in
             

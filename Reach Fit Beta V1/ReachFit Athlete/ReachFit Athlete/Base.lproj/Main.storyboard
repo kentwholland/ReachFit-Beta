@@ -117,7 +117,7 @@
         <!--Sign Up-->
         <scene sceneID="J5S-e8-4sN">
             <objects>
-                <viewController id="pWI-Kt-qbQ" customClass="SignUpViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pWI-Kt-qbQ" customClass="SignUpTwoViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cdV-vU-KVg"/>
                         <viewControllerLayoutGuide type="bottom" id="SBn-KU-WBg"/>

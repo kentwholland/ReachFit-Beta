@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 ReachFit. All rights reserved.
 //
 
-import Cocoa
+import UIKit
+import Parse
 
-class signUpTwoViewController: UIViewController {
-
+class SignUpTwoViewController: UIViewController {
+    
 }

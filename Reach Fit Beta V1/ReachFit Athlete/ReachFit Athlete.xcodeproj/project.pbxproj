@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9681B351B1A0062EA27 /* Bolts.framework */; };
+		D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9691B351B1A0062EA27 /* Parse.framework */; };
+		D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */; };
+		D765A96F1B351B1A0062EA27 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A96B1B351B1A0062EA27 /* ParseUI.framework */; };
 		D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */; };
 		D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7A552701B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld */; };
 		D7A552741B3358A2009CC6DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A552731B3358A2009CC6DB /* ViewController.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D765A9681B351B1A0062EA27 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		D765A9691B351B1A0062EA27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		D765A96B1B351B1A0062EA27 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		D7A552691B3358A2009CC6DB /* ReachFit Athlete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReachFit Athlete.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A5526D1B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +53,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */,
+				D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */,
+				D765A96F1B351B1A0062EA27 /* ParseUI.framework in Frameworks */,
+				D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +73,10 @@
 		D7A552601B3358A2009CC6DB = {
 			isa = PBXGroup;
 			children = (
+				D765A9681B351B1A0062EA27 /* Bolts.framework */,
+				D765A9691B351B1A0062EA27 /* Parse.framework */,
+				D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */,
+				D765A96B1B351B1A0062EA27 /* ParseUI.framework */,
 				D7A5526B1B3358A2009CC6DB /* ReachFit Athlete */,
 				D7A552841B3358A2009CC6DB /* ReachFit AthleteTests */,
 				D7A5526A1B3358A2009CC6DB /* Products */,
@@ -344,6 +360,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "ReachFit Athlete/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +374,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "ReachFit Athlete/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -413,6 +437,7 @@
 				D7A5528D1B3358A2009CC6DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7A5528E1B3358A2009CC6DB /* Build configuration list for PBXNativeTarget "ReachFit AthleteTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +446,7 @@
 				D7A552901B3358A2009CC6DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

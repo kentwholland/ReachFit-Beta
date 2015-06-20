@@ -26,7 +26,6 @@
 		D765A98A1B351C130062EA27 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9891B351C130062EA27 /* libsqlite3.dylib */; };
 		D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */; };
 		D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7A552701B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld */; };
-		D7A552741B3358A2009CC6DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A552731B3358A2009CC6DB /* ViewController.swift */; };
 		D7A552771B3358A2009CC6DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A552751B3358A2009CC6DB /* Main.storyboard */; };
 		D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A552781B3358A2009CC6DB /* Images.xcassets */; };
 		D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */; };
@@ -65,7 +64,6 @@
 		D7A5526D1B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A552711B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReachFit_Athlete.xcdatamodel; sourceTree = "<group>"; };
-		D7A552731B3358A2009CC6DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7A552761B3358A2009CC6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D7A552781B3358A2009CC6DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D7A5527B1B3358A2009CC6DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */,
-				D7A552731B3358A2009CC6DB /* ViewController.swift */,
 				D7A552751B3358A2009CC6DB /* Main.storyboard */,
 				D7A552781B3358A2009CC6DB /* Images.xcassets */,
 				D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */,
@@ -291,7 +288,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7A552741B3358A2009CC6DB /* ViewController.swift in Sources */,
 				D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */,
 				D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */,
 			);

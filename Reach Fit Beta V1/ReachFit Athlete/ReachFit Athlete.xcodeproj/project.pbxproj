@@ -24,6 +24,7 @@
 		D765A9861B351C010062EA27 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9851B351C010062EA27 /* SystemConfiguration.framework */; };
 		D765A9881B351C0B0062EA27 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9871B351C0B0062EA27 /* libz.dylib */; };
 		D765A98A1B351C130062EA27 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9891B351C130062EA27 /* libsqlite3.dylib */; };
+		D765A98C1B35C7BC0062EA27 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765A98B1B35C7BC0062EA27 /* StartingViewController.swift */; };
 		D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */; };
 		D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7A552701B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld */; };
 		D7A552771B3358A2009CC6DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A552751B3358A2009CC6DB /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		D765A9851B351C010062EA27 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D765A9871B351C0B0062EA27 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D765A9891B351C130062EA27 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D765A98B1B35C7BC0062EA27 /* StartingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
 		D7A552691B3358A2009CC6DB /* ReachFit Athlete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReachFit Athlete.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A5526D1B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */,
+				D765A98B1B35C7BC0062EA27 /* StartingViewController.swift */,
 				D7A552751B3358A2009CC6DB /* Main.storyboard */,
 				D7A552781B3358A2009CC6DB /* Images.xcassets */,
 				D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */,
@@ -289,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */,
+				D765A98C1B35C7BC0062EA27 /* StartingViewController.swift in Sources */,
 				D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

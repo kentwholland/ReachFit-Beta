@@ -14,11 +14,11 @@
 		<string>https://github.com/stefandeclerck/ReachFit-Beta.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ReachFit Beta/ReachFit Beta.xcodeproj</string>
+	<string>ReachFit Beta V1/ReachFit Beta/ReachFit Beta.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EAA68A96F23A0EE0342F2B447406612C92C8343F</key>
-		<string>../../..</string>
+		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/stefandeclerck/ReachFit-Beta.git</string>

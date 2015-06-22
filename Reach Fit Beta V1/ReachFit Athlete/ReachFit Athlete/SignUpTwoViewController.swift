@@ -11,4 +11,13 @@ import Parse
 
 class SignUpTwoViewController: UIViewController {
     
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let profileImage = UIImageView(frame: CGRectMake(0, 0, 100, 100))
+        
+    }
+    
 }

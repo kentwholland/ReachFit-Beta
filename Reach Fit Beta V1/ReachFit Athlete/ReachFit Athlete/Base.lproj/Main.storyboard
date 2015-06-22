@@ -97,6 +97,7 @@
                     <navigationItem key="navigationItem" title="Sign Up" id="nfU-Co-ToI">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="vZA-cT-Gkg">
                             <connections>
+                                <action selector="signUp:" destination="lKK-gn-1Hk" id="9X7-0g-cJV"/>
                                 <segue destination="pWI-Kt-qbQ" kind="push" id="aY0-H4-2Xe"/>
                             </connections>
                         </barButtonItem>
@@ -128,6 +129,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yjz-g1-RIW">
                                 <rect key="frame" x="34" y="114" width="252" height="187"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -136,7 +138,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Done" id="cqr-d3-CVf"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="profileImage" destination="Yjz-g1-RIW" id="wZ5-BP-crM"/>
+                        <outlet property="profileImage" destination="Yjz-g1-RIW" id="dhP-Oa-9zl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOt-Ps-bhg" userLabel="First Responder" sceneMemberID="firstResponder"/>

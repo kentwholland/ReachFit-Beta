@@ -17,14 +17,49 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var DOBTextField: UITextField!
     
-    @IBOutlet weak var profileImage: UIImageView!
-    
     @IBOutlet weak var nextButton: UIBarButtonItem!
+    
+    @IBAction func signUp(sender: AnyObject) {
+        
+        let user = PFUser()
+        user.password = passwordTextField.text
+        user.email = emailTextField.text
+        user["isStudent"] = true
+        user["firstName"] = firstNameTextField.text
+        user["lastName"] = lastNameTextField.text
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error{
+                let alertController = UIAlertController(title: "Alert", message:
+                    "There is a problem with the given information", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else {
+                CurrentUserInfo.currentUserEmail = self.emailTextField.text
+                CurrentUserInfo.currentUserFirstName = self.firstNameTextField.text
+                CurrentUserInfo.currentUserLastName = self.lastNameTextField.text
+                println("success")
+                self.performSegueWithIdentifier("finishSignUp", sender:self)
+            }
+        }
+        
+    }
+    
+    func checkInputComplete() {
+        if emailTextField.text != "" || passwordTextField.text != "" {
+            nextButton.enabled = true
+        } else {
+            nextButton.enabled = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let profileImage = UIImageView(frame: CGRectMake(0, 0, 100, 100))
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("checkInputComplete"), userInfo: nil, repeats: true)
+        
+        self.firstNameTextField.becomeFirstResponder()
         
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self

@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         let user = PFUser()
         user.password = passwordTextField.text
         user.email = emailTextField.text
+        user.username = emailTextField.text
         user["isStudent"] = true
         user["firstName"] = firstNameTextField.text
         user["lastName"] = lastNameTextField.text

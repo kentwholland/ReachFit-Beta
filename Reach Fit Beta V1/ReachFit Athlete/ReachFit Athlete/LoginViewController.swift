@@ -21,10 +21,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func checkInputComplete() {
-        if emailTextField.text != "" || passwordTextField.text != "" {
-            doneButton.enabled = true
-        } else {
+        if emailTextField.text == "" || passwordTextField.text == "" {
             doneButton.enabled = false
+        } else {
+            doneButton.enabled = true
         }
     }
     

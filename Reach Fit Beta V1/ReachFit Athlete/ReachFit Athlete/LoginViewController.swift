@@ -17,6 +17,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBAction func Login(sender: AnyObject) {
+        println("login clicked")
+        
+        PFUser.logInWithUsernameInBackground(emailTextField.text, password: passwordTextField.text) { (curretUser, error) -> Void in
+            if error == nil {
+                println("success")
+                self.performSegueWithIdentifier("", sender: self)
+            } else {
+                println("Failure")
+                
+            }
+        }
         
     }
     

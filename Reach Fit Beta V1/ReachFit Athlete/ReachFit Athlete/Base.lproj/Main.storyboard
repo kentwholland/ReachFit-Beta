@@ -153,6 +153,34 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="r4g-ud-hvb">
+                                <rect key="frame" x="46" y="264" width="228" height="31"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2g-8i-RvC">
+                                <rect key="frame" x="26" y="268" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI8-sh-9F8">
+                                <rect key="frame" x="284" y="268" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rate your fitness level from 1 to 5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bq4-37-vxq">
+                                <rect key="frame" x="32" y="297" width="257" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Describe your fitness goal!" translatesAutoresizingMaskIntoConstraints="NO" id="LRx-1H-Yfk">
+                                <rect key="frame" x="16" y="356" width="288" height="128"/>
+                                <color key="backgroundColor" red="0.92501183712121215" green="0.92501183712121215" blue="0.92501183712121215" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -160,8 +188,13 @@
                         <barButtonItem key="rightBarButtonItem" title="Done" id="cqr-d3-CVf"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="fitnessGoalTextView" destination="LRx-1H-Yfk" id="mE2-HH-xEh"/>
+                        <outlet property="fitnessLevelSlider" destination="r4g-ud-hvb" id="QFy-bK-lHt"/>
+                        <outlet property="fiveLevelLabel" destination="NI8-sh-9F8" id="ont-Wn-UNg"/>
                         <outlet property="instructionLabel1" destination="i36-nO-ZUR" id="hIM-VC-q3m"/>
                         <outlet property="instructionLabel2" destination="fpj-1n-gBI" id="nph-wA-pJl"/>
+                        <outlet property="instructionLevelLabel" destination="Bq4-37-vxq" id="vCd-gD-tix"/>
+                        <outlet property="oneLevelLabel" destination="L2g-8i-RvC" id="jHA-FO-773"/>
                         <outlet property="profileImage" destination="Yjz-g1-RIW" id="dhP-Oa-9zl"/>
                     </connections>
                 </viewController>

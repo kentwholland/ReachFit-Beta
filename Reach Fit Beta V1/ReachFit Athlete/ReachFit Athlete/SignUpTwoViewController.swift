@@ -9,11 +9,18 @@
 import UIKit
 import Parse
 
-class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var instructionLabel1: UILabel!
     @IBOutlet weak var instructionLabel2: UILabel!
+    @IBOutlet weak var fitnessGoalTextView: UITextView!
+    @IBOutlet weak var fitnessLevelSlider: UISlider!
+    @IBOutlet weak var oneLevelLabel: UILabel!
+    @IBOutlet weak var fiveLevelLabel: UILabel!
+    @IBOutlet weak var instructionLevelLabel: UILabel!
+    
+    var standardViewHeight: CGFloat = 0
     
     @IBAction func profileImageTapped(sender: AnyObject) {
         
@@ -65,8 +72,39 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
         
     }
     
+    func keyboardWillShow(notification : NSNotification) {
+        
+        var keyboardSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size
+        
+        UIView.animateWithDuration(1, animations: { () -> Void in
+            self.view.center.y = 150
+        })
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        fitnessGoalTextView.resignFirstResponder()
+    }
+    
+    func keyboardWillHide(notification : NSNotification) {
+        self.view.center.y = standardViewHeight
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let newView = UIView()
+        
+        standardViewHeight = self.view.center.y
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
+        
+        fitnessGoalTextView.delegate = self
         
         profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
         profileImage.clipsToBounds = true;

@@ -232,12 +232,19 @@
                                     <outletCollection property="gestureRecognizers" destination="SMd-Ky-0Xa" appends="YES" id="z6Z-H2-PMg"/>
                                 </connections>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxh-jA-Lhz">
+                                <rect key="frame" x="16" y="202" width="288" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="bAa-2y-cYJ"/>
                     <connections>
                         <outlet property="profileImageView" destination="hIY-8U-v9v" id="IBl-cV-2W5"/>
+                        <outlet property="userNameLabel" destination="qxh-jA-Lhz" id="fIb-7x-uHu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbQ-Ba-ELf" userLabel="First Responder" sceneMemberID="firstResponder"/>

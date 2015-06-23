@@ -12,6 +12,7 @@ import Parse
 class MainProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
@@ -67,6 +68,8 @@ class MainProfileViewController: UIViewController, UIImagePickerControllerDelega
         profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
         profileImageView.clipsToBounds = true;
         profileImageView.userInteractionEnabled = true
+        
+        self.userNameLabel.text = "\(CurrentUserInfo.currentUserFirstName) \(CurrentUserInfo.currentUserLastName)"
         
         let pictureObject: AnyObject? = CurrentUserInfo.currentUserProfilePic
         pictureObject!.getDataInBackgroundWithBlock { (imageData: NSData?, error:NSError?) -> Void in

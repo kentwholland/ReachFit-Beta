@@ -185,7 +185,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="c45-RG-OvE">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="cqr-d3-CVf"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="cqr-d3-CVf">
+                            <connections>
+                                <action selector="done:" destination="pWI-Kt-qbQ" id="NsX-kh-3PF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="fitnessGoalTextView" destination="LRx-1H-Yfk" id="mE2-HH-xEh"/>

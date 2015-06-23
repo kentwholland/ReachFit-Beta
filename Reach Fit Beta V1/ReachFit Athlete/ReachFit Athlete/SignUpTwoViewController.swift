@@ -22,6 +22,10 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
     
     var standardViewHeight: CGFloat = 0
     
+    @IBAction func done(sender: AnyObject) {
+        println(fitnessLevelSlider.value)
+    }
+    
     @IBAction func profileImageTapped(sender: AnyObject) {
         
         println("image tapped")

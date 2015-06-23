@@ -28,6 +28,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         user["isStudent"] = true
         user["firstName"] = firstNameTextField.text
         user["lastName"] = lastNameTextField.text
+        user["dateOfBirth"] = DOBTextField.text
         
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in

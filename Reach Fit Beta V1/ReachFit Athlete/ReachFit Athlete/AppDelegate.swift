@@ -20,6 +20,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Parse.setApplicationId("sCsLLNAEyIqKPb7CtvGwAqNYQWR3XRUku6n6D9ew", clientKey: "Rm9kqIGX9othZGwn1hrEXEKcly1uF0kUZhy2TeH1")
         
+        let currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("beginningTabBarStarter") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let initialViewController = storyboard.instantiateViewControllerWithIdentifier("ReachFitSignUp") as! UIViewController
+            
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 

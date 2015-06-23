@@ -24,13 +24,14 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
     
     @IBAction func done(sender: AnyObject) {
         
+        var currentUser = PFUser.currentUser()
         var user = PFUser.currentUser()
         
-        if fitnessGoalTextView.text == "Describe your fitness goal!" {
-            var alert = UIAlertController(title: "Error", message: "Make sure to enter your fitness goal and set your fitness level!", preferredStyle: UIAlertControllerStyle.Alert)
+        if fitnessGoalTextView.text == "Describe your fitness goal!" || profileImage.image == nil{
+            var alert = UIAlertController(title: "Error", message: "Make sure to complete all inputs", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
                 
-                self.dismissViewControllerAnimated(true, completion: nil)
+                alert.dismissViewControllerAnimated(true, completion: nil)
                 
             })))
             

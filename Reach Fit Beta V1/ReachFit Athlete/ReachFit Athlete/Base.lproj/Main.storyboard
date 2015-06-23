@@ -224,18 +224,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjf-LT-E4D">
-                                <rect key="frame" x="55" y="102" width="166" height="161"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hIY-8U-v9v">
+                                <rect key="frame" x="107" y="87" width="107" height="107"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="SMd-Ky-0Xa" appends="YES" id="z6Z-H2-PMg"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="bAa-2y-cYJ"/>
                     <connections>
-                        <outlet property="profileImageView" destination="Wjf-LT-E4D" id="IDB-Us-udx"/>
+                        <outlet property="profileImageView" destination="hIY-8U-v9v" id="IBl-cV-2W5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YbQ-Ba-ELf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="SMd-Ky-0Xa">
+                    <connections>
+                        <action selector="profileImageViewTapped:" destination="aBL-gF-c6A" id="ozd-xg-oOX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3296" y="696"/>
         </scene>
@@ -440,6 +450,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9x0-Ex-sVu"/>
+        <segue reference="9S6-pz-pfn"/>
     </inferredMetricsTieBreakers>
 </document>

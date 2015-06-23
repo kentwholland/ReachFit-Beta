@@ -23,7 +23,40 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
     var standardViewHeight: CGFloat = 0
     
     @IBAction func done(sender: AnyObject) {
-        println(fitnessLevelSlider.value)
+        
+        var user = PFUser.currentUser()
+        
+        if fitnessGoalTextView.text == "Describe your fitness goal!" {
+            var alert = UIAlertController(title: "Error", message: "Make sure to enter your fitness goal and set your fitness level!", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
+            })))
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            user?.setObject(fitnessGoalTextView.text, forKey: "fitnessGoal")
+            user?.setObject(fitnessLevelSlider.value, forKey: "fitnessLevelNumber")
+            
+            user!.saveInBackgroundWithBlock({ (success, error) -> Void in
+                
+                if error == nil {
+                    
+                    
+                    
+                } else {
+                    
+                    
+                    
+                }
+                
+            })
+            
+        }
+        
     }
     
     @IBAction func profileImageTapped(sender: AnyObject) {

@@ -241,7 +241,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Profile" id="bAa-2y-cYJ"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="bAa-2y-cYJ">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="RYT-Nu-xmw">
+                            <connections>
+                                <segue destination="j44-gh-mx2" kind="push" id="3s6-VU-EJm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="profileImageView" destination="hIY-8U-v9v" id="IBl-cV-2W5"/>
                         <outlet property="userNameLabel" destination="qxh-jA-Lhz" id="fIb-7x-uHu"/>
@@ -255,6 +261,27 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3296" y="696"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="OIi-Cl-B72">
+            <objects>
+                <viewController id="j44-gh-mx2" customClass="UserSettingsViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wIC-xn-X7C"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Sc-aB-WgN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ufb-wP-lfy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="Nfa-ui-s3k">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="GdT-v7-uWZ"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KBb-GZ-cXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3744" y="699"/>
         </scene>
         <!--My Fitness-->
         <scene sceneID="f4G-sf-y4M">

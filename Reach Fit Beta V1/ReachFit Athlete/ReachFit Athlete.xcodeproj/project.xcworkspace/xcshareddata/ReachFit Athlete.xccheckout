@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>DD986685-4B54-48A3-8227-7C25A2C83DF2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ReachFit Athlete</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EAA68A96F23A0EE0342F2B447406612C92C8343F</key>
 		<string>https://github.com/stefandeclerck/ReachFit-Beta.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Reach Fit Beta V1/ReachFit Athlete/ReachFit Athlete.xcodeproj/project.xcworkspace</string>
+	<string>Reach Fit Beta V1/ReachFit Athlete/ReachFit Athlete.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EAA68A96F23A0EE0342F2B447406612C92C8343F</key>

@@ -200,6 +200,7 @@
                         <outlet property="instructionLevelLabel" destination="Bq4-37-vxq" id="vCd-gD-tix"/>
                         <outlet property="oneLevelLabel" destination="L2g-8i-RvC" id="jHA-FO-773"/>
                         <outlet property="profileImage" destination="Yjz-g1-RIW" id="dhP-Oa-9zl"/>
+                        <segue destination="To8-aU-2NA" kind="modal" identifier="finishSignUp" id="9S6-pz-pfn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yOt-Ps-bhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,6 +211,63 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2007" y="699"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="M8W-Ev-UAK">
+            <objects>
+                <viewController id="aBL-gF-c6A" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="shr-9T-anY"/>
+                        <viewControllerLayoutGuide type="bottom" id="26I-lW-sUS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tYT-Ik-ec4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="KgL-1c-euf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbQ-Ba-ELf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2978" y="668"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="7yU-QO-S0R">
+            <objects>
+                <viewController id="nHT-Nk-A0q" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O4Q-7u-G1Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="OTl-8T-3RJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7La-N6-lx8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="5vV-OQ-VRW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KTh-ne-2ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2978" y="38"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jb5-1y-6PK">
+            <objects>
+                <tabBarController id="To8-aU-2NA" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="wTb-eg-pgE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nHT-Nk-A0q" kind="relationship" relationship="viewControllers" id="7N5-wW-smd"/>
+                        <segue destination="aBL-gF-c6A" kind="relationship" relationship="viewControllers" id="szl-dD-SGg"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YfD-9S-EvY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2438" y="353"/>
         </scene>
         <!--Login-->
         <scene sceneID="ffT-aG-Yu6">
@@ -247,6 +305,7 @@
                         <outlet property="doneButton" destination="7g3-so-4Lh" id="1qQ-R1-du0"/>
                         <outlet property="emailTextField" destination="70q-gf-K5V" id="Wsy-xV-arx"/>
                         <outlet property="passwordTextField" destination="Q8j-2q-W1A" id="rmR-HZ-rXI"/>
+                        <segue destination="To8-aU-2NA" kind="modal" identifier="finishLogin" id="9x0-Ex-sVu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E0o-GL-Rd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,4 +354,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="9x0-Ex-sVu"/>
+    </inferredMetricsTieBreakers>
 </document>

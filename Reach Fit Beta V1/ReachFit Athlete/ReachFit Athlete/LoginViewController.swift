@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         PFUser.logInWithUsernameInBackground(emailTextField.text, password: passwordTextField.text) { (curretUser, error) -> Void in
             if error == nil {
                 println("success")
-                self.performSegueWithIdentifier("", sender: self)
+                self.performSegueWithIdentifier("finishLogin", sender: self)
             } else {
                 println("Failure")
         

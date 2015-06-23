@@ -45,7 +45,7 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
                 
                 if error == nil {
                     
-                    self.performSegueWithIdentifier("", sender: self)
+                    self.performSegueWithIdentifier("finishSignUp", sender: self)
                     
                 } else {
                     

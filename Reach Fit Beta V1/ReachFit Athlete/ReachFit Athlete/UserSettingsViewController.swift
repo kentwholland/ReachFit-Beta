@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class UserSettingsViewController: UIViewController {
 
@@ -16,6 +17,22 @@ class UserSettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func logout(sender: AnyObject) {
+        PFUser.logOut()
+        var availableUser = PFUser.currentUser()
+        
+        if availableUser == nil {
+            self.performSegueWithIdentifier("userLogout", sender: self)
+            println("logout success")
+            
+        } else if availableUser != nil {
+            
+            println("logout fail")
+            
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

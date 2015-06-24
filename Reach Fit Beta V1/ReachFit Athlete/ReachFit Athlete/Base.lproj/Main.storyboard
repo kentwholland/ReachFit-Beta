@@ -276,8 +276,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Nfa-ui-s3k">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="GdT-v7-uWZ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="GdT-v7-uWZ">
+                            <connections>
+                                <action selector="logout:" destination="j44-gh-mx2" id="Q2Y-2M-J8w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="zr8-Mg-S2q" kind="modal" identifier="userLogout" id="0Hl-Jj-5bB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBb-GZ-cXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

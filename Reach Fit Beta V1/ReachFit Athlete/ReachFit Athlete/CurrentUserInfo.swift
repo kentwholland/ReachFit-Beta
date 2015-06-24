@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 import Parse
 
-var currentUser = PFUser.currentUser()
-
 struct CurrentUserInfo {
     
     static var currentUserEmail = currentUser!.objectForKey("email") as! String
@@ -23,3 +21,5 @@ struct CurrentUserInfo {
     static var currentUserProfilePic: PFFile = currentUser!.objectForKey("profilePicture") as! PFFile
     
 }
+
+var currentUser = PFUser.currentUser()

@@ -307,7 +307,7 @@
         <!--My Fitness-->
         <scene sceneID="f4G-sf-y4M">
             <objects>
-                <viewController id="V2H-QW-BIs" sceneMemberID="viewController">
+                <viewController id="V2H-QW-BIs" customClass="MyFitnessViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tin-5I-8wk"/>
                         <viewControllerLayoutGuide type="bottom" id="1xX-Cu-Ryf"/>
@@ -322,6 +322,9 @@
                                     <segment title="Upcoming"/>
                                     <segment title="Past"/>
                                 </segments>
+                                <connections>
+                                    <action selector="myFitnessSegmentControllerSelect:" destination="V2H-QW-BIs" eventType="valueChanged" id="kfA-Sv-AyJ"/>
+                                </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mwb-Xd-fis">
                                 <rect key="frame" x="0.0" y="94" width="320" height="425"/>
@@ -339,6 +342,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Fitness" id="5Nh-o6-24j"/>
+                    <connections>
+                        <outlet property="myFitnessSegmentController" destination="qGd-ag-328" id="QOc-uo-3S4"/>
+                        <outlet property="pastMyFitnessView" destination="rzV-to-tAT" id="sqR-e4-2ZX"/>
+                        <outlet property="upcomingMyFitnessView" destination="Mwb-Xd-fis" id="TyU-Iv-DNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hd0-w5-9pc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -347,7 +355,7 @@
         <!--Upcoming SubTab 1-->
         <scene sceneID="Whh-Ud-mgq">
             <objects>
-                <tableViewController title="Upcoming SubTab 1" id="NN7-6K-jDL" sceneMemberID="viewController">
+                <tableViewController title="Upcoming SubTab 1" id="NN7-6K-jDL" customClass="UpcomingTableViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eiY-Hs-ck4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,8 +418,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="dw5-Ad-GiI" kind="relationship" relationship="viewControllers" id="7N5-wW-smd"/>
                         <segue destination="bOX-R1-ESz" kind="relationship" relationship="viewControllers" id="Ar3-Rk-Cip"/>
+                        <segue destination="dw5-Ad-GiI" kind="relationship" relationship="viewControllers" id="7N5-wW-smd"/>
                         <segue destination="p1j-Fd-U3b" kind="relationship" relationship="viewControllers" id="szl-dD-SGg"/>
                     </connections>
                 </tabBarController>
@@ -498,11 +506,11 @@
             </objects>
             <point key="canvasLocation" x="1566" y="699"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Profile-->
         <scene sceneID="1Ta-rj-Hhg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p1j-Fd-U3b" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="KgL-1c-euf"/>
+                    <tabBarItem key="tabBarItem" title="My Profile" id="KgL-1c-euf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MIQ-cQ-SXG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -517,11 +525,11 @@
             </objects>
             <point key="canvasLocation" x="2869" y="696"/>
         </scene>
-        <!--Item 1-->
+        <!--Find-->
         <scene sceneID="nrA-mx-OCF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dw5-Ad-GiI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="5vV-OQ-VRW"/>
+                    <tabBarItem key="tabBarItem" title="Find" id="5vV-OQ-VRW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hxf-DD-vJC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -536,11 +544,11 @@
             </objects>
             <point key="canvasLocation" x="2869" y="6"/>
         </scene>
-        <!--Item-->
+        <!--My Fitness-->
         <scene sceneID="jPE-6X-ufB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bOX-R1-ESz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="JId-UA-WSz"/>
+                    <tabBarItem key="tabBarItem" title="My Fitness" id="JId-UA-WSz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ljr-sM-rzX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

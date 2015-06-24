@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		D70F1A431B3A67EC005219B5 /* CustomUpcomingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70F1A421B3A67EC005219B5 /* CustomUpcomingCell.xib */; };
 		D70F1A451B3A6956005219B5 /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A441B3A6956005219B5 /* UpcomingTableViewCell.swift */; };
-		D70F1A471B3A7428005219B5 /* UpcomingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A461B3A7428005219B5 /* UpcomingDetailViewController.swift */; };
 		D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */; };
+		D70F1A4E1B3B68B8005219B5 /* MyFitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4D1B3B68B8005219B5 /* MyFitnessViewController.swift */; };
+		D70F1A501B3B6E12005219B5 /* PastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4F1B3B6E12005219B5 /* PastTableViewController.swift */; };
+		D70F1A521B3B6E53005219B5 /* PastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A511B3B6E53005219B5 /* PastTableViewCell.swift */; };
+		D70F1A541B3B6E65005219B5 /* CustomPastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70F1A531B3B6E65005219B5 /* CustomPastCell.xib */; };
 		D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9681B351B1A0062EA27 /* Bolts.framework */; };
 		D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9691B351B1A0062EA27 /* Parse.framework */; };
 		D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */; };
@@ -56,8 +59,11 @@
 /* Begin PBXFileReference section */
 		D70F1A421B3A67EC005219B5 /* CustomUpcomingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomUpcomingCell.xib; sourceTree = "<group>"; };
 		D70F1A441B3A6956005219B5 /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
-		D70F1A461B3A7428005219B5 /* UpcomingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingDetailViewController.swift; sourceTree = "<group>"; };
 		D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewController.swift; sourceTree = "<group>"; };
+		D70F1A4D1B3B68B8005219B5 /* MyFitnessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFitnessViewController.swift; sourceTree = "<group>"; };
+		D70F1A4F1B3B6E12005219B5 /* PastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastTableViewController.swift; sourceTree = "<group>"; };
+		D70F1A511B3B6E53005219B5 /* PastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastTableViewCell.swift; sourceTree = "<group>"; };
+		D70F1A531B3B6E65005219B5 /* CustomPastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPastCell.xib; sourceTree = "<group>"; };
 		D765A9681B351B1A0062EA27 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D765A9691B351B1A0062EA27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -132,6 +138,7 @@
 		D70F1A411B3A67AF005219B5 /* My Fitness */ = {
 			isa = PBXGroup;
 			children = (
+				D70F1A4D1B3B68B8005219B5 /* MyFitnessViewController.swift */,
 				D70F1A481B3A74D0005219B5 /* Upcoming SubTab 1 */,
 				D70F1A491B3B67CC005219B5 /* Past SubTab 2 */,
 			);
@@ -143,7 +150,6 @@
 			children = (
 				D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */,
 				D70F1A441B3A6956005219B5 /* UpcomingTableViewCell.swift */,
-				D70F1A461B3A7428005219B5 /* UpcomingDetailViewController.swift */,
 				D70F1A421B3A67EC005219B5 /* CustomUpcomingCell.xib */,
 			);
 			name = "Upcoming SubTab 1";
@@ -152,6 +158,9 @@
 		D70F1A491B3B67CC005219B5 /* Past SubTab 2 */ = {
 			isa = PBXGroup;
 			children = (
+				D70F1A4F1B3B6E12005219B5 /* PastTableViewController.swift */,
+				D70F1A511B3B6E53005219B5 /* PastTableViewCell.swift */,
+				D70F1A531B3B6E65005219B5 /* CustomPastCell.xib */,
 			);
 			name = "Past SubTab 2";
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70F1A431B3A67EC005219B5 /* CustomUpcomingCell.xib in Resources */,
+				D70F1A541B3B6E65005219B5 /* CustomPastCell.xib in Resources */,
 				D7A552771B3358A2009CC6DB /* Main.storyboard in Resources */,
 				D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */,
 				D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */,
@@ -371,14 +381,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70F1A4E1B3B68B8005219B5 /* MyFitnessViewController.swift in Sources */,
 				D77BE7741B35DA30006B82F0 /* CurrentUserInfo.swift in Sources */,
 				D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */,
 				D765A98C1B35C7BC0062EA27 /* StartingViewController.swift in Sources */,
+				D70F1A501B3B6E12005219B5 /* PastTableViewController.swift in Sources */,
 				D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */,
 				D77BE73D1B35CA67006B82F0 /* SignUpViewController.swift in Sources */,
-				D70F1A471B3A7428005219B5 /* UpcomingDetailViewController.swift in Sources */,
 				D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */,
 				D77BE7721B35D3AF006B82F0 /* SignUpTwoViewController.swift in Sources */,
+				D70F1A521B3B6E53005219B5 /* PastTableViewCell.swift in Sources */,
 				D77BE7701B35CA87006B82F0 /* LoginViewController.swift in Sources */,
 				D70F1A451B3A6956005219B5 /* UpcomingTableViewCell.swift in Sources */,
 				D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */,

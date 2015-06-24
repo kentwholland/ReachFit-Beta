@@ -22,7 +22,7 @@ class UpcomingTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 0
+        return 1
         
     }
 

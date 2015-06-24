@@ -13,6 +13,8 @@ class MainProfileViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var fitnessGoalLabels: UITextView!
+    @IBOutlet weak var fitnessLevelNumber: UILabel!
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
@@ -64,7 +66,9 @@ class MainProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        fitnessLevelNumber.text = "Your Fitness Level: \(CurrentUserInfo.currentUserFitnessLevel)"
+        fitnessGoalLabels.text = "\(CurrentUserInfo.currentUserFitnessGoals)"
         profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
         profileImageView.clipsToBounds = true;
         profileImageView.userInteractionEnabled = true

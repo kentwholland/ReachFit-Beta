@@ -15,9 +15,10 @@
 		D70F1A521B3B6E53005219B5 /* PastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A511B3B6E53005219B5 /* PastTableViewCell.swift */; };
 		D70F1A541B3B6E65005219B5 /* CustomPastCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70F1A531B3B6E65005219B5 /* CustomPastCell.xib */; };
 		D70F1A561B3B7FE2005219B5 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A551B3B7FE2005219B5 /* FindViewController.swift */; };
-		D70F1A5A1B3B94F1005219B5 /* SearchTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A591B3B94F1005219B5 /* SearchTableTableViewController.swift */; };
+		D70F1A5A1B3B94F1005219B5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */; };
 		D70F1A5C1B3B951E005219B5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */; };
 		D70F1A5E1B3B952D005219B5 /* CustomSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70F1A5D1B3B952D005219B5 /* CustomSearchCell.xib */; };
+		D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */; };
 		D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9681B351B1A0062EA27 /* Bolts.framework */; };
 		D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9691B351B1A0062EA27 /* Parse.framework */; };
 		D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */; };
@@ -69,9 +70,10 @@
 		D70F1A511B3B6E53005219B5 /* PastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastTableViewCell.swift; sourceTree = "<group>"; };
 		D70F1A531B3B6E65005219B5 /* CustomPastCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPastCell.xib; sourceTree = "<group>"; };
 		D70F1A551B3B7FE2005219B5 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
-		D70F1A591B3B94F1005219B5 /* SearchTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableTableViewController.swift; sourceTree = "<group>"; };
+		D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		D70F1A5D1B3B952D005219B5 /* CustomSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSearchCell.xib; sourceTree = "<group>"; };
+		D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D765A9681B351B1A0062EA27 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D765A9691B351B1A0062EA27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		D70F1A571B3B7FE6005219B5 /* Map SubTab 2 */ = {
 			isa = PBXGroup;
 			children = (
+				D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */,
 			);
 			name = "Map SubTab 2";
 			sourceTree = "<group>";
@@ -193,7 +196,7 @@
 		D70F1A581B3B801E005219B5 /* Search SubTab 1 */ = {
 			isa = PBXGroup;
 			children = (
-				D70F1A591B3B94F1005219B5 /* SearchTableTableViewController.swift */,
+				D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */,
 				D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */,
 				D70F1A5D1B3B952D005219B5 /* CustomSearchCell.xib */,
 			);
@@ -414,7 +417,7 @@
 				D77BE7741B35DA30006B82F0 /* CurrentUserInfo.swift in Sources */,
 				D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */,
 				D765A98C1B35C7BC0062EA27 /* StartingViewController.swift in Sources */,
-				D70F1A5A1B3B94F1005219B5 /* SearchTableTableViewController.swift in Sources */,
+				D70F1A5A1B3B94F1005219B5 /* SearchTableViewController.swift in Sources */,
 				D70F1A501B3B6E12005219B5 /* PastTableViewController.swift in Sources */,
 				D70F1A561B3B7FE2005219B5 /* FindViewController.swift in Sources */,
 				D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */,
@@ -423,6 +426,7 @@
 				D77BE7721B35D3AF006B82F0 /* SignUpTwoViewController.swift in Sources */,
 				D70F1A5C1B3B951E005219B5 /* SearchTableViewCell.swift in Sources */,
 				D70F1A521B3B6E53005219B5 /* PastTableViewCell.swift in Sources */,
+				D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */,
 				D77BE7701B35CA87006B82F0 /* LoginViewController.swift in Sources */,
 				D70F1A451B3A6956005219B5 /* UpcomingTableViewCell.swift in Sources */,
 				D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */,

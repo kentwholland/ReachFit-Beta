@@ -592,10 +592,10 @@
             </objects>
             <point key="canvasLocation" x="1983" y="-706"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Table View Controller-->
         <scene sceneID="fMZ-9h-zOc">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="khk-5V-9be" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="khk-5V-9be" customClass="SearchTableViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JGA-6D-RFM"/>
                         <viewControllerLayoutGuide type="bottom" id="gnO-Aa-Dyb"/>
@@ -632,10 +632,10 @@
             </objects>
             <point key="canvasLocation" x="2827" y="-63"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="IGe-b1-yzs">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bEY-t6-BJd" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="bEY-t6-BJd" customClass="MapViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qpH-MK-S04"/>
                         <viewControllerLayoutGuide type="bottom" id="TyM-Zf-VB8"/>

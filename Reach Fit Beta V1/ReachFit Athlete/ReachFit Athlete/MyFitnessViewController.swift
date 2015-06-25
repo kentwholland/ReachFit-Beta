@@ -24,7 +24,7 @@ class MyFitnessViewController: UIViewController {
             upcomingMyFitnessView.hidden = true
             pastMyFitnessView.hidden = false
         default:
-            break;
+            break
             
         }
         

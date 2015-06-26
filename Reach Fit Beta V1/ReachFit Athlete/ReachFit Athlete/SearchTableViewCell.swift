@@ -10,9 +10,9 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var pastClassInstructorLabel: UILabel!
-    @IBOutlet weak var pastDateCityLabel: UILabel!
-    @IBOutlet weak var pastIntensityLabel: UILabel!
+    @IBOutlet weak var searchClassInstructorLabel: UILabel!
+    @IBOutlet weak var searchDateCityLabel: UILabel!
+    @IBOutlet weak var searchIntensityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -33,10 +33,11 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="classAndInstructorLabel" destination="Cox-aS-0mL" id="9wm-bG-wu0"/>
-                <outlet property="dateAndCityLabel" destination="chh-Cd-V8y" id="6Qf-Xv-RbI"/>
-                <outlet property="upcomingClassInstructorLabel" destination="Cox-aS-0mL" id="5f5-Us-CZk"/>
-                <outlet property="upcomingDateCityLabel" destination="chh-Cd-V8y" id="NNT-8M-qiL"/>
+                <outlet property="pastDateCityLabel" destination="chh-Cd-V8y" id="j9h-aN-0Eo"/>
+                <outlet property="pastIntensityLabel" destination="MsH-H6-aNk" id="l4E-fO-XBe"/>
+                <outlet property="searchClassInstructorLabel" destination="Cox-aS-0mL" id="SFI-ol-ze5"/>
+                <outlet property="searchDateCityLabel" destination="chh-Cd-V8y" id="VMr-eR-LMJ"/>
+                <outlet property="searchIntensityLabel" destination="MsH-H6-aNk" id="at0-ZT-QPW"/>
                 <outlet property="upcomingIntensityLabel" destination="MsH-H6-aNk" id="mTA-aL-qYG"/>
                 <outlet property="workoutIntensityLabel" destination="MsH-H6-aNk" id="Yuh-dK-Hv3"/>
             </connections>

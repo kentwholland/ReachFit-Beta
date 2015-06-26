@@ -17,21 +17,29 @@ class PastTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
-
-    // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
         return 1
-        
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 1
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        var  cell:PastTableViewCell? = tableView.dequeueReusableCellWithIdentifier("upcomingTableViewCellBox") as? PastTableViewCell
+        
+        if cell == nil {
+            let nib:Array = NSBundle.mainBundle().loadNibNamed("TableViewCell", owner: self, options: nil)
+            cell = nib[0] as? PastTableViewCell
+        }
+        
+        return cell!
     }
 
 }

@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let initialViewController = storyboard.instantiateViewControllerWithIdentifier("beginningTabBarStarter") as! UIViewController
             
             self.window?.rootViewController = initialViewController
+            
             self.window?.makeKeyAndVisible()
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

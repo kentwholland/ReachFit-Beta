@@ -9,7 +9,7 @@
 import UIKit
 
 class UpcomingTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,14 +27,13 @@ class UpcomingTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var  cell:UpcomingTableViewCell? = tableView.dequeueReusableCellWithIdentifier("upcomingTableViewCellBox") as? UpcomingTableViewCell
-
-        if cell == nil {
-            let nib:Array = NSBundle.mainBundle().loadNibNamed("TableViewCell", owner: self, options: nil)
-            cell = nib[0] as? UpcomingTableViewCell
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("upcomingTableViewCellBox", forIndexPath: indexPath) as! UpcomingTableViewCell
         
-        return cell!
+        cell.upcomingClassInstructorLabel.text = "dfd"
+        cell.upcomingDateCityLabel.text = "dkfj"
+        cell.upcomingIntensityLabel.text = "1"
+        
+        return cell
     }
     
 }

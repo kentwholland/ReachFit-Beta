@@ -356,10 +356,44 @@
         <scene sceneID="Whh-Ud-mgq">
             <objects>
                 <tableViewController title="Upcoming SubTab 1" id="NN7-6K-jDL" customClass="UpcomingTableViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eiY-Hs-ck4">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" id="eiY-Hs-ck4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="upcomingTableViewCellBox" rowHeight="62" id="WfW-Un-SLx" customClass="UpcomingTableViewCell" customModule="ReachFit_Athlete" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WfW-Un-SLx" id="vGM-jq-bVo">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Class, Instructor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKk-dD-GSp">
+                                            <rect key="frame" x="8" y="8" width="258" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date - City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-P1-TLX">
+                                            <rect key="frame" x="8" y="29" width="258" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1-5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXb-vb-adI">
+                                            <rect key="frame" x="261" y="19" width="26" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="upcomingClassInstructorLabel" destination="yKk-dD-GSp" id="LOg-h1-sVJ"/>
+                                    <outlet property="upcomingDateCityLabel" destination="Nlw-P1-TLX" id="ibH-MH-goY"/>
+                                    <outlet property="upcomingIntensityLabel" destination="jXb-vb-adI" id="Pc1-qq-UVB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="NN7-6K-jDL" id="psQ-W9-XjO"/>
                             <outlet property="delegate" destination="NN7-6K-jDL" id="u1i-mU-4WK"/>
@@ -373,11 +407,45 @@
         <!--Past SubTab 2-->
         <scene sceneID="h2g-8E-Z3r">
             <objects>
-                <tableViewController title="Past SubTab 2" id="WEr-X1-fcY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="f9R-qO-wwb">
+                <tableViewController title="Past SubTab 2" id="WEr-X1-fcY" customClass="PastTableViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="f9R-qO-wwb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pastTableViewCellBox" rowHeight="60" id="VxR-yj-rfb" customClass="PastTableViewCell" customModule="ReachFit_Athlete" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VxR-yj-rfb" id="1ml-ge-j9j">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date - City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quP-nu-AnY">
+                                            <rect key="frame" x="8" y="29" width="258" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1-5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1P-yT-KX5">
+                                            <rect key="frame" x="261" y="19" width="26" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Class, Instructor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsU-h8-Nsp">
+                                            <rect key="frame" x="8" y="8" width="258" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pastClassInstructorLabel" destination="hsU-h8-Nsp" id="E4I-On-HdN"/>
+                                    <outlet property="pastDateCityLabel" destination="quP-nu-AnY" id="sxk-1Y-MEH"/>
+                                    <outlet property="pastIntensityLabel" destination="L1P-yT-KX5" id="doI-U1-HMi"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="WEr-X1-fcY" id="XUe-mw-7oa"/>
                             <outlet property="delegate" destination="WEr-X1-fcY" id="umB-jT-qwd"/>
@@ -413,7 +481,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JpG-fR-B5o">
                                 <rect key="frame" x="0.0" y="93" width="320" height="426"/>
                                 <connections>
-                                    <segue destination="khk-5V-9be" kind="embed" id="aRU-ya-epd"/>
+                                    <segue destination="xv0-x3-3il" kind="embed" id="4ze-KO-FEi"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nfA-hh-j11">
@@ -435,6 +503,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTh-ne-2ij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2404" y="8"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="zbv-zl-Kw5">
+            <objects>
+                <tableViewController id="xv0-x3-3il" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="p70-Dk-rIf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="esD-AT-jA7">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="esD-AT-jA7" id="oT8-je-5AS">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xv0-x3-3il" id="QCx-7C-TJW"/>
+                            <outlet property="delegate" destination="xv0-x3-3il" id="rbX-qV-yZy"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xsV-FX-0PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2827" y="-63"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jb5-1y-6PK">
@@ -591,51 +685,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dF8-3m-5ag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1983" y="-706"/>
-        </scene>
-        <!--Search Table View Controller-->
-        <scene sceneID="fMZ-9h-zOc">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="khk-5V-9be" customClass="SearchTableViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JGA-6D-RFM"/>
-                        <viewControllerLayoutGuide type="bottom" id="gnO-Aa-Dyb"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Guy-dX-DhW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZIo-oD-DVt">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xNx-od-nwD">
-                                <rect key="frame" x="0.0" y="44" width="320" height="382"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="khk-5V-9be" id="R1u-Hg-aFv"/>
-                                    <outlet property="delegate" destination="khk-5V-9be" id="R4E-tp-Obt"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                    <connections>
-                        <outlet property="searchBar" destination="ZIo-oD-DVt" id="Mua-p4-Iyg"/>
-                        <outlet property="searchDisplayController" destination="8HN-DM-75r" id="jsW-hI-dkb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pto-1c-mrs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="8HN-DM-75r">
-                    <connections>
-                        <outlet property="delegate" destination="khk-5V-9be" id="vnC-yF-8n0"/>
-                        <outlet property="searchContentsController" destination="khk-5V-9be" id="REP-0Q-e2h"/>
-                        <outlet property="searchResultsDataSource" destination="khk-5V-9be" id="vK3-A2-hbX"/>
-                        <outlet property="searchResultsDelegate" destination="khk-5V-9be" id="4Qf-4U-Uh8"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="2827" y="-63"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="IGe-b1-yzs">

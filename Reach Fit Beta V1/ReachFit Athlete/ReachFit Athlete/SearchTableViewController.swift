@@ -40,6 +40,9 @@ class SearchTableViewController: UITableViewController {
                         self.classStudents[self.objectId.count] =  object.objectForKey("classStudents") as? String
                         
                         println(self.workoutClassName.count)
+                        
+                        self.tableView.reloadData()
+                        
                     }
                     
                 }
@@ -57,19 +60,26 @@ class SearchTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return 1
+        if workoutClassName.count == 0 {
+            
+            return 0
+        } else {
+            
+            return workoutClassName.count
+        }
     }
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCellBox", forIndexPath: indexPath) as? SearchTableViewCell
         
-//        cell?.searchClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
-        cell?.searchClassInstructorLabel.text = "W I"
-//        cell?.searchDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
-        cell?.searchDateCityLabel.text = "D L"
-//        cell?.searchIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
-        cell?.searchIntensityLabel.text = "I"
+        if workoutClassName.count >= 1 {
+            
+        cell?.searchClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
+        cell?.searchDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
+        cell?.searchIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
+            
+        }
         
         return cell!
     }

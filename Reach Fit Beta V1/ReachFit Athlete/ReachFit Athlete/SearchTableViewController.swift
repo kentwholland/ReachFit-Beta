@@ -9,9 +9,7 @@
 import UIKit
 import Parse
 
-class SearchTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    var query = PFQuery(className: "WorkoutClasses")
+class SearchTableViewController: UITableViewController {
     
     // Class data intializer
     var objectId: [String] = [String]()
@@ -23,21 +21,16 @@ class SearchTableViewController: UIViewController, UITableViewDelegate, UITableV
     var locationOfClass: [String] = [String]()
     var classStudents: [Int: String] = [Int: String]()
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var tableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "CustomSearchCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCellBox")
-        
+        var query = PFQuery(className: "WorkoutClasses")
         query.findObjectsInBackgroundWithBlock{
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil {
                 if let objects = objects as? [PFObject] {
                     for object in objects {
-                        
-                        self.objectId.append(object.objectForKey("objectId") as! String)
+
                         self.workoutClassName.append(object.objectForKey("workoutClassName") as! String)
                         self.instructorName.append(object.objectForKey("instructorName") as! String)
                         self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
@@ -46,7 +39,7 @@ class SearchTableViewController: UIViewController, UITableViewDelegate, UITableV
                         self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
                         self.classStudents[self.objectId.count] =  object.objectForKey("classStudents") as? String
                         
-                    
+                        println(self.workoutClassName.count)
                     }
                     
                 }
@@ -55,43 +48,28 @@ class SearchTableViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
         
-        self.tableView.reloadData()
-        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-    }
-
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
 
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return objectId.count
+        return 1
     }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-//        searchClassInstructorLabel
-//        searchDateCityLabel
-//        searchIntensityLabel
+        let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCellBox", forIndexPath: indexPath) as? SearchTableViewCell
         
-        var  cell:SearchTableViewCell? = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCellBox") as? SearchTableViewCell
-        
-        cell?.searchClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
-        cell?.searchDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
-        cell?.searchIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
-        
-        if cell == nil {
-            let nib:Array = NSBundle.mainBundle().loadNibNamed("CustomSearchCell", owner: self, options: nil)
-            cell = nib[0] as? SearchTableViewCell
-        }
-        
-        
+//        cell?.searchClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
+        cell?.searchClassInstructorLabel.text = "W I"
+//        cell?.searchDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
+        cell?.searchDateCityLabel.text = "D L"
+//        cell?.searchIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
+        cell?.searchIntensityLabel.text = "I"
         
         return cell!
     }

@@ -15,7 +15,6 @@
 		D70F1A561B3B7FE2005219B5 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A551B3B7FE2005219B5 /* FindViewController.swift */; };
 		D70F1A5A1B3B94F1005219B5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */; };
 		D70F1A5C1B3B951E005219B5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */; };
-		D70F1A5E1B3B952D005219B5 /* CustomSearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70F1A5D1B3B952D005219B5 /* CustomSearchCell.xib */; };
 		D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */; };
 		D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9681B351B1A0062EA27 /* Bolts.framework */; };
 		D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9691B351B1A0062EA27 /* Parse.framework */; };
@@ -68,7 +67,6 @@
 		D70F1A551B3B7FE2005219B5 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
-		D70F1A5D1B3B952D005219B5 /* CustomSearchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomSearchCell.xib; sourceTree = "<group>"; };
 		D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D765A9681B351B1A0062EA27 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D765A9691B351B1A0062EA27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 			children = (
 				D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */,
 				D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */,
-				D70F1A5D1B3B952D005219B5 /* CustomSearchCell.xib */,
 			);
 			name = "Search SubTab 1";
 			sourceTree = "<group>";
@@ -386,7 +383,6 @@
 			files = (
 				D7A552771B3358A2009CC6DB /* Main.storyboard in Resources */,
 				D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */,
-				D70F1A5E1B3B952D005219B5 /* CustomSearchCell.xib in Resources */,
 				D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

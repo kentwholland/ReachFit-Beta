@@ -82,9 +82,9 @@ class SearchTableViewController: UIViewController, UITableViewDelegate, UITableV
         
         var  cell:SearchTableViewCell? = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCellBox") as? SearchTableViewCell
         
-        cell?.searchClassInstructorLabel.text = ""
-        cell?.searchDateCityLabel.text = ""
-        cell?.searchIntensityLabel.text = ""
+        cell?.searchClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
+        cell?.searchDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
+        cell?.searchIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
         
         if cell == nil {
             let nib:Array = NSBundle.mainBundle().loadNibNamed("CustomSearchCell", owner: self, options: nil)

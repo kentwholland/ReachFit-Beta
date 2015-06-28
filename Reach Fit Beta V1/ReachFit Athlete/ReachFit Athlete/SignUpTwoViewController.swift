@@ -11,6 +11,9 @@ import Parse
 
 class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate {
     
+    var sliderValue: String = String()
+    var fitnessGoalTextViewText: String = String()
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var instructionLabel1: UILabel!
     @IBOutlet weak var instructionLabel2: UILabel!
@@ -22,10 +25,21 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
     
     var standardViewHeight: CGFloat = 0
     
+    @IBAction func sliderValueChange(slider: UISlider) {
+        
+        println(slider.value)
+        sliderValue = "\(slider.value)"
+        
+    }
+    
     @IBAction func done(sender: AnyObject) {
         
         var currentUser = PFUser.currentUser()
         var user = PFUser.currentUser()
+        
+        println(sliderValue)
+        fitnessGoalTextViewText = fitnessGoalTextView.text
+        println(fitnessGoalTextViewText)
         
         if fitnessGoalTextView.text == "Describe your fitness goal!" || profileImage.image == nil{
             var alert = UIAlertController(title: "Error", message: "Make sure to complete all inputs", preferredStyle: UIAlertControllerStyle.Alert)
@@ -39,8 +53,8 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
             
         } else {
             
-            user?.setObject(fitnessGoalTextView.text, forKey: "fitnessGoal")
-            user?.setObject(fitnessLevelSlider.value, forKey: "fitnessLevelNumber")
+            user?.setObject(fitnessGoalTextViewText, forKey: "fitnessGoal")
+            user?.setObject(sliderValue, forKey: "fitnessLevelNumber")
             
             user!.saveInBackgroundWithBlock({ (success, error) -> Void in
                 
@@ -53,7 +67,7 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
                     var alert = UIAlertController(title: "Error", message: "Could not set user information", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
                         
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        alert.view.hidden = true
                         
                     })))
                     
@@ -141,6 +155,8 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sliderValue = "3"
         
         let newView = UIView()
         

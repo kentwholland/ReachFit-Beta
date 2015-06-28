@@ -155,6 +155,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="r4g-ud-hvb">
                                 <rect key="frame" x="46" y="264" width="228" height="31"/>
+                                <connections>
+                                    <action selector="sliderValueChange:" destination="pWI-Kt-qbQ" eventType="valueChanged" id="CNL-X6-HVj"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2g-8i-RvC">
                                 <rect key="frame" x="26" y="268" width="10" height="21"/>
@@ -274,7 +277,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2404" y="1073"/>
+            <point key="canvasLocation" x="2410" y="1171"/>
         </scene>
         <!--Settings-->
         <scene sceneID="OIi-Cl-B72">
@@ -302,7 +305,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBb-GZ-cXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2827" y="1073"/>
+            <point key="canvasLocation" x="2827" y="1171"/>
         </scene>
         <!--My Fitness-->
         <scene sceneID="f4G-sf-y4M">
@@ -402,7 +405,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ag-Hx-ebr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2833" y="-777.5"/>
+            <point key="canvasLocation" x="2827" y="-777.5"/>
         </scene>
         <!--Past SubTab 2-->
         <scene sceneID="h2g-8E-Z3r">
@@ -454,7 +457,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEe-6D-CSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3254" y="-777.5"/>
+            <point key="canvasLocation" x="3248" y="-777.5"/>
         </scene>
         <!--Find-->
         <scene sceneID="7yU-QO-S0R">
@@ -551,10 +554,55 @@
                             <outlet property="delegate" destination="xv0-x3-3il" id="rbX-qV-yZy"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="0sM-V1-lh6">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
+                    <connections>
+                        <segue destination="hSt-ve-LCu" kind="push" identifier="GoToSearchDetailViewController" id="E2C-Vf-fnE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsV-FX-0PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2827" y="-63"/>
+        </scene>
+        <!--Search Detail View Controller-->
+        <scene sceneID="6NA-8E-02a">
+            <objects>
+                <viewController id="hSt-ve-LCu" customClass="SearchDetailViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DuP-xE-Ghy"/>
+                        <viewControllerLayoutGuide type="bottom" id="e4x-lg-jdY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ynd-ij-uQK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rqe-fn-vOS">
+                                <rect key="frame" x="0.0" y="372" width="320" height="54"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="Nx2-Ro-gjL"/>
+                                    <constraint firstAttribute="height" constant="54" id="rCu-Gm-wBf"/>
+                                </constraints>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addOrRemoveFromClasses:" destination="hSt-ve-LCu" eventType="touchUpInside" id="8sw-Bv-zHe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e4x-lg-jdY" firstAttribute="top" secondItem="rqe-fn-vOS" secondAttribute="bottom" id="a4X-au-ws7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="y78-xl-k9f"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lGc-dl-dyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2827" y="500"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jb5-1y-6PK">
@@ -672,7 +720,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EVK-cT-idc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="1073"/>
+            <point key="canvasLocation" x="1977" y="1171"/>
         </scene>
         <!--Find-->
         <scene sceneID="nrA-mx-OCF">
@@ -738,6 +786,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9x0-Ex-sVu"/>
+        <segue reference="9S6-pz-pfn"/>
     </inferredMetricsTieBreakers>
 </document>

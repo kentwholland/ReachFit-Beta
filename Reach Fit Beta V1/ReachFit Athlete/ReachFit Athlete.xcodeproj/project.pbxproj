@@ -45,6 +45,7 @@
 		D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A552781B3358A2009CC6DB /* Images.xcassets */; };
 		D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */; };
 		D7A552881B3358A2009CC6DB /* ReachFit_AthleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */; };
+		D7C6187E1B3F943A008B0355 /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C6187D1B3F943A008B0355 /* SearchDetailViewController.swift */; };
 		D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,7 @@
 		D7A552811B3358A2009CC6DB /* ReachFit AthleteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReachFit AthleteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A552861B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachFit_AthleteTests.swift; sourceTree = "<group>"; };
+		D7C6187D1B3F943A008B0355 /* SearchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +192,7 @@
 			children = (
 				D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */,
 				D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */,
+				D7C6187C1B3F9415008B0355 /* Detail VC */,
 			);
 			name = "Search SubTab 1";
 			sourceTree = "<group>";
@@ -301,6 +304,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D7C6187C1B3F9415008B0355 /* Detail VC */ = {
+			isa = PBXGroup;
+			children = (
+				D7C6187D1B3F943A008B0355 /* SearchDetailViewController.swift */,
+			);
+			name = "Detail VC";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,6 +417,7 @@
 				D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */,
 				D765A98C1B35C7BC0062EA27 /* StartingViewController.swift in Sources */,
 				D70F1A5A1B3B94F1005219B5 /* SearchTableViewController.swift in Sources */,
+				D7C6187E1B3F943A008B0355 /* SearchDetailViewController.swift in Sources */,
 				D70F1A501B3B6E12005219B5 /* PastTableViewController.swift in Sources */,
 				D70F1A561B3B7FE2005219B5 /* FindViewController.swift in Sources */,
 				D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */,

@@ -11,18 +11,20 @@ import Parse
 
 class SearchTableViewController: UITableViewController {
     
+    var indexPathOfClickedRow: Int = Int()
+    
     // Class data intializer
-    var objectId: [String] = [String]()
     var workoutClassName: [String] = [String]()
     var instructorName: [String] = [String]()
     var workoutIntensity: [String] = [String]()
     var classMusicType: [String] = [String]()
     var dateOfClass: [String] = [String]()
     var locationOfClass: [String] = [String]()
-    var classStudents: [Int: String] = [Int: String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         
         var query = PFQuery(className: "WorkoutClasses")
         query.findObjectsInBackgroundWithBlock{
@@ -37,7 +39,6 @@ class SearchTableViewController: UITableViewController {
                         self.classMusicType.append(object.objectForKey("classMusicType") as! String)
                         self.dateOfClass.append(object.objectForKey("dateOfClass") as! String)
                         self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
-                        self.classStudents[self.objectId.count] =  object.objectForKey("classStudents") as? String
                         
                         println(self.workoutClassName.count)
                         
@@ -50,6 +51,66 @@ class SearchTableViewController: UITableViewController {
                 println("\(error?.userInfo)")
             }
         }
+        
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        
+        var query = PFQuery(className: "WorkoutClasses")
+        query.findObjectsInBackgroundWithBlock{
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            if error == nil {
+                if let objects = objects as? [PFObject] {
+                    
+                    self.workoutClassName = []
+                    self.instructorName = []
+                    self.workoutIntensity = []
+                    self.classMusicType = []
+                    self.dateOfClass = []
+                    self.locationOfClass = []
+                    
+                    for object in objects {
+                        
+                        self.workoutClassName.append(object.objectForKey("workoutClassName") as! String)
+                        self.instructorName.append(object.objectForKey("instructorName") as! String)
+                        self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
+                        self.classMusicType.append(object.objectForKey("classMusicType") as! String)
+                        self.dateOfClass.append(object.objectForKey("dateOfClass") as! String)
+                        self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
+                        
+                        self.tableView.reloadData()
+                        
+                        
+                    }
+                    
+                    println("done")
+                    refreshControl.endRefreshing()
+                    
+                }
+            } else {
+                println("\(error?.userInfo)")
+            }
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    
+        if segue.identifier == "GoToSearchDetailViewController" {
+            
+            var goingToViewController = segue.destinationViewController as! SearchDetailViewController
+            goingToViewController.viewControllerTitle = "\(workoutClassName[indexPathOfClickedRow])"
+            
+        }
+    
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        indexPathOfClickedRow = indexPath.row
+        println(indexPathOfClickedRow)
+        
+        self.performSegueWithIdentifier("GoToSearchDetailViewController", sender: self)
         
     }
 

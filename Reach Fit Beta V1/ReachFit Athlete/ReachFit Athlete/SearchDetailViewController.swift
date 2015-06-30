@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SearchDetailViewController: UIViewController {
 
@@ -27,6 +28,9 @@ class SearchDetailViewController: UIViewController {
     var classIds: String = ""
     
     @IBAction func addOrRemoveFromClasses(sender: AnyObject) {
+        
+        currentUser!.objectForKey("subscribedClasses") as! [String]
+        
         
     }
     

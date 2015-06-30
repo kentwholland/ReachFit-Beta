@@ -9,9 +9,11 @@
 import UIKit
 import Parse
 
-class SearchTableViewController: UITableViewController {
+class SearchTableViewController: UITableViewController, UISearchDisplayDelegate, UISearchBarDelegate {
     
     var indexPathOfClickedRow: Int = Int()
+
+    var classesIds: [String] = [String]()
     
     // Class data intializer
     var workoutClassName: [String] = [String]()
@@ -21,6 +23,33 @@ class SearchTableViewController: UITableViewController {
     var dateOfClass: [String] = [String]()
     var locationOfClass: [String] = [String]()
     
+    var filteredWorkoutClassName: [String] = [String]()
+    var filteredInstructorName: [String] = [String]()
+    var filteredWorkoutIntensity: [String] = [String]()
+    var filteredDateOfClass: [String] = [String]()
+    var filteredLocationOfClass: [String] = [String]()
+    
+    func filterTableViewForEnterText(searchText: String)
+    {
+        self.filteredWorkoutClassName = self.workoutClassName.filter({( strCountry : String) -> Bool in
+            var stringForSearch = strCountry.rangeOfString(searchText)
+            return (stringForSearch != nil)
+        })
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        filterTableViewForEnterText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool
+    {
+        let textScope = searchDisplayController?.searchBar.scopeButtonTitles as! [String]
+        filterTableViewForEnterText(self.searchDisplayController!.searchBar.text!)
+        
+        return true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +68,11 @@ class SearchTableViewController: UITableViewController {
                         self.classMusicType.append(object.objectForKey("classMusicType") as! String)
                         self.dateOfClass.append(object.objectForKey("dateOfClass") as! String)
                         self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
+                        self.classesIds.append(object.objectId! as String)
                         
                         println(self.workoutClassName.count)
+                        println(self.classesIds.count)
+                        println(self.instructorName)
                         
                         self.tableView.reloadData()
                         
@@ -77,9 +109,9 @@ class SearchTableViewController: UITableViewController {
                         self.classMusicType.append(object.objectForKey("classMusicType") as! String)
                         self.dateOfClass.append(object.objectForKey("dateOfClass") as! String)
                         self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
+                        self.classesIds.append(object.objectId! as String)
                         
                         self.tableView.reloadData()
-                        
                         
                     }
                     
@@ -98,8 +130,16 @@ class SearchTableViewController: UITableViewController {
     
         if segue.identifier == "GoToSearchDetailViewController" {
             
+            println(instructorName[indexPathOfClickedRow])
+            
             var goingToViewController = segue.destinationViewController as! SearchDetailViewController
-            goingToViewController.viewControllerTitle = "\(workoutClassName[indexPathOfClickedRow])"
+            goingToViewController.viewControllerTitle = workoutClassName[indexPathOfClickedRow]
+            goingToViewController.classInstructor = instructorName[indexPathOfClickedRow]
+            goingToViewController.classIntensity = workoutIntensity[indexPathOfClickedRow]
+            goingToViewController.classMusicType = classMusicType[indexPathOfClickedRow]
+            goingToViewController.classDate = dateOfClass[indexPathOfClickedRow]
+            goingToViewController.classCity = locationOfClass[indexPathOfClickedRow]
+            goingToViewController.classIds = classesIds[indexPathOfClickedRow]
             
         }
     
@@ -121,28 +161,37 @@ class SearchTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        if workoutClassName.count == 0 {
+        if tableView == self.searchDisplayController!.searchResultsTableView
+        {
+            return filteredWorkoutClassName.count
             
-            return 0
         } else {
             
             return workoutClassName.count
+            
         }
     }
   
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("SearchTableViewCellBox", forIndexPath: indexPath) as? SearchTableViewCell
-        
-        if workoutClassName.count >= 1 {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("SearchTableViewCellBox") as? SearchTableViewCell
+
+        if tableView == searchDisplayController?.searchResultsTableView {
             
-        cell?.searchClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
-        cell?.searchDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
-        cell?.searchIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
+            cell?.searchClassInstructorLabel.text = "\(filteredWorkoutClassName[indexPath.row])"
+            
+            return cell!
+            
+        } else {
+            
+            cell?.searchClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
+            cell?.searchDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
+            cell?.searchIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
+            
+            return cell!
             
         }
         
-        return cell!
     }
 
 }

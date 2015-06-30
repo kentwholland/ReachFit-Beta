@@ -22,5 +22,6 @@ struct CurrentUserInfo {
     static var currentUserFitnessLevel = currentUser!.objectForKey("fitnessLevelNumber") as! String
     static var currentUserFitnessGoals = currentUser!.objectForKey("fitnessGoal") as! String
     static var currentUserProfilePic: PFFile = currentUser!.objectForKey("profilePicture") as! PFFile
+    static var currentUserSubscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
     
 }

@@ -29,8 +29,8 @@ class SearchDetailViewController: UIViewController {
     
     @IBAction func addOrRemoveFromClasses(sender: AnyObject) {
         
-        currentUser!.objectForKey("subscribedClasses") as! [String]
-        
+        currentUser?.addObject(classIds, forKey: "subscribedClasses")
+        currentUser?.save()
         
     }
     

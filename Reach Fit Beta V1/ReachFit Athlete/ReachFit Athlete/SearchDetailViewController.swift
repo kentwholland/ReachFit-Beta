@@ -29,8 +29,17 @@ class SearchDetailViewController: UIViewController {
     
     @IBAction func addOrRemoveFromClasses(sender: AnyObject) {
         
-        currentUser?.addObject(classIds, forKey: "subscribedClasses")
-        currentUser?.save()
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            
+            currentUser?.addObject(self.classIds, forKey: "subscribedClasses")
+            currentUser?.save()
+            var classesQuery = PFQuery(className: "WorkoutClasses")
+            var classesObject = classesQuery.getObjectWithId(self.classIds)
+            classesObject!.addObject(currentUser!.objectId!, forKey: "classStudents")
+            classesObject!.save()
+            
+        }
         
     }
     

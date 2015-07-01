@@ -11,6 +11,8 @@ import Parse
 
 class SearchDetailViewController: UIViewController {
 
+    var classesIds: [String] = [String]()
+    
     @IBOutlet weak var joinLeaveButton: UIButton!
     
     @IBOutlet weak var instructorLabel: UILabel!
@@ -29,15 +31,36 @@ class SearchDetailViewController: UIViewController {
     
     @IBAction func addOrRemoveFromClasses(sender: AnyObject) {
         
+        
+        currentUser?.addObject(self.classIds, forKey: "subscribedClasses")
+        currentUser?.save()
+        var classesQuery = PFQuery(className: "WorkoutClasses")
+        var classesObject = classesQuery.getObjectWithId(self.classIds)
+        classesObject!.addObject(currentUser!.objectId!, forKey: "classStudents")
+        classesObject!.save()
+        
+        if self.joinLeaveButton.titleLabel == "Join" {
+            
+            println("the join code worked")
+            
+        } else if self.joinLeaveButton.titleLabel == "Leave" {
+            
+            
+            
+        }
+        
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
             
-            currentUser?.addObject(self.classIds, forKey: "subscribedClasses")
-            currentUser?.save()
-            var classesQuery = PFQuery(className: "WorkoutClasses")
-            var classesObject = classesQuery.getObjectWithId(self.classIds)
-            classesObject!.addObject(currentUser!.objectId!, forKey: "classStudents")
-            classesObject!.save()
+            if self.joinLeaveButton.titleLabel == "Join" {
+                
+                println("the join code worked")
+                
+            } else if self.joinLeaveButton.titleLabel == "Leave" {
+                
+                
+                
+            }
             
         }
         
@@ -45,6 +68,19 @@ class SearchDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        println(classesIds)
+        
+        if contains(classesIds, currentUser!.objectId!) {
+            
+            joinLeaveButton.setTitle("Leave", forState: .Normal)
+            
+        } else {
+            
+            joinLeaveButton.setTitle("Join", forState: .Normal)
+            
+        }
         
         println("\(viewControllerTitle)")
         

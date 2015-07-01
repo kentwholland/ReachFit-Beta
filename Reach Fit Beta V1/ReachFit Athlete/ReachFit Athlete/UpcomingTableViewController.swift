@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class UpcomingTableViewController: UITableViewController {
     
+    var currentUserSubscribed: [String] = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentUserSubscribed = (CurrentUserInfo.currentUserSubscribedClasses as [String])
+        
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -20,7 +26,6 @@ class UpcomingTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         
         return 1
     }

@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class SearchDetailViewController: UIViewController {
-
+    
     var classesIds: [String] = [String]()
     
     @IBOutlet weak var joinLeaveButton: UIButton!
@@ -31,46 +31,34 @@ class SearchDetailViewController: UIViewController {
     
     @IBAction func addOrRemoveFromClasses(sender: AnyObject) {
         
-        
-        currentUser?.addObject(self.classIds, forKey: "subscribedClasses")
-        currentUser?.save()
-        var classesQuery = PFQuery(className: "WorkoutClasses")
-        var classesObject = classesQuery.getObjectWithId(self.classIds)
-        classesObject!.addObject(currentUser!.objectId!, forKey: "classStudents")
-        classesObject!.save()
-        
         if self.joinLeaveButton.titleLabel == "Join" {
             
-            println("the join code worked")
+            println("user \(currentUser!.objectId!) joined :)")
+            
+            currentUser?.addObject(self.classIds, forKey: "subscribedClasses")
+            currentUser?.save()
+            var classesQuery = PFQuery(className: "WorkoutClasses")
+            var classesObject = classesQuery.getObjectWithId(self.classIds)
+            classesObject!.addObject(currentUser!.objectId!, forKey: "classStudents")
+            classesObject!.save()
+            
             
         } else if self.joinLeaveButton.titleLabel == "Leave" {
             
+            currentUser?.removeObject(self.classIds, forKey: "subscribedClasses")
+            currentUser?.save()
+            var classesQuery = PFQuery(className: "WorkoutClasses")
+            var classesObject = classesQuery.getObjectWithId(self.classIds)
+            classesObject!.removeObject(currentUser!.objectId!, forKey: "classStudents")
+            classesObject!.save()
             
-            
-        }
-        
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            
-            if self.joinLeaveButton.titleLabel == "Join" {
-                
-                println("the join code worked")
-                
-            } else if self.joinLeaveButton.titleLabel == "Leave" {
-                
-                
-                
-            }
+            println("user \(currentUser!.objectId!) left :'(")
             
         }
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
-        println(classesIds)
+    func constantCheck() {
         
         if contains(classesIds, currentUser!.objectId!) {
             
@@ -82,7 +70,28 @@ class SearchDetailViewController: UIViewController {
             
         }
         
-        println("\(viewControllerTitle)")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var query = PFQuery(className:"WorkoutClasses")
+        query.getObjectInBackgroundWithId("\(classIds)") {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error == nil && object != nil {
+                
+                var usersInClass: AnyObject? = object?.objectForKey("classStudents") as! [String]
+                self.classesIds = usersInClass as! [String]
+                println(self.classesIds)
+                
+            } else {
+                println(error)
+            }
+        }
+        
+        self.joinLeaveButton.setTitle("", forState: .Normal)
+        
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("constantCheck"), userInfo: nil, repeats: true)
         
         instructorLabel.text = classInstructor
         intensityLabel.text = classIntensity

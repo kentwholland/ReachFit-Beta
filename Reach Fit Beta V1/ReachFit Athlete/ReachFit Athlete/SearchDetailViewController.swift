@@ -31,7 +31,7 @@ class SearchDetailViewController: UIViewController {
     
     @IBAction func addOrRemoveFromClasses(sender: AnyObject) {
         
-        if self.joinLeaveButton.titleLabel == "Join" {
+        if self.joinLeaveButton.titleLabel?.text == "Join" {
             
             println("user \(currentUser!.objectId!) joined :)")
             
@@ -42,8 +42,10 @@ class SearchDetailViewController: UIViewController {
             classesObject!.addObject(currentUser!.objectId!, forKey: "classStudents")
             classesObject!.save()
             
+            runObjectFind()
             
-        } else if self.joinLeaveButton.titleLabel == "Leave" {
+            
+        } else if self.joinLeaveButton.titleLabel?.text == "Leave" {
             
             currentUser?.removeObject(self.classIds, forKey: "subscribedClasses")
             currentUser?.save()
@@ -54,11 +56,17 @@ class SearchDetailViewController: UIViewController {
             
             println("user \(currentUser!.objectId!) left :'(")
             
+            runObjectFind()
+            
         }
         
     }
     
     func constantCheck() {
+        
+        if joinLeaveButton.titleLabel?.text == "Join" {
+            println("it is true")
+        }
         
         if contains(classesIds, currentUser!.objectId!) {
             
@@ -72,22 +80,34 @@ class SearchDetailViewController: UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func runObjectFind() {
         
         var query = PFQuery(className:"WorkoutClasses")
         query.getObjectInBackgroundWithId("\(classIds)") {
             (object: PFObject?, error: NSError?) -> Void in
-            if error == nil && object != nil {
+            if error != nil {
+                
+                println("error")
+                
+            } else if object == nil {
+                
+                println("nothing in here")
+                
+            } else if object != nil {
                 
                 var usersInClass: AnyObject? = object?.objectForKey("classStudents") as! [String]
                 self.classesIds = usersInClass as! [String]
                 println(self.classesIds)
                 
-            } else {
-                println(error)
             }
         }
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        runObjectFind()
         
         self.joinLeaveButton.setTitle("", forState: .Normal)
         

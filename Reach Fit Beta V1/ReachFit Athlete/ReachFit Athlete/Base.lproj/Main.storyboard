@@ -618,7 +618,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="Nx2-Ro-gjL"/>
                                     <constraint firstAttribute="height" constant="54" id="rCu-Gm-wBf"/>
                                 </constraints>
-                                <state key="normal" title="Join">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

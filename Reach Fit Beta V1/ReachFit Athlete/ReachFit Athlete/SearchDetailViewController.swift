@@ -64,17 +64,17 @@ class SearchDetailViewController: UIViewController {
     
     func constantCheck() {
         
-        if joinLeaveButton.titleLabel?.text == "Join" {
-            println("it is true")
+        if contains(classesIds, currentUser!.objectId!) {
+            println("classesIds contains currentUser ID")
         }
         
         if contains(classesIds, currentUser!.objectId!) {
             
-            joinLeaveButton.setTitle("Leave", forState: .Normal)
+            joinLeaveButton.setTitle("Leave", forState: UIControlState.Normal)
             
         } else {
             
-            joinLeaveButton.setTitle("Join", forState: .Normal)
+            joinLeaveButton.setTitle("Join", forState: UIControlState.Normal)
             
         }
         
@@ -108,8 +108,6 @@ class SearchDetailViewController: UIViewController {
         super.viewDidLoad()
         
         runObjectFind()
-        
-        self.joinLeaveButton.setTitle("", forState: .Normal)
         
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("constantCheck"), userInfo: nil, repeats: true)
         

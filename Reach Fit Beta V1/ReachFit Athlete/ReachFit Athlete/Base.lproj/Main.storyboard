@@ -358,6 +358,7 @@
         <!--Upcoming SubTab 1-->
         <scene sceneID="Whh-Ud-mgq">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ag-Hx-ebr" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="Upcoming SubTab 1" id="NN7-6K-jDL" customClass="UpcomingTableViewController" customModule="ReachFit_Athlete" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="22" sectionFooterHeight="22" id="eiY-Hs-ck4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="425"/>
@@ -376,15 +377,15 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date - City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-P1-TLX">
-                                            <rect key="frame" x="8" y="31" width="258" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1-5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXb-vb-adI">
                                             <rect key="frame" x="261" y="20" width="26" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date - City" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlw-P1-TLX">
+                                            <rect key="frame" x="8" y="32" width="258" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -402,8 +403,10 @@
                             <outlet property="delegate" destination="NN7-6K-jDL" id="u1i-mU-4WK"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="AKh-QK-H6u">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ag-Hx-ebr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2827" y="-777.5"/>
         </scene>
@@ -454,6 +457,9 @@
                             <outlet property="delegate" destination="WEr-X1-fcY" id="umB-jT-qwd"/>
                         </connections>
                     </tableView>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Vj5-K6-TI2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEe-6D-CSk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -742,6 +748,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yUl-5m-Vix">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DjT-jE-x85" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="ReachFitSignUp" automaticallyAdjustsScrollViewInsets="NO" id="zr8-Mg-S2q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QCV-SY-i2V">
@@ -753,7 +760,6 @@
                         <segue destination="85z-YU-kWA" kind="relationship" relationship="rootViewController" id="A2y-b2-Jo9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DjT-jE-x85" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="260" y="353"/>
         </scene>
@@ -858,6 +864,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="9x0-Ex-sVu"/>
+        <segue reference="9S6-pz-pfn"/>
     </inferredMetricsTieBreakers>
 </document>

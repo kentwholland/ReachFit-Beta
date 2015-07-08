@@ -16,6 +16,8 @@ class MainProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var fitnessGoalLabels: UITextView!
     @IBOutlet weak var fitnessLevelNumber: UILabel!
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
         
         self.dismissViewControllerAnimated(true, completion:nil)

@@ -69,6 +69,7 @@
 		D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D71C6D201B4DEF0E00E5BED8 /* testPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = testPlayground.playground; sourceTree = "<group>"; };
 		D765A9681B351B1A0062EA27 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D765A9691B351B1A0062EA27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -155,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */,
+				D71C6D201B4DEF0E00E5BED8 /* testPlayground.playground */,
 				D70F1A441B3A6956005219B5 /* UpcomingTableViewCell.swift */,
 			);
 			name = "Upcoming SubTab 1";

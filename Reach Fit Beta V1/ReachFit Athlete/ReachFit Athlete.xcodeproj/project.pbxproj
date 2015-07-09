@@ -46,6 +46,8 @@
 		D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A552781B3358A2009CC6DB /* Images.xcassets */; };
 		D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */; };
 		D7A552881B3358A2009CC6DB /* ReachFit_AthleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */; };
+		D7BF05F11B4F0EA800FED20F /* Sources in Resources */ = {isa = PBXBuildFile; fileRef = D7BF05EF1B4F0EA800FED20F /* Sources */; };
+		D7BF05F21B4F0EA800FED20F /* Tests in Resources */ = {isa = PBXBuildFile; fileRef = D7BF05F01B4F0EA800FED20F /* Tests */; };
 		D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		D7A552811B3358A2009CC6DB /* ReachFit AthleteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReachFit AthleteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A552861B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachFit_AthleteTests.swift; sourceTree = "<group>"; };
+		D7BF05EF1B4F0EA800FED20F /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Sources; sourceTree = "<group>"; };
+		D7BF05F01B4F0EA800FED20F /* Tests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tests; sourceTree = "<group>"; };
 		D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -278,6 +282,7 @@
 		D7A5526C1B3358A2009CC6DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D7BF05F31B4F0EAD00FED20F /* NSDate SDK */,
 				D765A9701B351BAD0062EA27 /* Frameworks */,
 				D7A552781B3358A2009CC6DB /* Images.xcassets */,
 				D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */,
@@ -302,6 +307,15 @@
 				D7A552861B3358A2009CC6DB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7BF05F31B4F0EAD00FED20F /* NSDate SDK */ = {
+			isa = PBXGroup;
+			children = (
+				D7BF05EF1B4F0EA800FED20F /* Sources */,
+				D7BF05F01B4F0EA800FED20F /* Tests */,
+			);
+			name = "NSDate SDK";
 			sourceTree = "<group>";
 		};
 		D7C6187C1B3F9415008B0355 /* Detail VC */ = {
@@ -394,7 +408,9 @@
 			files = (
 				D7A552771B3358A2009CC6DB /* Main.storyboard in Resources */,
 				D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */,
+				D7BF05F21B4F0EA800FED20F /* Tests in Resources */,
 				D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */,
+				D7BF05F11B4F0EA800FED20F /* Sources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

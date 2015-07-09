@@ -24,7 +24,7 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
     @IBOutlet weak var instructionLevelLabel: UILabel!
     
     var standardViewHeight: CGFloat = 0
-    
+
     @IBAction func sliderValueChange(slider: UISlider) {
         
         println(slider.value)

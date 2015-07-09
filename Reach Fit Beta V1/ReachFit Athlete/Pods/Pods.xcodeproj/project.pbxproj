@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D2F9BA0E5924631B69DDCB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E11AE961D0F1660C5B1E1 /* Foundation.framework */; };
+		305597E4EA507EC486932C86 /* NSCalendar+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE722E9E7A29BD417E153F3 /* NSCalendar+Timepiece.swift */; };
+		352940FC34744EBAA693ABB6 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C471708F9820C008AA5EDBA8 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AF6C0EE04B4C626C3A323C8 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16C1EE583BE62F4CE5DACA7 /* Int+Timepiece.swift */; };
+		8E6620D1D050541AC15C47FE /* NSTimeInterval+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D6A4C2D71F0BE067E02E83 /* NSTimeInterval+Timepiece.swift */; };
+		9918EECF1D81FE8764687D5B /* NSCalendarUnit+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE81FBE401EF6F266D637CC /* NSCalendarUnit+Timepiece.swift */; };
+		A0C7FC13D6F575B3EC64F42B /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30903E639D0EFDA8E027EC4 /* Duration.swift */; };
+		ADF45A6910319EF106CC8F2A /* String+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB9DD549193331D386B1DE /* String+Timepiece.swift */; };
+		B7F15BD670E85146753E10EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524E11AE961D0F1660C5B1E1 /* Foundation.framework */; };
+		C0BAA94A3E13809452BBA048 /* Pods-Timepiece-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FF1DB8A65948CDB4DB81EB /* Pods-Timepiece-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4436AFEBB363697D279221E /* NSDate+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00519BACB1DE1CF6B1B9712C /* NSDate+Timepiece.swift */; };
+		D0FAC6F9EC69F92C7FDFCD9A /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B88ED63767FB39EE9271F4DE /* Pods-dummy.m */; };
+		E198FB98651B2757720148E4 /* Pods-Timepiece-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 527C421835FF10585BCEF1E2 /* Pods-Timepiece-dummy.m */; };
+		E959DB7BA27FF465A2E2F47D /* NSDateComponents+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52F38A3F75462A4770BB8D6 /* NSDateComponents+Timepiece.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C87DA2CE9903DE7FB8D784A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7DD66B4A14122B07E256B16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52AB19EDD4652EFFDF502226;
+			remoteInfo = "Pods-Timepiece";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00519BACB1DE1CF6B1B9712C /* NSDate+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSDate+Timepiece.swift"; path = "Sources/NSDate+Timepiece.swift"; sourceTree = "<group>"; };
+		022221B13A298FC8115C2E98 /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		083406241C48755892416B3F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		145EB5B48FB153B01B7801EF /* Pods-Timepiece.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Timepiece.xcconfig"; sourceTree = "<group>"; };
+		181BB169C7DB5CF702A80AF0 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		30FF1DB8A65948CDB4DB81EB /* Pods-Timepiece-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Timepiece-umbrella.h"; sourceTree = "<group>"; };
+		4767D0301A37B05F793F847D /* Pods-Timepiece-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Timepiece-prefix.pch"; sourceTree = "<group>"; };
+		4DDFD70D99867B7D9A221DEC /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
+		524E11AE961D0F1660C5B1E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		527C421835FF10585BCEF1E2 /* Pods-Timepiece-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Timepiece-dummy.m"; sourceTree = "<group>"; };
+		5F7B1EBB93BD9D18F3295E73 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		6FEC90B003C31358FE0371AB /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		73357A4037243A91C3108BCF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AB9DD549193331D386B1DE /* String+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Timepiece.swift"; path = "Sources/String+Timepiece.swift"; sourceTree = "<group>"; };
+		8AE722E9E7A29BD417E153F3 /* NSCalendar+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSCalendar+Timepiece.swift"; path = "Sources/NSCalendar+Timepiece.swift"; sourceTree = "<group>"; };
+		A7ED891EB324B011755FD7AC /* Pods-Timepiece-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Timepiece-Private.xcconfig"; sourceTree = "<group>"; };
+		AAE81FBE401EF6F266D637CC /* NSCalendarUnit+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSCalendarUnit+Timepiece.swift"; path = "Sources/NSCalendarUnit+Timepiece.swift"; sourceTree = "<group>"; };
+		B88ED63767FB39EE9271F4DE /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		B8B9C30C858720DD420D1F75 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9D6A4C2D71F0BE067E02E83 /* NSTimeInterval+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSTimeInterval+Timepiece.swift"; path = "Sources/NSTimeInterval+Timepiece.swift"; sourceTree = "<group>"; };
+		C471708F9820C008AA5EDBA8 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		C57943E97637B059B9F84B8F /* Pods-Timepiece.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Timepiece.modulemap"; sourceTree = "<group>"; };
+		CA3175F7BC4491F03F041FD5 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		D16C1EE583BE62F4CE5DACA7 /* Int+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Timepiece.swift"; path = "Sources/Int+Timepiece.swift"; sourceTree = "<group>"; };
+		DA855CDB78C2FB4B617D8D82 /* Timepiece.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Timepiece.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF53495D66A0912EF0AA671A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		F30903E639D0EFDA8E027EC4 /* Duration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Duration.swift; path = Sources/Duration.swift; sourceTree = "<group>"; };
+		F52F38A3F75462A4770BB8D6 /* NSDateComponents+Timepiece.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSDateComponents+Timepiece.swift"; path = "Sources/NSDateComponents+Timepiece.swift"; sourceTree = "<group>"; };
+		F882DC3243211C28F940F302 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		FE604F1C8A3EBA0B5ED24739 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C2C6918599A73F48D1C711D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7F15BD670E85146753E10EC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B3DD93CC03A73BB158EF570 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D2F9BA0E5924631B69DDCB7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		062CFD5C5C324A195255FBFD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ACD19047F725C249B074B5B4 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		5AE68C630501B51EFA214A06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81DA8AF2D2CC6C59326CA435 /* Timepiece */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		72CE413ABA6DF93CA42FDA40 = {
+			isa = PBXGroup;
+			children = (
+				F882DC3243211C28F940F302 /* Podfile */,
+				B2BF98DCD9F5D385EE0F34CD /* Frameworks */,
+				5AE68C630501B51EFA214A06 /* Pods */,
+				E49824BBB378DEA5D3E7A1B1 /* Products */,
+				062CFD5C5C324A195255FBFD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		81DA8AF2D2CC6C59326CA435 /* Timepiece */ = {
+			isa = PBXGroup;
+			children = (
+				F30903E639D0EFDA8E027EC4 /* Duration.swift */,
+				D16C1EE583BE62F4CE5DACA7 /* Int+Timepiece.swift */,
+				8AE722E9E7A29BD417E153F3 /* NSCalendar+Timepiece.swift */,
+				AAE81FBE401EF6F266D637CC /* NSCalendarUnit+Timepiece.swift */,
+				00519BACB1DE1CF6B1B9712C /* NSDate+Timepiece.swift */,
+				F52F38A3F75462A4770BB8D6 /* NSDateComponents+Timepiece.swift */,
+				B9D6A4C2D71F0BE067E02E83 /* NSTimeInterval+Timepiece.swift */,
+				84AB9DD549193331D386B1DE /* String+Timepiece.swift */,
+				C08AF75629D2B91ED3C17BC6 /* Support Files */,
+			);
+			path = Timepiece;
+			sourceTree = "<group>";
+		};
+		ACD19047F725C249B074B5B4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B8B9C30C858720DD420D1F75 /* Info.plist */,
+				022221B13A298FC8115C2E98 /* Pods.modulemap */,
+				FE604F1C8A3EBA0B5ED24739 /* Pods-acknowledgements.markdown */,
+				CA3175F7BC4491F03F041FD5 /* Pods-acknowledgements.plist */,
+				B88ED63767FB39EE9271F4DE /* Pods-dummy.m */,
+				181BB169C7DB5CF702A80AF0 /* Pods-environment.h */,
+				4DDFD70D99867B7D9A221DEC /* Pods-frameworks.sh */,
+				6FEC90B003C31358FE0371AB /* Pods-resources.sh */,
+				C471708F9820C008AA5EDBA8 /* Pods-umbrella.h */,
+				5F7B1EBB93BD9D18F3295E73 /* Pods.debug.xcconfig */,
+				DF53495D66A0912EF0AA671A /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		B2BF98DCD9F5D385EE0F34CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4F21B0ED03A363AC04A449F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C08AF75629D2B91ED3C17BC6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				083406241C48755892416B3F /* Info.plist */,
+				C57943E97637B059B9F84B8F /* Pods-Timepiece.modulemap */,
+				145EB5B48FB153B01B7801EF /* Pods-Timepiece.xcconfig */,
+				A7ED891EB324B011755FD7AC /* Pods-Timepiece-Private.xcconfig */,
+				527C421835FF10585BCEF1E2 /* Pods-Timepiece-dummy.m */,
+				4767D0301A37B05F793F847D /* Pods-Timepiece-prefix.pch */,
+				30FF1DB8A65948CDB4DB81EB /* Pods-Timepiece-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-Timepiece";
+			sourceTree = "<group>";
+		};
+		D4F21B0ED03A363AC04A449F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				524E11AE961D0F1660C5B1E1 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		E49824BBB378DEA5D3E7A1B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73357A4037243A91C3108BCF /* Pods.framework */,
+				DA855CDB78C2FB4B617D8D82 /* Timepiece.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01DE8ADCC664F3D4E94A6A8D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0BAA94A3E13809452BBA048 /* Pods-Timepiece-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E41C80288334E5D919916460 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				352940FC34744EBAA693ABB6 /* Pods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		52AB19EDD4652EFFDF502226 /* Pods-Timepiece */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58FD2ADF3D3414D2AB931432 /* Build configuration list for PBXNativeTarget "Pods-Timepiece" */;
+			buildPhases = (
+				F56BA77B9ED71D786F55D824 /* Sources */,
+				5C2C6918599A73F48D1C711D /* Frameworks */,
+				01DE8ADCC664F3D4E94A6A8D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Timepiece";
+			productName = "Pods-Timepiece";
+			productReference = DA855CDB78C2FB4B617D8D82 /* Timepiece.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EAB370B482CB23F6B20A7109 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F00A50D60FF05BE9FBF069 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				5DE9F11E4268D76077B862EE /* Sources */,
+				8B3DD93CC03A73BB158EF570 /* Frameworks */,
+				E41C80288334E5D919916460 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B7B9618AD2AE6F8F4883449 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = 73357A4037243A91C3108BCF /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B7DD66B4A14122B07E256B16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = 9E245199E27ADC8DF2739B72 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 72CE413ABA6DF93CA42FDA40;
+			productRefGroup = E49824BBB378DEA5D3E7A1B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EAB370B482CB23F6B20A7109 /* Pods */,
+				52AB19EDD4652EFFDF502226 /* Pods-Timepiece */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5DE9F11E4268D76077B862EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0FAC6F9EC69F92C7FDFCD9A /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F56BA77B9ED71D786F55D824 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C7FC13D6F575B3EC64F42B /* Duration.swift in Sources */,
+				7AF6C0EE04B4C626C3A323C8 /* Int+Timepiece.swift in Sources */,
+				305597E4EA507EC486932C86 /* NSCalendar+Timepiece.swift in Sources */,
+				9918EECF1D81FE8764687D5B /* NSCalendarUnit+Timepiece.swift in Sources */,
+				C4436AFEBB363697D279221E /* NSDate+Timepiece.swift in Sources */,
+				E959DB7BA27FF465A2E2F47D /* NSDateComponents+Timepiece.swift in Sources */,
+				8E6620D1D050541AC15C47FE /* NSTimeInterval+Timepiece.swift in Sources */,
+				E198FB98651B2757720148E4 /* Pods-Timepiece-dummy.m in Sources */,
+				ADF45A6910319EF106CC8F2A /* String+Timepiece.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B7B9618AD2AE6F8F4883449 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Timepiece";
+			target = 52AB19EDD4652EFFDF502226 /* Pods-Timepiece */;
+			targetProxy = C87DA2CE9903DE7FB8D784A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1299075D9C7C917A5B98D97B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		147BAFFF190AC579D2227BA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7ED891EB324B011755FD7AC /* Pods-Timepiece-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Timepiece/Pods-Timepiece-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Timepiece/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Timepiece/Pods-Timepiece.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Timepiece;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7DACC0AAE2E387B9C2D470FA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F7B1EBB93BD9D18F3295E73 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		913AB1995D19B59782F08A86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF53495D66A0912EF0AA671A /* Pods.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E2CAEE6F37D0151DE5FA15B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7ED891EB324B011755FD7AC /* Pods-Timepiece-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-Timepiece/Pods-Timepiece-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-Timepiece/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-Timepiece/Pods-Timepiece.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Timepiece;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EAC748B1BF8114DB6AE23DE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58FD2ADF3D3414D2AB931432 /* Build configuration list for PBXNativeTarget "Pods-Timepiece" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2CAEE6F37D0151DE5FA15B2 /* Debug */,
+				147BAFFF190AC579D2227BA8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84F00A50D60FF05BE9FBF069 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7DACC0AAE2E387B9C2D470FA /* Debug */,
+				913AB1995D19B59782F08A86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E245199E27ADC8DF2739B72 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EAC748B1BF8114DB6AE23DE2 /* Debug */,
+				1299075D9C7C917A5B98D97B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B7DD66B4A14122B07E256B16 /* Project object */;
+}

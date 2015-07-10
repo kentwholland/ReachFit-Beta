@@ -46,6 +46,7 @@
 		D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A552781B3358A2009CC6DB /* Images.xcassets */; };
 		D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */; };
 		D7A552881B3358A2009CC6DB /* ReachFit_AthleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */; };
+		D7B29A891B507A7D000537E2 /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B29A881B507A7D000537E2 /* NSDateExtensionTests.swift */; };
 		D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		D7A552861B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachFit_AthleteTests.swift; sourceTree = "<group>"; };
 		D7B29A851B5074D9000537E2 /* testCode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = testCode.playground; sourceTree = "<group>"; };
+		D7B29A881B507A7D000537E2 /* NSDateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionTests.swift; sourceTree = "<group>"; };
 		D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 		D72231671B4F11B80031B386 /* NSDate SDK */ = {
 			isa = PBXGroup;
 			children = (
+				D7B29A881B507A7D000537E2 /* NSDateExtensionTests.swift */,
 			);
 			name = "NSDate SDK";
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				D70F1A521B3B6E53005219B5 /* PastTableViewCell.swift in Sources */,
 				D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */,
 				D77BE7701B35CA87006B82F0 /* LoginViewController.swift in Sources */,
+				D7B29A891B507A7D000537E2 /* NSDateExtensionTests.swift in Sources */,
 				D70F1A451B3A6956005219B5 /* UpcomingTableViewCell.swift in Sources */,
 				D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */,
 				D79C94331B393F840095FCD7 /* MainProfileViewController.swift in Sources */,

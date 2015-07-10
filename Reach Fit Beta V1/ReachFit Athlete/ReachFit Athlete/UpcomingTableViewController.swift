@@ -12,6 +12,7 @@ import Parse
 class UpcomingTableViewController: UITableViewController {
     
     var classesIds: [String] = [String]()
+    var currentDate: NSDate = NSDate()
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -67,6 +68,20 @@ class UpcomingTableViewController: UITableViewController {
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    
+                    for objects in self.dateOfClass {
+                        
+                        if self.currentDate > objects {
+                            
+                            println("true")
+                            
+                        } else {
+                            
+                            println("false")
+                            
+                        }
+                        
+                    }
                     
                 } else {
                     

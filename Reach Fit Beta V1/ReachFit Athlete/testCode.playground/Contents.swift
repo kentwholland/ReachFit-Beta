@@ -26,3 +26,6 @@ let date3 = NSDate(timeIntervalSince1970: 1339203982)
 date1 < date2 // true
 date0 == date1 // true
 date3 > date2 // false
+
+var hello: [String] = ["hello", "two"]
+find(hello, "hello")

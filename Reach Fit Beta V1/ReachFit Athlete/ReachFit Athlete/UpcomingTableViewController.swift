@@ -57,7 +57,8 @@ class UpcomingTableViewController: UITableViewController {
             query.getObjectInBackgroundWithId(object) {
                 (objects: AnyObject?, error: NSError?) -> Void in
                 if error == nil && objects != nil {
-                    
+        
+                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                     self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
                     self.instructorName.append(objects!.objectForKey("instructorName") as! String)
                     self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
@@ -65,23 +66,10 @@ class UpcomingTableViewController: UITableViewController {
                     self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                     self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
                     
+                    
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                    
-                    for objects in self.dateOfClass {
-                        
-                        if self.currentDate > objects {
-                            
-                            println("true")
-                            
-                        } else {
-                            
-                            println("false")
-                            
-                        }
-                        
-                    }
                     
                 } else {
                     

@@ -14,20 +14,17 @@ class PastTableViewController: UITableViewController {
     var classesIds: [String] = [String]()
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    var subscribedClasses: [String] = CurrentUserInfo.currentUserSubscribedClasses
     
     // Class data intializer
     var workoutClassName: [String] = [String]()
     var instructorName: [String] = [String]()
     var workoutIntensity: [String] = [String]()
     var classMusicType: [String] = [String]()
-    var dateOfClass: [String] = [String]()
+    var dateOfClass: [NSDate] = [NSDate]()
     var locationOfClass: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        println(subscribedClasses)
         
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         
@@ -39,40 +36,11 @@ class PastTableViewController: UITableViewController {
         activityIndicator.startAnimating()
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
-        for object in subscribedClasses {
-            
-            var query = PFQuery(className: "WorkoutClasses")
-            query.getObjectInBackgroundWithId(object) {
-                (objects: AnyObject?, error: NSError?) -> Void in
-                if error == nil && objects != nil {
-                    
-                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
-                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
-                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
-                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! String)
-                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
-                    
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                    
-                    self.tableView.reloadData()
-                    
-                } else {
-                    
-                    println(error)
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                    
-                }
-                
-            }
-            
-        }
-        
     }
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
+    override func viewDidAppear(animated: Bool) {
+        
+        var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
         
         workoutClassName = []
         instructorName = []
@@ -92,18 +60,15 @@ class PastTableViewController: UITableViewController {
                     self.instructorName.append(objects!.objectForKey("instructorName") as! String)
                     self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
                     self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! String)
+                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                     self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
                     
+                    self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
-                    refreshControl.endRefreshing()
-                    self.tableView.reloadData()
-                    
                 } else {
                     
-                    refreshControl.endRefreshing()
                     println(error)
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
@@ -113,6 +78,47 @@ class PastTableViewController: UITableViewController {
             }
             
         }
+        
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        
+        var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
+        
+        workoutClassName = []
+        instructorName = []
+        workoutIntensity = []
+        classMusicType = []
+        dateOfClass = []
+        locationOfClass = []
+        
+        for object in subscribedClasses {
+            
+            var query = PFQuery(className: "WorkoutClasses")
+            query.getObjectInBackgroundWithId(object) {
+                (objects: AnyObject?, error: NSError?) -> Void in
+                if error == nil && objects != nil {
+                    
+                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
+                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
+                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
+                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
+                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
+                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    
+                    self.tableView.reloadData()
+                    
+                } else {
+                    
+                    println(error)
+                    
+                }
+                
+            }
+            
+        }
+        
+        refreshControl.endRefreshing()
         
     }
     

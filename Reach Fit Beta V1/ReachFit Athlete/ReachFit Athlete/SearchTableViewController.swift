@@ -20,13 +20,13 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
     var instructorName: [String] = [String]()
     var workoutIntensity: [String] = [String]()
     var classMusicType: [String] = [String]()
-    var dateOfClass: [String] = [String]()
+    var dateOfClass: [NSDate] = [NSDate]()
     var locationOfClass: [String] = [String]()
     
     var filteredWorkoutClassName: [String] = [String]()
     var filteredInstructorName: [String] = [String]()
     var filteredWorkoutIntensity: [String] = [String]()
-    var filteredDateOfClass: [String] = [String]()
+    var filteredDateOfClass: [NSDate] = [NSDate]()
     var filteredLocationOfClass: [String] = [String]()
     
     func filterTableViewForEnterText(searchText: String)
@@ -66,7 +66,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
                         self.instructorName.append(object.objectForKey("instructorName") as! String)
                         self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
                         self.classMusicType.append(object.objectForKey("classMusicType") as! String)
-                        self.dateOfClass.append(object.objectForKey("dateOfClass") as! String)
+                        self.dateOfClass.append(object.objectForKey("dateOfClass") as! NSDate)
                         self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
                         self.classesIds.append(object.objectId! as String)
                         
@@ -107,7 +107,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
                         self.instructorName.append(object.objectForKey("instructorName") as! String)
                         self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
                         self.classMusicType.append(object.objectForKey("classMusicType") as! String)
-                        self.dateOfClass.append(object.objectForKey("dateOfClass") as! String)
+                        self.dateOfClass.append(object.objectForKey("dateOfClass") as! NSDate)
                         self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
                         self.classesIds.append(object.objectId! as String)
                         
@@ -137,7 +137,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
             goingToViewController.classInstructor = instructorName[indexPathOfClickedRow]
             goingToViewController.classIntensity = workoutIntensity[indexPathOfClickedRow]
             goingToViewController.classMusicType = classMusicType[indexPathOfClickedRow]
-            goingToViewController.classDate = dateOfClass[indexPathOfClickedRow]
+            goingToViewController.classDate = "\(dateOfClass[indexPathOfClickedRow])"
             goingToViewController.classCity = locationOfClass[indexPathOfClickedRow]
             goingToViewController.classIds = classesIds[indexPathOfClickedRow]
             

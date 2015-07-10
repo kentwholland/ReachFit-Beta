@@ -13,6 +13,9 @@ class PastTableViewController: UITableViewController {
     
     var classesIds: [String] = [String]()
     
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+    var subscribedClasses: [String] = CurrentUserInfo.currentUserSubscribedClasses
+    
     // Class data intializer
     var workoutClassName: [String] = [String]()
     var instructorName: [String] = [String]()
@@ -21,86 +24,94 @@ class PastTableViewController: UITableViewController {
     var dateOfClass: [String] = [String]()
     var locationOfClass: [String] = [String]()
     
-    var filteredWorkoutClassName: [String] = [String]()
-    var filteredInstructorName: [String] = [String]()
-    var filteredWorkoutIntensity: [String] = [String]()
-    var filteredDateOfClass: [String] = [String]()
-    var filteredLocationOfClass: [String] = [String]()
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        println(subscribedClasses)
+        
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         
-        var query = PFQuery(className: "WorkoutClasses")
-        query.findObjectsInBackgroundWithBlock{
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil {
-                if let objects = objects as? [PFObject] {
-                    for object in objects {
-                        
-                        self.workoutClassName.append(object.objectForKey("workoutClassName") as! String)
-                        self.instructorName.append(object.objectForKey("instructorName") as! String)
-                        self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
-                        self.classMusicType.append(object.objectForKey("classMusicType") as! String)
-                        self.dateOfClass.append(object.objectForKey("dateOfClass") as! String)
-                        self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
-                        self.classesIds.append(object.objectId! as String)
-                        
-                        println(self.workoutClassName.count)
-                        println(self.classesIds.count)
-                        println(self.instructorName)
-                        
-                        self.tableView.reloadData()
-                        
-                    }
+        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        
+        for object in subscribedClasses {
+            
+            var query = PFQuery(className: "WorkoutClasses")
+            query.getObjectInBackgroundWithId(object) {
+                (objects: AnyObject?, error: NSError?) -> Void in
+                if error == nil && objects != nil {
+                    
+                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
+                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
+                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
+                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
+                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! String)
+                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    
+                    self.tableView.reloadData()
+                    
+                } else {
+                    
+                    println(error)
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
                 }
-            } else {
-                println("\(error?.userInfo)")
+                
             }
+            
         }
         
     }
     
     func handleRefresh(refreshControl: UIRefreshControl) {
         
-        var query = PFQuery(className: "WorkoutClasses")
-        query.findObjectsInBackgroundWithBlock{
-            (objects: [AnyObject]?, error: NSError?) -> Void in
-            if error == nil {
-                if let objects = objects as? [PFObject] {
+        workoutClassName = []
+        instructorName = []
+        workoutIntensity = []
+        classMusicType = []
+        dateOfClass = []
+        locationOfClass = []
+        
+        for object in subscribedClasses {
+            
+            var query = PFQuery(className: "WorkoutClasses")
+            query.getObjectInBackgroundWithId(object) {
+                (objects: AnyObject?, error: NSError?) -> Void in
+                if error == nil && objects != nil {
                     
-                    self.workoutClassName = []
-                    self.instructorName = []
-                    self.workoutIntensity = []
-                    self.classMusicType = []
-                    self.dateOfClass = []
-                    self.locationOfClass = []
+                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
+                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
+                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
+                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
+                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! String)
+                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
                     
-                    for object in objects {
-                        
-                        self.workoutClassName.append(object.objectForKey("workoutClassName") as! String)
-                        self.instructorName.append(object.objectForKey("instructorName") as! String)
-                        self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
-                        self.classMusicType.append(object.objectForKey("classMusicType") as! String)
-                        self.dateOfClass.append(object.objectForKey("dateOfClass") as! String)
-                        self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
-                        self.classesIds.append(object.objectId! as String)
-                        
-                        self.tableView.reloadData()
-                        
-                    }
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
-                    println("done")
                     refreshControl.endRefreshing()
+                    self.tableView.reloadData()
+                    
+                } else {
+                    
+                    refreshControl.endRefreshing()
+                    println(error)
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
                 }
-            } else {
-                println("\(error?.userInfo)")
+                
             }
+            
         }
         
     }
@@ -112,7 +123,7 @@ class PastTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return workoutClassName.count
+        return self.workoutClassName.count
         
     }
     
@@ -120,8 +131,7 @@ class PastTableViewController: UITableViewController {
         
         let cell = self.tableView.dequeueReusableCellWithIdentifier("pastTableViewCellBox") as? PastTableViewCell
         
-        
-        if self.classesIds.count > 0 {
+        if self.workoutClassName.count > 0 {
             
             cell!.pastClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
             cell!.pastDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
@@ -134,3 +144,4 @@ class PastTableViewController: UITableViewController {
     }
     
 }
+

@@ -16,10 +16,6 @@
 		D70F1A5A1B3B94F1005219B5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */; };
 		D70F1A5C1B3B951E005219B5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */; };
 		D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */; };
-		D722316C1B4F11DB0031B386 /* NSDate+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72231681B4F11DB0031B386 /* NSDate+Comparable.swift */; };
-		D722316D1B4F11DB0031B386 /* NSDate+Count.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72231691B4F11DB0031B386 /* NSDate+Count.swift */; };
-		D722316E1B4F11DB0031B386 /* NSDate+Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D722316A1B4F11DB0031B386 /* NSDate+Main.swift */; };
-		D722316F1B4F11DB0031B386 /* NSDate+Periods.swift in Sources */ = {isa = PBXBuildFile; fileRef = D722316B1B4F11DB0031B386 /* NSDate+Periods.swift */; };
 		D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9681B351B1A0062EA27 /* Bolts.framework */; };
 		D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9691B351B1A0062EA27 /* Parse.framework */; };
 		D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */; };
@@ -73,10 +69,6 @@
 		D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		D72231681B4F11DB0031B386 /* NSDate+Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Comparable.swift"; sourceTree = "<group>"; };
-		D72231691B4F11DB0031B386 /* NSDate+Count.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Count.swift"; sourceTree = "<group>"; };
-		D722316A1B4F11DB0031B386 /* NSDate+Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Main.swift"; sourceTree = "<group>"; };
-		D722316B1B4F11DB0031B386 /* NSDate+Periods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Periods.swift"; sourceTree = "<group>"; };
 		D765A9681B351B1A0062EA27 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D765A9691B351B1A0062EA27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -111,6 +103,7 @@
 		D7A552811B3358A2009CC6DB /* ReachFit AthleteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReachFit AthleteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A552861B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachFit_AthleteTests.swift; sourceTree = "<group>"; };
+		D7B29A851B5074D9000537E2 /* testCode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = testCode.playground; sourceTree = "<group>"; };
 		D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,10 +201,6 @@
 		D72231671B4F11B80031B386 /* NSDate SDK */ = {
 			isa = PBXGroup;
 			children = (
-				D72231681B4F11DB0031B386 /* NSDate+Comparable.swift */,
-				D72231691B4F11DB0031B386 /* NSDate+Count.swift */,
-				D722316A1B4F11DB0031B386 /* NSDate+Main.swift */,
-				D722316B1B4F11DB0031B386 /* NSDate+Periods.swift */,
 			);
 			name = "NSDate SDK";
 			sourceTree = "<group>";
@@ -265,6 +254,7 @@
 		D7A552601B3358A2009CC6DB = {
 			isa = PBXGroup;
 			children = (
+				D7B29A851B5074D9000537E2 /* testCode.playground */,
 				D7A5526B1B3358A2009CC6DB /* ReachFit Athlete */,
 				D7A552841B3358A2009CC6DB /* ReachFit AthleteTests */,
 				D7A5526A1B3358A2009CC6DB /* Products */,
@@ -432,17 +422,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D722316D1B4F11DB0031B386 /* NSDate+Count.swift in Sources */,
 				D70F1A4E1B3B68B8005219B5 /* MyFitnessViewController.swift in Sources */,
 				D77BE7741B35DA30006B82F0 /* CurrentUserInfo.swift in Sources */,
 				D78E6B821B4336E3003AEAAC /* SearchDetailViewController.swift in Sources */,
 				D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */,
 				D765A98C1B35C7BC0062EA27 /* StartingViewController.swift in Sources */,
 				D70F1A5A1B3B94F1005219B5 /* SearchTableViewController.swift in Sources */,
-				D722316C1B4F11DB0031B386 /* NSDate+Comparable.swift in Sources */,
 				D70F1A501B3B6E12005219B5 /* PastTableViewController.swift in Sources */,
 				D70F1A561B3B7FE2005219B5 /* FindViewController.swift in Sources */,
-				D722316F1B4F11DB0031B386 /* NSDate+Periods.swift in Sources */,
 				D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */,
 				D77BE73D1B35CA67006B82F0 /* SignUpViewController.swift in Sources */,
 				D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */,
@@ -454,7 +441,6 @@
 				D70F1A451B3A6956005219B5 /* UpcomingTableViewCell.swift in Sources */,
 				D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */,
 				D79C94331B393F840095FCD7 /* MainProfileViewController.swift in Sources */,
-				D722316E1B4F11DB0031B386 /* NSDate+Main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

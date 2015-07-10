@@ -22,6 +22,7 @@ class UpcomingTableViewController: UITableViewController {
     var classMusicType: [String] = [String]()
     var dateOfClass: [NSDate] = [NSDate]()
     var locationOfClass: [String] = [String]()
+    var dateOfClassString: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

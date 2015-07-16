@@ -18,7 +18,7 @@ struct CurrentUserInfo {
     static var currentUserEmail = currentUser!.objectForKey("email") as! String
     static var currentUserFirstName = currentUser!.objectForKey("firstName") as! String
     static var currentUserLastName = currentUser!.objectForKey("lastName") as! String
-    static var currentUserDateOfBirth = currentUser!.objectForKey("dateOfBirth") as! String
+    static var currentUserDateOfBirth = currentUser!.objectForKey("dateOfBirth") as! NSDate
     static var currentUserFitnessLevel = currentUser!.objectForKey("fitnessLevelNumber") as! String
     static var currentUserFitnessGoals = currentUser!.objectForKey("fitnessGoal") as! String
     static var currentUserProfilePic: PFFile = currentUser!.objectForKey("profilePicture") as! PFFile

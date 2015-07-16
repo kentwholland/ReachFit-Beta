@@ -57,12 +57,6 @@ class UpcomingTableViewController: UITableViewController {
             query.getObjectInBackgroundWithId(object) {
                 (objects: AnyObject?, error: NSError?) -> Void in
                 if error == nil && objects != nil {
-                    
-                    var date = objects?.objectForKey("dateOfClass") as! NSDate
-                    println("thisss is a \(date)")
-                    var currentDate: NSDate = NSDate()
-                    
-                    if date > currentDate {
                      
                         self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                         self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
@@ -71,8 +65,6 @@ class UpcomingTableViewController: UITableViewController {
                         self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
                         self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                         self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
-                        
-                    }
                     
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()

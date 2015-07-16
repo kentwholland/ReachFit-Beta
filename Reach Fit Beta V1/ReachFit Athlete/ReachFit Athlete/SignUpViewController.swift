@@ -15,20 +15,44 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var DOBTextField: UITextField!
+    @IBOutlet weak var DOBlabel: UILabel!
+    
+    var dateToUpload: NSDate = NSDate()
     
     @IBOutlet weak var nextButton: UIBarButtonItem!
     
-    @IBAction func signUp(sender: AnyObject) {
+    @IBAction func DOBTextFieldPressed(sender: AnyObject) {
         
+        println("enter date was pressed")
+        passwordTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        lastNameTextField.resignFirstResponder()
+        firstNameTextField.resignFirstResponder()
+        
+        DatePickerDialog().show(title: "Enter Date of Birth", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .Date) {
+            (date) -> Void in
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy"
+            var dateString = dateFormatter.stringFromDate(date)
+            println(dateString)
+            var dateNSDate: NSDate = dateFormatter.dateFromString(dateString)!
+            self.dateToUpload = dateNSDate
+            self.DOBlabel.text = "\(dateString)"
+        }
+        
+    }
+    
+    @IBAction func signUp(sender: AnyObject) {
+
         let user = PFUser()
+        
         user.password = passwordTextField.text
         user.email = emailTextField.text
         user.username = emailTextField.text
         user["isStudent"] = true
         user["firstName"] = firstNameTextField.text
         user["lastName"] = lastNameTextField.text
-        user["dateOfBirth"] = DOBTextField.text
+        user["dateOfBirth"] = self.dateToUpload
         user["subscribedClasses"] = ["test"]
         
         user.signUpInBackgroundWithBlock {
@@ -50,11 +74,16 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     }
     
     func checkInputComplete() {
-        if emailTextField.text != "" || passwordTextField.text != "" {
-            nextButton.enabled = true
-        } else {
+        
+        if emailTextField.text == "" || passwordTextField.text == "" || firstNameTextField.text == "" || lastNameTextField.text == "" || DOBlabel.text == "Date of Birth" {
+            
             nextButton.enabled = false
+            
+        } else {
+            
+            nextButton.enabled = true
         }
+        
     }
     
     override func viewDidLoad() {
@@ -68,7 +97,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         lastNameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        DOBTextField.delegate = self
         
     }
     

@@ -68,10 +68,6 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
                 if let objects = objects as? [PFObject] {
                     for object in objects {
                         
-                        var date = object.objectForKey("dateOfClass") as! NSDate
-                        
-                        if date > currentDate {
-                        
                             self.workoutClassName.append(object.objectForKey("workoutClassName") as! String)
                             self.instructorName.append(object.objectForKey("instructorName") as! String)
                             self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
@@ -85,7 +81,6 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
                             println(self.instructorName)
                         
                             self.tableView.reloadData()
-                        }
                         
                     }
                     

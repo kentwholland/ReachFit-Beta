@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zr8-Mg-S2q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zr8-Mg-S2q">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -81,16 +81,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckm-Gs-u1C">
-                                <rect key="frame" x="16" y="205" width="288" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date of Birth" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4r-jJ-CNh">
+                                <rect key="frame" x="23" y="239" width="279" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date of Birth" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sR5-mU-bhu">
-                                <rect key="frame" x="16" y="247" width="288" height="30"/>
+                                <color key="textColor" red="0.65989977904040398" green="0.65989977904040398" blue="0.65989977904040398" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Sn2-kC-RyN">
+                                <rect key="frame" x="16" y="201" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sa-4G-ccR">
+                                <rect key="frame" x="16" y="258" width="162" height="30"/>
+                                <state key="normal" title="Enter your Date of Birth">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="DOBTextFieldPressed:" destination="lKK-gn-1Hk" eventType="touchUpInside" id="Gkf-cJ-Rne"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -102,12 +112,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="DOBTextField" destination="sR5-mU-bhu" id="xdG-hB-P1g"/>
+                        <outlet property="DOBlabel" destination="x4r-jJ-CNh" id="bXy-s8-mVh"/>
                         <outlet property="emailTextField" destination="fOG-Le-sFK" id="2Y8-k3-YbW"/>
                         <outlet property="firstNameTextField" destination="BmX-fZ-NvY" id="3Dg-Ga-rnb"/>
                         <outlet property="lastNameTextField" destination="pzH-ib-97R" id="Ibr-f3-yL5"/>
                         <outlet property="nextButton" destination="vZA-cT-Gkg" id="Glh-xk-tpa"/>
-                        <outlet property="passwordTextField" destination="ckm-Gs-u1C" id="ueD-aN-upo"/>
+                        <outlet property="passwordTextField" destination="Sn2-kC-RyN" id="efr-Xp-4Qt"/>
                         <segue destination="7oW-Vm-CZ6" kind="modal" identifier="finishSignUp" id="afq-b2-6Uk"/>
                     </connections>
                 </viewController>

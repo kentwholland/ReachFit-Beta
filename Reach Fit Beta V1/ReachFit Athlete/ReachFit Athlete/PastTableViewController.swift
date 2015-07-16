@@ -56,12 +56,19 @@ class PastTableViewController: UITableViewController {
                 (objects: AnyObject?, error: NSError?) -> Void in
                 if error == nil && objects != nil {
                     
-                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
-                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
-                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
-                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
-                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    var currentDate: NSDate = NSDate()
+                    var date: NSDate = objects?.objectForKey("dateOfClass") as! NSDate
+                    
+                    if date < currentDate {
+                     
+                        self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
+                        self.instructorName.append(objects!.objectForKey("instructorName") as! String)
+                        self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
+                        self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
+                        self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
+                        self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                        
+                    }
                     
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()

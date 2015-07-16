@@ -23,6 +23,7 @@ class PastTableViewController: UITableViewController {
     var classMusicType: [String] = [String]()
     var dateOfClass: [NSDate] = [NSDate]()
     var locationOfClass: [String] = [String]()
+    var dateOfClassString: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +84,16 @@ class PastTableViewController: UITableViewController {
                         
                     }
                     
+                    for objects in self.dateOfClass {
+                        
+                        var dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "MM/dd/yyyy H:mm a"
+                        var dateNSDate: String = dateFormatter.stringFromDate(objects)
+                        var stringTest: String = dateNSDate
+                        self.dateOfClassString.append(stringTest)
+                        
+                    }
+                    
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
@@ -111,6 +122,7 @@ class PastTableViewController: UITableViewController {
         classMusicType = []
         dateOfClass = []
         locationOfClass = []
+        dateOfClassString = []
         
         for object in subscribedClasses {
             
@@ -142,6 +154,16 @@ class PastTableViewController: UITableViewController {
                             self.locationOfClass.removeAtIndex(self.indexOfItemToRemove)
                             
                         }
+                        
+                    }
+                    
+                    for objects in self.dateOfClass {
+                        
+                        var dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "MM/dd/yyyy H:mm a"
+                        var dateNSDate: String = dateFormatter.stringFromDate(objects)
+                        var stringTest: String = dateNSDate
+                        self.dateOfClassString.append(stringTest)
                         
                     }
                     
@@ -179,7 +201,7 @@ class PastTableViewController: UITableViewController {
         if self.workoutClassName.count > 0 {
             
             cell!.pastClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
-            cell!.pastDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
+            cell!.pastDateCityLabel.text = "\(dateOfClassString[indexPath.row]), \(locationOfClass[indexPath.row])"
             cell!.pastIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
             
         }

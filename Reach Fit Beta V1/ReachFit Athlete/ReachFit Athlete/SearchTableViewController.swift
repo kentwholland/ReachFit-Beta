@@ -24,6 +24,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
     var classMusicType: [String] = [String]()
     var dateOfClass: [NSDate] = [NSDate]()
     var locationOfClass: [String] = [String]()
+    var dateOfClassString: [String] = [String]()
     
     var filteredWorkoutClassName: [String] = [String]()
     var filteredInstructorName: [String] = [String]()
@@ -95,6 +96,16 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
                             }
                             
                         }
+                        
+                        for objects in self.dateOfClass {
+                            
+                            var dateFormatter = NSDateFormatter()
+                            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm a"
+                            var dateNSDate: String = dateFormatter.stringFromDate(objects)
+                            var stringTest: String = dateNSDate
+                            self.dateOfClassString.append(stringTest)
+                            
+                        }
                     
                         self.tableView.reloadData()
                         
@@ -123,6 +134,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
                     self.classMusicType = []
                     self.dateOfClass = []
                     self.locationOfClass = []
+                    self.dateOfClassString = []
                     
                     for object in objects {
                         
@@ -154,6 +166,16 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
                             
                         }
                         
+                        for objects in self.dateOfClass {
+                            
+                            var dateFormatter = NSDateFormatter()
+                            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm a"
+                            var dateNSDate: String = dateFormatter.stringFromDate(objects)
+                            var stringTest: String = dateNSDate
+                            self.dateOfClassString.append(stringTest)
+                            
+                        }
+                        
                         self.tableView.reloadData()
                         
                     }
@@ -180,7 +202,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
             goingToViewController.classInstructor = instructorName[indexPathOfClickedRow]
             goingToViewController.classIntensity = workoutIntensity[indexPathOfClickedRow]
             goingToViewController.classMusicType = classMusicType[indexPathOfClickedRow]
-            goingToViewController.classDate = "\(dateOfClass[indexPathOfClickedRow])"
+            goingToViewController.classDate = "\(dateOfClassString[indexPathOfClickedRow])"
             goingToViewController.classCity = locationOfClass[indexPathOfClickedRow]
             goingToViewController.classIds = classesIds[indexPathOfClickedRow]
             
@@ -228,7 +250,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
         } else {
             
             cell?.searchClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
-            cell?.searchDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
+            cell?.searchDateCityLabel.text = "\(dateOfClassString[indexPath.row]), \(locationOfClass[indexPath.row])"
             cell?.searchIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
             
             return cell!

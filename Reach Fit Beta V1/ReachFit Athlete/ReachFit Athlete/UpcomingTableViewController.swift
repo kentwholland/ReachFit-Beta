@@ -14,8 +14,6 @@ class UpcomingTableViewController: UITableViewController {
     var indexPathOfClickedRow: Int = Int()
     var indexOfObjectToRemove: Int = Int()
     
-    var classesIds: [String] = [String]()
-    
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
     // Class data intializer
@@ -26,34 +24,6 @@ class UpcomingTableViewController: UITableViewController {
     var dateOfClass: [NSDate] = [NSDate]()
     var locationOfClass: [String] = [String]()
     var dateOfClassString: [String] = [String]()
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "GoToUpcomingDetailViewController" {
-            
-            println(instructorName[indexPathOfClickedRow])
-            
-            var goingToViewController = segue.destinationViewController as! UpcomingDetailViewController
-            goingToViewController.viewControllerTitle = workoutClassName[indexPathOfClickedRow]
-            goingToViewController.classInstructor = instructorName[indexPathOfClickedRow]
-            goingToViewController.classIntensity = workoutIntensity[indexPathOfClickedRow]
-            goingToViewController.classMusicType = classMusicType[indexPathOfClickedRow]
-            goingToViewController.classDate = "\(dateOfClass[indexPathOfClickedRow])"
-            goingToViewController.classCity = locationOfClass[indexPathOfClickedRow]
-            goingToViewController.classIds = classesIds[indexPathOfClickedRow]
-            
-        }
-        
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        indexPathOfClickedRow = indexPath.row
-        println(indexPathOfClickedRow)
-        
-        self.performSegueWithIdentifier("GoToUpcomingDetailViewController", sender: self)
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +81,16 @@ class UpcomingTableViewController: UITableViewController {
                         
                     }
                     
+                    for objects in self.dateOfClass {
+                        
+                        var dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+                        var dateNSDate: String = dateFormatter.stringFromDate(objects)
+                        var stringTest: String = dateNSDate
+                        self.dateOfClassString.append(stringTest)
+                        
+                    }
+                    
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
@@ -139,6 +119,7 @@ class UpcomingTableViewController: UITableViewController {
         classMusicType = []
         dateOfClass = []
         locationOfClass = []
+        dateOfClassString = []
         
         for object in subscribedClasses {
             
@@ -171,6 +152,16 @@ class UpcomingTableViewController: UITableViewController {
                             self.locationOfClass.removeAtIndex(self.indexOfObjectToRemove)
                             
                         }
+                        
+                    }
+                    
+                    for objects in self.dateOfClass {
+                        
+                        var dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+                        var dateNSDate: String = dateFormatter.stringFromDate(objects)
+                        var stringTest: String = dateNSDate
+                        self.dateOfClassString.append(stringTest)
                         
                     }
                     
@@ -208,7 +199,7 @@ class UpcomingTableViewController: UITableViewController {
         if self.workoutClassName.count > 0 {
             
             cell!.upcomingClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
-            cell!.upcomingDateCityLabel.text = "\(dateOfClass[indexPath.row]), \(locationOfClass[indexPath.row])"
+            cell!.upcomingDateCityLabel.text = "\(dateOfClassString[indexPath.row]), \(locationOfClass[indexPath.row])"
             cell!.upcomingIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
             
         }

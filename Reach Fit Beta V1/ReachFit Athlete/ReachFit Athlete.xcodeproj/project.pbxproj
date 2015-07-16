@@ -17,7 +17,6 @@
 		D70F1A5C1B3B951E005219B5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */; };
 		D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */; };
 		D762E7561B581EE700D47D44 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762E7551B581EE700D47D44 /* DatePickerDialog.swift */; };
-		D762E7581B585DD700D47D44 /* UpcomingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762E7571B585DD700D47D44 /* UpcomingDetailViewController.swift */; };
 		D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9681B351B1A0062EA27 /* Bolts.framework */; };
 		D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9691B351B1A0062EA27 /* Parse.framework */; };
 		D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */; };
@@ -73,7 +72,6 @@
 		D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D762E7551B581EE700D47D44 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
-		D762E7571B585DD700D47D44 /* UpcomingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingDetailViewController.swift; sourceTree = "<group>"; };
 		D765A9681B351B1A0062EA27 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		D765A9691B351B1A0062EA27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		D765A96A1B351B1A0062EA27 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 			children = (
 				D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */,
 				D70F1A441B3A6956005219B5 /* UpcomingTableViewCell.swift */,
-				D762E7591B585E2B00D47D44 /* Detail VC */,
 			);
 			name = "Upcoming SubTab 1";
 			sourceTree = "<group>";
@@ -211,14 +208,6 @@
 				D7B29A881B507A7D000537E2 /* NSDateExtensionTests.swift */,
 			);
 			name = "NSDate SDK";
-			sourceTree = "<group>";
-		};
-		D762E7591B585E2B00D47D44 /* Detail VC */ = {
-			isa = PBXGroup;
-			children = (
-				D762E7571B585DD700D47D44 /* UpcomingDetailViewController.swift */,
-			);
-			name = "Detail VC";
 			sourceTree = "<group>";
 		};
 		D765A9701B351BAD0062EA27 /* Frameworks */ = {
@@ -454,7 +443,6 @@
 				D77BE7721B35D3AF006B82F0 /* SignUpTwoViewController.swift in Sources */,
 				D70F1A5C1B3B951E005219B5 /* SearchTableViewCell.swift in Sources */,
 				D70F1A521B3B6E53005219B5 /* PastTableViewCell.swift in Sources */,
-				D762E7581B585DD700D47D44 /* UpcomingDetailViewController.swift in Sources */,
 				D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */,
 				D77BE7701B35CA87006B82F0 /* LoginViewController.swift in Sources */,
 				D7B29A891B507A7D000537E2 /* NSDateExtensionTests.swift in Sources */,

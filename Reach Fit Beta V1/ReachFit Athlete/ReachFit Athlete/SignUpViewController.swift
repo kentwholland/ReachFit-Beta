@@ -16,19 +16,19 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var DOBlabel: UILabel!
-    
+
     var dateToUpload: NSDate = NSDate()
-    
+
     @IBOutlet weak var nextButton: UIBarButtonItem!
-    
+
     @IBAction func DOBTextFieldPressed(sender: AnyObject) {
-        
+
         println("enter date was pressed")
         passwordTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
         lastNameTextField.resignFirstResponder()
         firstNameTextField.resignFirstResponder()
-        
+
         DatePickerDialog().show(title: "Enter Date of Birth", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .Date) {
             (date) -> Void in
             var dateFormatter = NSDateFormatter()
@@ -39,13 +39,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
             self.dateToUpload = dateNSDate
             self.DOBlabel.text = "\(dateString)"
         }
-        
+
     }
-    
+
     @IBAction func signUp(sender: AnyObject) {
 
         let user = PFUser()
-        
+
         user.password = passwordTextField.text
         user.email = emailTextField.text
         user.username = emailTextField.text
@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         user["lastName"] = lastNameTextField.text
         user["dateOfBirth"] = self.dateToUpload
         user["subscribedClasses"] = ["test"]
-        
+
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error{
@@ -70,46 +70,46 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 self.performSegueWithIdentifier("finishSignUp", sender:self)
             }
         }
-        
+
     }
-    
+
     func checkInputComplete() {
-        
+
         if emailTextField.text == "" || passwordTextField.text == "" || firstNameTextField.text == "" || lastNameTextField.text == "" || DOBlabel.text == "Date of Birth" {
-            
+
             nextButton.enabled = false
-            
+
         } else {
-            
+
             nextButton.enabled = true
         }
-        
+
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("checkInputComplete"), userInfo: nil, repeats: true)
-        
+
         self.firstNameTextField.becomeFirstResponder()
-        
+
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
+
     }
-    
+
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
-    
+
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
+
         textField.resignFirstResponder()
-        
+
         return true
-        
+
     }
-    
+
 }

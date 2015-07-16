@@ -11,6 +11,7 @@ import Parse
 
 class UpcomingTableViewController: UITableViewController {
     
+    var indexPathOfClickedRow: Int = Int()
     var indexOfObjectToRemove: Int = Int()
     
     var classesIds: [String] = [String]()
@@ -26,6 +27,34 @@ class UpcomingTableViewController: UITableViewController {
     var locationOfClass: [String] = [String]()
     var dateOfClassString: [String] = [String]()
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "GoToUpcomingDetailViewController" {
+            
+            println(instructorName[indexPathOfClickedRow])
+            
+            var goingToViewController = segue.destinationViewController as! UpcomingDetailViewController
+            goingToViewController.viewControllerTitle = workoutClassName[indexPathOfClickedRow]
+            goingToViewController.classInstructor = instructorName[indexPathOfClickedRow]
+            goingToViewController.classIntensity = workoutIntensity[indexPathOfClickedRow]
+            goingToViewController.classMusicType = classMusicType[indexPathOfClickedRow]
+            goingToViewController.classDate = "\(dateOfClass[indexPathOfClickedRow])"
+            goingToViewController.classCity = locationOfClass[indexPathOfClickedRow]
+            goingToViewController.classIds = classesIds[indexPathOfClickedRow]
+            
+        }
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        indexPathOfClickedRow = indexPath.row
+        println(indexPathOfClickedRow)
+        
+        self.performSegueWithIdentifier("GoToUpcomingDetailViewController", sender: self)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,10 +67,6 @@ class UpcomingTableViewController: UITableViewController {
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-        
-    }
-    
-    override func viewDidAppear(animated: Bool) {
         
         var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
         
@@ -60,13 +85,13 @@ class UpcomingTableViewController: UITableViewController {
             query.getObjectInBackgroundWithId(object) {
                 (objects: AnyObject?, error: NSError?) -> Void in
                 if error == nil && objects != nil {
-                     
-                        self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
-                        self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
-                        self.instructorName.append(objects!.objectForKey("instructorName") as! String)
-                        self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
-                        self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                        self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    
+                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
+                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
+                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
+                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
+                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
+                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
                     
                     for objects in self.dateOfClass {
                         

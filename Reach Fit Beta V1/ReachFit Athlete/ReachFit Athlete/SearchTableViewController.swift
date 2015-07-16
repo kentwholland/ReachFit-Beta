@@ -13,7 +13,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
     
     var indexPathOfClickedRow: Int = Int()
 
-    var indexOfDateToRemove: Int = Int()
+    var indexOfObjectToRemove: Int = Int()
     
     var classesIds: [String] = [String]()
     
@@ -59,32 +59,49 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
         
         self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         
-        var querys = PFQuery(className: "WorkoutClasses")
-        
         var query = PFQuery(className: "WorkoutClasses")
         query.findObjectsInBackgroundWithBlock{
             (objects: [AnyObject]?, error: NSError?) -> Void in
             if error == nil {
                 if let objects = objects as? [PFObject] {
                     for object in objects {
+
+                        self.workoutClassName.append(object.objectForKey("workoutClassName") as! String)
+                        self.instructorName.append(object.objectForKey("instructorName") as! String)
+                        self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
+                        self.classMusicType.append(object.objectForKey("classMusicType") as! String)
+                        self.dateOfClass.append(object.objectForKey("dateOfClass") as! NSDate)
+                        self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
+                        self.classesIds.append(object.objectId! as String)
                         
-                            self.workoutClassName.append(object.objectForKey("workoutClassName") as! String)
-                            self.instructorName.append(object.objectForKey("instructorName") as! String)
-                            self.workoutIntensity.append(object.objectForKey("workoutIntensity") as! String)
-                            self.classMusicType.append(object.objectForKey("classMusicType") as! String)
-                            self.dateOfClass.append(object.objectForKey("dateOfClass") as! NSDate)
-                            self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
-                            self.classesIds.append(object.objectId! as String)
+                        println(self.workoutClassName.count)
+                        println(self.classesIds.count)
+                        println(self.instructorName)
                         
-                            println(self.workoutClassName.count)
-                            println(self.classesIds.count)
-                            println(self.instructorName)
-                        
-                            self.tableView.reloadData()
+                        for objects in self.dateOfClass {
+                            
+                            if objects < currentDate {
+                                
+                                self.indexOfObjectToRemove = find(self.dateOfClass, objects)!
+                                
+                                self.workoutClassName.removeAtIndex(self.indexOfObjectToRemove)
+                                self.instructorName.removeAtIndex(self.indexOfObjectToRemove)
+                                self.workoutIntensity.removeAtIndex(self.indexOfObjectToRemove)
+                                self.classMusicType.removeAtIndex(self.indexOfObjectToRemove)
+                                self.dateOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                                self.locationOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                                self.classesIds.removeAtIndex(self.indexOfObjectToRemove)
+                                
+                            }
+                            
+                        }
+                    
+                        self.tableView.reloadData()
                         
                     }
                     
                 }
+                
             } else {
                 println("\(error?.userInfo)")
             }
@@ -116,6 +133,26 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
                         self.dateOfClass.append(object.objectForKey("dateOfClass") as! NSDate)
                         self.locationOfClass.append(object.objectForKey("locationOfClass") as! String)
                         self.classesIds.append(object.objectId! as String)
+                        
+                        var currentDate: NSDate = NSDate()
+                        
+                        for objects in self.dateOfClass {
+                            
+                            if objects < currentDate {
+                                
+                                self.indexOfObjectToRemove = find(self.dateOfClass, objects)!
+                                
+                                self.workoutClassName.removeAtIndex(self.indexOfObjectToRemove)
+                                self.instructorName.removeAtIndex(self.indexOfObjectToRemove)
+                                self.workoutIntensity.removeAtIndex(self.indexOfObjectToRemove)
+                                self.classMusicType.removeAtIndex(self.indexOfObjectToRemove)
+                                self.dateOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                                self.locationOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                                self.classesIds.removeAtIndex(self.indexOfObjectToRemove)
+                                
+                            }
+                            
+                        }
                         
                         self.tableView.reloadData()
                         

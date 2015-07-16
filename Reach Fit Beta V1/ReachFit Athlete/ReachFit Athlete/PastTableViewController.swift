@@ -12,6 +12,7 @@ import Parse
 class PastTableViewController: UITableViewController {
     
     var classesIds: [String] = [String]()
+    var indexOfItemToRemove: Int = Int()
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -57,16 +58,28 @@ class PastTableViewController: UITableViewController {
                 if error == nil && objects != nil {
                     
                     var currentDate: NSDate = NSDate()
-                    var date: NSDate = objects?.objectForKey("dateOfClass") as! NSDate
                     
-                    if date < currentDate {
-                     
-                        self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
-                        self.instructorName.append(objects!.objectForKey("instructorName") as! String)
-                        self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
-                        self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                        self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
-                        self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
+                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
+                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
+                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
+                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
+                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    
+                    for objects in self.dateOfClass {
+                        
+                        if objects > currentDate {
+                            
+                            self.indexOfItemToRemove = find(self.dateOfClass, objects)!
+                            
+                            self.workoutClassName.removeAtIndex(self.indexOfItemToRemove)
+                            self.instructorName.removeAtIndex(self.indexOfItemToRemove)
+                            self.workoutIntensity.removeAtIndex(self.indexOfItemToRemove)
+                            self.classMusicType.removeAtIndex(self.indexOfItemToRemove)
+                            self.dateOfClass.removeAtIndex(self.indexOfItemToRemove)
+                            self.locationOfClass.removeAtIndex(self.indexOfItemToRemove)
+                            
+                        }
                         
                     }
                     
@@ -106,12 +119,31 @@ class PastTableViewController: UITableViewController {
                 (objects: AnyObject?, error: NSError?) -> Void in
                 if error == nil && objects != nil {
                     
+                    var currentDate: NSDate = NSDate()
+                    
                     self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
                     self.instructorName.append(objects!.objectForKey("instructorName") as! String)
                     self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
                     self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
                     self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                     self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    
+                    for objects in self.dateOfClass {
+                        
+                        if objects > currentDate {
+                            
+                            self.indexOfItemToRemove = find(self.dateOfClass, objects)!
+                            
+                            self.workoutClassName.removeAtIndex(self.indexOfItemToRemove)
+                            self.instructorName.removeAtIndex(self.indexOfItemToRemove)
+                            self.workoutIntensity.removeAtIndex(self.indexOfItemToRemove)
+                            self.classMusicType.removeAtIndex(self.indexOfItemToRemove)
+                            self.dateOfClass.removeAtIndex(self.indexOfItemToRemove)
+                            self.locationOfClass.removeAtIndex(self.indexOfItemToRemove)
+                            
+                        }
+                        
+                    }
                     
                     self.tableView.reloadData()
                     

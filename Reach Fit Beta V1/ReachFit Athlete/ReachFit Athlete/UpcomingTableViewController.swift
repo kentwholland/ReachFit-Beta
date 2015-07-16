@@ -11,8 +11,9 @@ import Parse
 
 class UpcomingTableViewController: UITableViewController {
     
+    var indexOfObjectToRemove: Int = Int()
+    
     var classesIds: [String] = [String]()
-    var currentDate: NSDate = NSDate()
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     
@@ -53,6 +54,8 @@ class UpcomingTableViewController: UITableViewController {
         
         for object in subscribedClasses {
             
+            var currentDate: NSDate = NSDate()
+            
             var query = PFQuery(className: "WorkoutClasses")
             query.getObjectInBackgroundWithId(object) {
                 (objects: AnyObject?, error: NSError?) -> Void in
@@ -63,8 +66,25 @@ class UpcomingTableViewController: UITableViewController {
                         self.instructorName.append(objects!.objectForKey("instructorName") as! String)
                         self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
                         self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                        self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                         self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    
+                    for objects in self.dateOfClass {
+                        
+                        if objects < currentDate {
+                            
+                            self.indexOfObjectToRemove = find(self.dateOfClass, objects)!
+                            println(self.indexOfObjectToRemove)
+                            
+                            self.dateOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                            self.workoutClassName.removeAtIndex(self.indexOfObjectToRemove)
+                            self.instructorName.removeAtIndex(self.indexOfObjectToRemove)
+                            self.workoutIntensity.removeAtIndex(self.indexOfObjectToRemove)
+                            self.classMusicType.removeAtIndex(self.indexOfObjectToRemove)
+                            self.locationOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                            
+                        }
+                        
+                    }
                     
                     self.tableView.reloadData()
                     self.activityIndicator.stopAnimating()
@@ -108,6 +128,26 @@ class UpcomingTableViewController: UITableViewController {
                     self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
                     self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                     self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    
+                    var currentDate: NSDate = NSDate()
+                    
+                    for objects in self.dateOfClass {
+                        
+                        if objects < currentDate {
+                            
+                            self.indexOfObjectToRemove = find(self.dateOfClass, objects)!
+                            println(self.indexOfObjectToRemove)
+                            
+                            self.dateOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                            self.workoutClassName.removeAtIndex(self.indexOfObjectToRemove)
+                            self.instructorName.removeAtIndex(self.indexOfObjectToRemove)
+                            self.workoutIntensity.removeAtIndex(self.indexOfObjectToRemove)
+                            self.classMusicType.removeAtIndex(self.indexOfObjectToRemove)
+                            self.locationOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                            
+                        }
+                        
+                    }
                     
                     self.tableView.reloadData()
                     

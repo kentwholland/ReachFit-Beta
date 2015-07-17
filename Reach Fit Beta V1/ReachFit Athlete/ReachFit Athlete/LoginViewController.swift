@@ -19,8 +19,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Login(sender: AnyObject) {
         println("login clicked")
         
-        var currentUser = PFUser.currentUser()
-        
         PFUser.logInWithUsernameInBackground(emailTextField.text, password: passwordTextField.text) { (curretUser, error) -> Void in
             if error == nil {
                 println("success")

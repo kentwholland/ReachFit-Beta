@@ -42,7 +42,7 @@ class PastTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
+        var subscribedClasses: [String] = PFUser.currentUser()!.objectForKey("subscribedClasses") as! [String]
         
         workoutClassName = []
         instructorName = []
@@ -116,7 +116,7 @@ class PastTableViewController: UITableViewController {
     
     func handleRefresh(refreshControl: UIRefreshControl) {
         
-        var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
+        var subscribedClasses: [String] = PFUser.currentUser()!.objectForKey("subscribedClasses") as! [String]
         
         workoutClassName = []
         instructorName = []

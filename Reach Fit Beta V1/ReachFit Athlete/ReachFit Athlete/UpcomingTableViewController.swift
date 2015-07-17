@@ -38,7 +38,7 @@ class UpcomingTableViewController: UITableViewController {
         activityIndicator.startAnimating()
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
-        var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
+        var subscribedClasses: [String] = PFUser.currentUser()!.objectForKey("subscribedClasses") as! [String]
         println(subscribedClasses)
         
         workoutClassName = []
@@ -118,7 +118,7 @@ class UpcomingTableViewController: UITableViewController {
     
     func handleRefresh(refreshControl: UIRefreshControl) {
         
-        var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
+        var subscribedClasses: [String] = PFUser.currentUser()!.objectForKey("subscribedClasses") as! [String]
         println(subscribedClasses)
         
         workoutClassName = []

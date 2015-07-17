@@ -33,13 +33,13 @@ class SearchDetailViewController: UIViewController {
         
         if self.joinLeaveButton.titleLabel?.text == "Join" {
             
-            println("user \(currentUser!.objectId!) joined :)")
+            println("user \(PFUser.currentUser()!.objectId!) joined :)")
             
-            currentUser?.addObject(self.classIds, forKey: "subscribedClasses")
-            currentUser?.save()
+            PFUser.currentUser()?.addObject(self.classIds, forKey: "subscribedClasses")
+            PFUser.currentUser()?.save()
             var classesQuery = PFQuery(className: "WorkoutClasses")
             var classesObject = classesQuery.getObjectWithId(self.classIds)
-            classesObject!.addObject(currentUser!.objectId!, forKey: "classStudents")
+            classesObject!.addObject(PFUser.currentUser()!.objectId!, forKey: "classStudents")
             classesObject!.save()
             
             runObjectFind()
@@ -47,14 +47,14 @@ class SearchDetailViewController: UIViewController {
             
         } else if self.joinLeaveButton.titleLabel?.text == "Leave" {
             
-            currentUser?.removeObject(self.classIds, forKey: "subscribedClasses")
-            currentUser?.save()
+            PFUser.currentUser()?.removeObject(self.classIds, forKey: "subscribedClasses")
+            PFUser.currentUser()?.save()
             var classesQuery = PFQuery(className: "WorkoutClasses")
             var classesObject = classesQuery.getObjectWithId(self.classIds)
-            classesObject!.removeObject(currentUser!.objectId!, forKey: "classStudents")
+            classesObject!.removeObject(PFUser.currentUser()!.objectId!, forKey: "classStudents")
             classesObject!.save()
             
-            println("user \(currentUser!.objectId!) left :'(")
+            println("user \(PFUser.currentUser()!.objectId!) left :'(")
             
             runObjectFind()
             
@@ -64,11 +64,7 @@ class SearchDetailViewController: UIViewController {
     
     func constantCheck() {
         
-        if contains(classesIds, currentUser!.objectId!) {
-            println("classesIds contains currentUser ID")
-        }
-        
-        if contains(classesIds, currentUser!.objectId!) {
+        if contains(classesIds, PFUser.currentUser()!.objectId!) {
             
             joinLeaveButton.setTitle("Leave", forState: UIControlState.Normal)
             

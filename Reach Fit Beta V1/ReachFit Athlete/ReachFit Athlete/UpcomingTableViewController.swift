@@ -39,6 +39,84 @@ class UpcomingTableViewController: UITableViewController {
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         
         var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
+        println(subscribedClasses)
+        
+        workoutClassName = []
+        instructorName = []
+        workoutIntensity = []
+        classMusicType = []
+        dateOfClass = []
+        locationOfClass = []
+        
+        for object in subscribedClasses {
+            
+            var currentDate: NSDate = NSDate()
+            
+            var query = PFQuery(className: "WorkoutClasses")
+            query.getObjectInBackgroundWithId(object) {
+                (objects: AnyObject?, error: NSError?) -> Void in
+                if error == nil && objects != nil {
+                    
+                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
+                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
+                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
+                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
+                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
+                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
+                    
+                    for objects in self.dateOfClass {
+                        
+                        if objects < currentDate {
+                            
+                            self.indexOfObjectToRemove = find(self.dateOfClass, objects)!
+                            println(self.indexOfObjectToRemove)
+                            
+                            self.dateOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                            self.workoutClassName.removeAtIndex(self.indexOfObjectToRemove)
+                            self.instructorName.removeAtIndex(self.indexOfObjectToRemove)
+                            self.workoutIntensity.removeAtIndex(self.indexOfObjectToRemove)
+                            self.classMusicType.removeAtIndex(self.indexOfObjectToRemove)
+                            self.locationOfClass.removeAtIndex(self.indexOfObjectToRemove)
+                            
+                        }
+                        
+                    }
+                    
+                    for objects in self.dateOfClass {
+                        
+                        var dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
+                        var dateNSDate: String = dateFormatter.stringFromDate(objects)
+                        var stringTest: String = dateNSDate
+                        self.dateOfClassString.append(stringTest)
+                        
+                    }
+
+                    self.tableView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    
+                } else {
+                    
+                    println(error)
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                    
+                }
+                
+                println("hello")
+                self.tableView.reloadData()
+                
+            }
+            
+        }
+        
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        
+        var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
+        println(subscribedClasses)
         
         workoutClassName = []
         instructorName = []
@@ -92,86 +170,15 @@ class UpcomingTableViewController: UITableViewController {
                     }
                     
                     self.tableView.reloadData()
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
                 } else {
                     
                     println(error)
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
                     
                 }
                 
-            }
-            
-        }
-        
-    }
-    
-    func handleRefresh(refreshControl: UIRefreshControl) {
-        
-        var subscribedClasses: [String] = currentUser!.objectForKey("subscribedClasses") as! [String]
-        
-        workoutClassName = []
-        instructorName = []
-        workoutIntensity = []
-        classMusicType = []
-        dateOfClass = []
-        locationOfClass = []
-        dateOfClassString = []
-        
-        for object in subscribedClasses {
-            
-            var query = PFQuery(className: "WorkoutClasses")
-            query.getObjectInBackgroundWithId(object) {
-                (objects: AnyObject?, error: NSError?) -> Void in
-                if error == nil && objects != nil {
-                    
-                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
-                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
-                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
-                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
-                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
-                    
-                    var currentDate: NSDate = NSDate()
-                    
-                    for objects in self.dateOfClass {
-                        
-                        if objects < currentDate {
-                            
-                            self.indexOfObjectToRemove = find(self.dateOfClass, objects)!
-                            println(self.indexOfObjectToRemove)
-                            
-                            self.dateOfClass.removeAtIndex(self.indexOfObjectToRemove)
-                            self.workoutClassName.removeAtIndex(self.indexOfObjectToRemove)
-                            self.instructorName.removeAtIndex(self.indexOfObjectToRemove)
-                            self.workoutIntensity.removeAtIndex(self.indexOfObjectToRemove)
-                            self.classMusicType.removeAtIndex(self.indexOfObjectToRemove)
-                            self.locationOfClass.removeAtIndex(self.indexOfObjectToRemove)
-                            
-                        }
-                        
-                    }
-                    
-                    for objects in self.dateOfClass {
-                        
-                        var dateFormatter = NSDateFormatter()
-                        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
-                        var dateNSDate: String = dateFormatter.stringFromDate(objects)
-                        var stringTest: String = dateNSDate
-                        self.dateOfClassString.append(stringTest)
-                        
-                    }
-                    
-                    self.tableView.reloadData()
-                    
-                } else {
-                    
-                    println(error)
-                    
-                }
+                println("hello")
+                self.tableView.reloadData()
                 
             }
             

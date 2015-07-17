@@ -106,6 +106,8 @@ class PastTableViewController: UITableViewController {
                     
                 }
                 
+                self.tableView.reloadData()
+                
             }
             
         }
@@ -174,6 +176,8 @@ class PastTableViewController: UITableViewController {
                     println(error)
                     
                 }
+                
+                self.tableView.reloadData()
                 
             }
             

@@ -29,7 +29,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
     var filteredWorkoutClassName: [String] = [String]()
     var filteredInstructorName: [String] = [String]()
     var filteredWorkoutIntensity: [String] = [String]()
-    var filteredDateOfClass: [NSDate] = [NSDate]()
+    var filteredDateOfClassString: [String] = [String]()
     var filteredLocationOfClass: [String] = [String]()
     
     func filterTableViewForEnterText(searchText: String)
@@ -38,6 +38,7 @@ class SearchTableViewController: UITableViewController, UISearchDisplayDelegate,
             var stringForSearch = strCountry.rangeOfString(searchText)
             return (stringForSearch != nil)
         })
+        
     }
     
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String!) -> Bool {

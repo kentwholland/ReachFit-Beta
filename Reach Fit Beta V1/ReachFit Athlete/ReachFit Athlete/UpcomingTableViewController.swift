@@ -57,6 +57,9 @@ class UpcomingTableViewController: UITableViewController {
                 (objects: AnyObject?, error: NSError?) -> Void in
                 if error == nil && objects != nil {
                     
+                    var objectsss: AnyObject? = objects
+                    println(objectsss)
+                    
                     self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
                     self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
                     self.instructorName.append(objects!.objectForKey("instructorName") as! String)

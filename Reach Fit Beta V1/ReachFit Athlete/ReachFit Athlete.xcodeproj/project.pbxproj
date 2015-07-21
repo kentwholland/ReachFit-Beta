@@ -14,7 +14,6 @@
 		D70F1A521B3B6E53005219B5 /* PastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A511B3B6E53005219B5 /* PastTableViewCell.swift */; };
 		D70F1A561B3B7FE2005219B5 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A551B3B7FE2005219B5 /* FindViewController.swift */; };
 		D70F1A5A1B3B94F1005219B5 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */; };
-		D70F1A5C1B3B951E005219B5 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */; };
 		D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */; };
 		D762E7561B581EE700D47D44 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762E7551B581EE700D47D44 /* DatePickerDialog.swift */; };
 		D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9681B351B1A0062EA27 /* Bolts.framework */; };
@@ -40,6 +39,10 @@
 		D77BE7721B35D3AF006B82F0 /* SignUpTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BE7711B35D3AF006B82F0 /* SignUpTwoViewController.swift */; };
 		D77BE7741B35DA30006B82F0 /* CurrentUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BE7731B35DA30006B82F0 /* CurrentUserInfo.swift */; };
 		D78E6B821B4336E3003AEAAC /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E6B811B4336E3003AEAAC /* SearchDetailViewController.swift */; };
+		D79484C61B5EE70200194D5D /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */; };
+		D79484C71B5EE70200194D5D /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C31B5EE70200194D5D /* ParseFacebookUtils.framework */; };
+		D79484C81B5EE70200194D5D /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C41B5EE70200194D5D /* ParseFacebookUtilsV4.framework */; };
+		D79484C91B5EE70200194D5D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C51B5EE70200194D5D /* ParseUI.framework */; };
 		D79C94331B393F840095FCD7 /* MainProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C94321B393F840095FCD7 /* MainProfileViewController.swift */; };
 		D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */; };
 		D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7A552701B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld */; };
@@ -69,7 +72,6 @@
 		D70F1A511B3B6E53005219B5 /* PastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastTableViewCell.swift; sourceTree = "<group>"; };
 		D70F1A551B3B7FE2005219B5 /* FindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindViewController.swift; sourceTree = "<group>"; };
 		D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
-		D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		D70F1A5F1B3B95C7005219B5 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D762E7551B581EE700D47D44 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
 		D765A9681B351B1A0062EA27 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -95,6 +97,10 @@
 		D77BE7711B35D3AF006B82F0 /* SignUpTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTwoViewController.swift; sourceTree = "<group>"; };
 		D77BE7731B35DA30006B82F0 /* CurrentUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserInfo.swift; sourceTree = "<group>"; };
 		D78E6B811B4336E3003AEAAC /* SearchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
+		D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		D79484C31B5EE70200194D5D /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		D79484C41B5EE70200194D5D /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		D79484C51B5EE70200194D5D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		D79C94321B393F840095FCD7 /* MainProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainProfileViewController.swift; sourceTree = "<group>"; };
 		D7A552691B3358A2009CC6DB /* ReachFit Athlete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReachFit Athlete.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A5526D1B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,17 +123,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D765A98A1B351C130062EA27 /* libsqlite3.dylib in Frameworks */,
+				D79484C61B5EE70200194D5D /* ParseCrashReporting.framework in Frameworks */,
 				D765A9881B351C0B0062EA27 /* libz.dylib in Frameworks */,
 				D765A9861B351C010062EA27 /* SystemConfiguration.framework in Frameworks */,
 				D765A9841B351BFA0062EA27 /* StoreKit.framework in Frameworks */,
+				D79484C71B5EE70200194D5D /* ParseFacebookUtils.framework in Frameworks */,
 				D765A9821B351BF60062EA27 /* Social.framework in Frameworks */,
 				D765A9801B351BF20062EA27 /* Security.framework in Frameworks */,
 				D765A97E1B351BED0062EA27 /* QuartzCore.framework in Frameworks */,
+				D79484C91B5EE70200194D5D /* ParseUI.framework in Frameworks */,
 				D765A97C1B351BE90062EA27 /* MobileCoreServices.framework in Frameworks */,
 				D765A97A1B351BE30062EA27 /* CoreLocation.framework in Frameworks */,
 				D765A9781B351BDE0062EA27 /* CoreGraphics.framework in Frameworks */,
 				D765A9761B351BD80062EA27 /* CFNetwork.framework in Frameworks */,
 				D765A9741B351BD30062EA27 /* AudioToolbox.framework in Frameworks */,
+				D79484C81B5EE70200194D5D /* ParseFacebookUtilsV4.framework in Frameworks */,
 				D765A9721B351BCF0062EA27 /* Accounts.framework in Frameworks */,
 				D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */,
 				D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */,
@@ -196,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				D70F1A591B3B94F1005219B5 /* SearchTableViewController.swift */,
-				D70F1A5B1B3B951E005219B5 /* SearchTableViewCell.swift */,
 				D7C6187C1B3F9415008B0355 /* Detail VC */,
 			);
 			name = "Search SubTab 1";
@@ -292,6 +301,10 @@
 		D7A5526C1B3358A2009CC6DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */,
+				D79484C31B5EE70200194D5D /* ParseFacebookUtils.framework */,
+				D79484C41B5EE70200194D5D /* ParseFacebookUtilsV4.framework */,
+				D79484C51B5EE70200194D5D /* ParseUI.framework */,
 				D762E7551B581EE700D47D44 /* DatePickerDialog.swift */,
 				D72231671B4F11B80031B386 /* NSDate SDK */,
 				D765A9701B351BAD0062EA27 /* Frameworks */,
@@ -441,7 +454,6 @@
 				D77BE73D1B35CA67006B82F0 /* SignUpViewController.swift in Sources */,
 				D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */,
 				D77BE7721B35D3AF006B82F0 /* SignUpTwoViewController.swift in Sources */,
-				D70F1A5C1B3B951E005219B5 /* SearchTableViewCell.swift in Sources */,
 				D70F1A521B3B6E53005219B5 /* PastTableViewCell.swift in Sources */,
 				D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */,
 				D77BE7701B35CA87006B82F0 /* LoginViewController.swift in Sources */,
@@ -582,6 +594,8 @@
 					Fit,
 					Beta,
 					"V1/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/ReachFit",
+					Athlete,
 				);
 				INFOPLIST_FILE = "ReachFit Athlete/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -600,6 +614,8 @@
 					Fit,
 					Beta,
 					"V1/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/ReachFit",
+					Athlete,
 				);
 				INFOPLIST_FILE = "ReachFit Athlete/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

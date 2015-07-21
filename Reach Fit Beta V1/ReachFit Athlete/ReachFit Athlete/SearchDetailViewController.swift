@@ -8,94 +8,48 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class SearchDetailViewController: UIViewController {
     
-    var classesIds: [String] = [String]()
+    var currentObject : PFObject?
+    
+    var usersInClass: [String] = [String]()
+    var currentObjectID: String = String()
+    
+    @IBOutlet weak var instructorLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var musicTypeLabel: UILabel!
+    @IBOutlet weak var instensityLabel: UILabel!
     
     @IBOutlet weak var joinLeaveButton: UIButton!
     
-    @IBOutlet weak var instructorLabel: UILabel!
-    @IBOutlet weak var intensityLabel: UILabel!
-    @IBOutlet weak var musicTypeLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    
-    var viewControllerTitle: String = ""
-    var classInstructor: String = ""
-    var classIntensity: String = ""
-    var classMusicType: String = ""
-    var classDate: String = ""
-    var classCity: String = ""
-    var classIds: String = ""
-    
-    @IBAction func addOrRemoveFromClasses(sender: AnyObject) {
+    func checkUserState() {
         
-        if self.joinLeaveButton.titleLabel?.text == "Join" {
+        if contains(usersInClass, PFUser.currentUser()!.objectId!) {
             
-            println("user \(PFUser.currentUser()!.objectId!) joined :)")
-            
-            PFUser.currentUser()?.addObject(self.classIds, forKey: "subscribedClasses")
-            PFUser.currentUser()?.save()
-            var classesQuery = PFQuery(className: "WorkoutClasses")
-            var classesObject = classesQuery.getObjectWithId(self.classIds)
-            classesObject!.addObject(PFUser.currentUser()!.objectId!, forKey: "classStudents")
-            classesObject!.save()
-            
-            runObjectFind()
-            
-            
-        } else if self.joinLeaveButton.titleLabel?.text == "Leave" {
-            
-            PFUser.currentUser()?.removeObject(self.classIds, forKey: "subscribedClasses")
-            PFUser.currentUser()?.save()
-            var classesQuery = PFQuery(className: "WorkoutClasses")
-            var classesObject = classesQuery.getObjectWithId(self.classIds)
-            classesObject!.removeObject(PFUser.currentUser()!.objectId!, forKey: "classStudents")
-            classesObject!.save()
-            
-            println("user \(PFUser.currentUser()!.objectId!) left :'(")
-            
-            runObjectFind()
-            
-        }
-        
-    }
-    
-    func constantCheck() {
-        
-        if contains(classesIds, PFUser.currentUser()!.objectId!) {
-            
-            joinLeaveButton.setTitle("Leave", forState: UIControlState.Normal)
+            joinLeaveButton.setTitle("Leave", forState: .Normal)
             
         } else {
             
-            joinLeaveButton.setTitle("Join", forState: UIControlState.Normal)
+            joinLeaveButton.setTitle("Join", forState: .Normal)
             
         }
         
     }
     
-    func runObjectFind() {
+    func resetData() {
         
-        var query = PFQuery(className:"WorkoutClasses")
-        query.getObjectInBackgroundWithId("\(classIds)") {
-            (object: PFObject?, error: NSError?) -> Void in
-            if error != nil {
-                
-                println("error")
-                
-            } else if object == nil {
-                
-                println("nothing in here")
-                
-            } else if object != nil {
-                
-                var usersInClass: AnyObject? = object?.objectForKey("classStudents") as! [String]
-                self.classesIds = usersInClass as! [String]
-                println(self.classesIds)
-                
-            }
+        if let object = currentObject {
+            
+            usersInClass = object["classStudents"] as! [String]
+            instructorLabel.text = object["instructorName"] as? String
+            dateLabel.text = object["dateOfClass"] as? String
+            cityLabel.text = object["locationOfClass"] as? String
+            musicTypeLabel.text = object["classMusicType"] as? String
+            instensityLabel.text = object["workoutIntensity"] as? String
+            
         }
         
     }
@@ -103,16 +57,51 @@ class SearchDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        runObjectFind()
+        var timer: NSTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("checkUserState"), userInfo: nil, repeats: true)
         
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("constantCheck"), userInfo: nil, repeats: true)
+        if let object = currentObject {
+            
+            currentObjectID = object.objectId! as String!
+            usersInClass = object["classStudents"] as! [String]
+            self.navigationItem.title = object["workoutClassName"] as? String
+            instructorLabel.text = object["instructorName"] as? String
+            dateLabel.text = object["dateOfClass"] as? String
+            cityLabel.text = object["locationOfClass"] as? String
+            musicTypeLabel.text = object["classMusicType"] as? String
+            instensityLabel.text = object["workoutIntensity"] as? String
+            
+        }
         
-        instructorLabel.text = classInstructor
-        intensityLabel.text = classIntensity
-        musicTypeLabel.text = classMusicType
-        dateLabel.text = classDate
-        cityLabel.text = classCity
-        self.navigationItem.title = viewControllerTitle
+    }
+    
+    @IBAction func joinLeaveClass(sender: AnyObject) {
+        
+        if joinLeaveButton.titleLabel?.text == "Join" {
+            
+            println("join")
+            PFUser.currentUser()?.addObject(self.currentObjectID, forKey: "subscribedClasses")
+            PFUser.currentUser()?.save()
+            var classesQuery = PFQuery(className: "WorkoutClasses")
+            var classesObject = classesQuery.getObjectWithId(self.currentObjectID)
+            classesObject!.addObject(PFUser.currentUser()!.objectId!, forKey: "classStudents")
+            classesObject!.save()
+            
+        } else if joinLeaveButton.titleLabel?.text == "Leave" {
+            
+            println("Leave")
+            PFUser.currentUser()?.removeObject(self.currentObjectID, forKey: "subscribedClasses")
+            PFUser.currentUser()?.save()
+            var classesQuery = PFQuery(className: "WorkoutClasses")
+            var classesObject = classesQuery.getObjectWithId(self.currentObjectID)
+            classesObject!.removeObject(PFUser.currentUser()!.objectId!, forKey: "classStudents")
+            classesObject!.save()
+            
+            
+        } else {
+            
+            println("There is no option at this point")
+            
+        }
         
     }
 

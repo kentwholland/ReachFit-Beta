@@ -28,7 +28,7 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
         if cell == nil {
             cell = PFTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "SearchTableViewCellBox")
         }
-        
+
         // Extract values from the PFObject to display in the table cell
         if let nameEnglish = object?["workoutClassName"] as? String {
             

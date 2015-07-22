@@ -41,7 +41,6 @@
 		D78E6B821B4336E3003AEAAC /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E6B811B4336E3003AEAAC /* SearchDetailViewController.swift */; };
 		D79484C61B5EE70200194D5D /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */; };
 		D79484C91B5EE70200194D5D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C51B5EE70200194D5D /* ParseUI.framework */; };
-		D79485011B5F2AFE00194D5D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79485001B5F2AFE00194D5D /* Bolts.framework */; };
 		D79B17701B6000BD00B1CDD5 /* KSToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = D79B176F1B6000BD00B1CDD5 /* KSToastView.m */; };
 		D79C94331B393F840095FCD7 /* MainProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C94321B393F840095FCD7 /* MainProfileViewController.swift */; };
 		D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */; };
@@ -98,7 +97,6 @@
 		D78E6B811B4336E3003AEAAC /* SearchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		D79484C51B5EE70200194D5D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		D79485001B5F2AFE00194D5D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../../../Downloads/parse-library-1.7.5/Bolts.framework"; sourceTree = "<group>"; };
 		D79B176D1B6000BC00B1CDD5 /* ReachFit Athlete-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReachFit Athlete-Bridging-Header.h"; sourceTree = "<group>"; };
 		D79B176E1B6000BD00B1CDD5 /* KSToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSToastView.h; sourceTree = "<group>"; };
 		D79B176F1B6000BD00B1CDD5 /* KSToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSToastView.m; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		D7A552811B3358A2009CC6DB /* ReachFit AthleteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReachFit AthleteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A552861B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachFit_AthleteTests.swift; sourceTree = "<group>"; };
-		D7B29A851B5074D9000537E2 /* testCode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = testCode.playground; sourceTree = "<group>"; };
 		D7B29A881B507A7D000537E2 /* NSDateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionTests.swift; sourceTree = "<group>"; };
 		D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,7 +136,6 @@
 				D765A9721B351BCF0062EA27 /* Accounts.framework in Frameworks */,
 				D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */,
 				D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */,
-				D79485011B5F2AFE00194D5D /* Bolts.framework in Frameworks */,
 				D765A96F1B351B1A0062EA27 /* ParseUI.framework in Frameworks */,
 				D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */,
 			);
@@ -267,7 +263,6 @@
 		D7A552601B3358A2009CC6DB = {
 			isa = PBXGroup;
 			children = (
-				D7B29A851B5074D9000537E2 /* testCode.playground */,
 				D7A5526B1B3358A2009CC6DB /* ReachFit Athlete */,
 				D7A552841B3358A2009CC6DB /* ReachFit AthleteTests */,
 				D7A5526A1B3358A2009CC6DB /* Products */,
@@ -302,7 +297,6 @@
 			children = (
 				D79B176E1B6000BD00B1CDD5 /* KSToastView.h */,
 				D79B176F1B6000BD00B1CDD5 /* KSToastView.m */,
-				D79485001B5F2AFE00194D5D /* Bolts.framework */,
 				D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */,
 				D79484C51B5EE70200194D5D /* ParseUI.framework */,
 				D762E7551B581EE700D47D44 /* DatePickerDialog.swift */,

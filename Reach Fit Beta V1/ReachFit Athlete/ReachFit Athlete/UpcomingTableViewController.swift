@@ -13,65 +13,12 @@ import Bolts
 
 class UpcomingTableViewController: PFQueryTableViewController {
     
-    @IBOutlet weak var searchBar: UISearchBar!
-    var stringDate: String = String()
-    
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
-        
         super.init(style: style, className: className)
     }
     
-    //override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
-        
-        var cell = tableView.dequeueReusableCellWithIdentifier("upcomingTableViewCellBox") as! PFTableViewCell!
-        if cell == nil {
-            cell = PFTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "upcomingTableViewCellBox")
-        }
-        
-        // Extract values from the PFObject to display in the table cell
-        if let nameEnglish = object?["workoutClassName"] as? String {
-            
-            if let instructorName = object?["instructorName"] as? String {
-                
-                cell?.textLabel?.text = "\(nameEnglish), \(instructorName)"
-                
-            }
-            
-        }
-        
-        if let dateObject = object?["dateOfClass"] as? NSDate {
-            
-            var dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm a"
-            var dateNSDate: String = dateFormatter.stringFromDate(dateObject)
-            stringDate = dateNSDate
-            
-        }
-        
-        if let capital = object?["locationOfClass"] as? String {
-            
-            cell?.detailTextLabel?.text = "\(capital), \(stringDate)"
-            
-        }
-        
-        return cell
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        // Get the new view controller using [segue destinationViewController].
-        var detailScene = segue.destinationViewController as! SearchDetailViewController
-        
-        // Pass the selected object to the destination view controller.
-        if let indexPath = self.tableView.indexPathForSelectedRow() {
-            let row = Int(indexPath.row)
-            detailScene.currentObject = (objects?[row] as! PFObject)
-        }
-    }
-    
-    required init(coder aDecoder: NSCoder) {
+    required init!(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         // Configure the PFQueryTableView
@@ -81,24 +28,38 @@ class UpcomingTableViewController: PFQueryTableViewController {
         self.paginationEnabled = false
     }
     
-    override func viewDidAppear(animated: Bool) {
-        
-        super.viewDidAppear(true)
-        self.loadObjects()
-        
-    }
-    
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "WorkoutClasses")
-        
-        // Order the results
         query.orderByAscending("workoutClassName")
-        query.whereKey("dateOfClass", greaterThan: NSDate())
-        query.whereKey("classStudents", containsString: PFUser.currentUser()?.objectId)
-        
-        // Return the qwuery object
+        query.whereKey("classStudents", containsString: PFUser.currentUser()?.objectId! as String!)
         return query
+    }
+    
+    //override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as! PFTableViewCell!
+        if cell == nil {
+            cell = PFTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        }
+        
+        // Extract values from the PFObject to display in the table cell
+        if let className = object?["workoutClassName"] as? String {
+            cell?.textLabel?.text = className
+        }
+        if let locationOfClass = object?["locationOfClass"] as? String {
+            cell?.detailTextLabel?.text = locationOfClass
+        }
+        
+        return cell
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        // Refresh the table to ensure any data changes are displayed
+        tableView.reloadData()
+        self.loadObjects()
     }
     
 }

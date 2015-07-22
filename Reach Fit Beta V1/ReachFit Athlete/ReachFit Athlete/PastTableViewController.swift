@@ -8,210 +8,96 @@
 
 import UIKit
 import Parse
+import ParseUI
+import Bolts
 
-class PastTableViewController: UITableViewController {
+class PastTableViewController: PFQueryTableViewController {
     
-    var classesIds: [String] = [String]()
-    var indexOfItemToRemove: Int = Int()
+    @IBOutlet weak var searchBar: UISearchBar!
+    var stringDate: String = String()
     
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
-    
-    // Class data intializer
-    var workoutClassName: [String] = [String]()
-    var instructorName: [String] = [String]()
-    var workoutIntensity: [String] = [String]()
-    var classMusicType: [String] = [String]()
-    var dateOfClass: [NSDate] = [NSDate]()
-    var locationOfClass: [String] = [String]()
-    var dateOfClassString: [String] = [String]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // Initialise the PFQueryTable tableview
+    override init(style: UITableViewStyle, className: String!) {
         
-        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        super.init(style: style, className: className)
+    }
+    
+    //override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell {
         
-        activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+        var cell = tableView.dequeueReusableCellWithIdentifier("pastTableViewCellBox") as! PFTableViewCell!
+        if cell == nil {
+            cell = PFTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "pastTableViewCellBox")
+        }
         
+        // Extract values from the PFObject to display in the table cell
+        if let nameEnglish = object?["workoutClassName"] as? String {
+            
+            if let instructorName = object?["instructorName"] as? String {
+                
+                cell?.textLabel?.text = "\(nameEnglish), \(instructorName)"
+                
+            }
+            
+        }
+        
+        if let dateObject = object?["dateOfClass"] as? NSDate {
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm a"
+            var dateNSDate: String = dateFormatter.stringFromDate(dateObject)
+            stringDate = dateNSDate
+            
+        }
+        
+        if let capital = object?["locationOfClass"] as? String {
+            
+            cell?.detailTextLabel?.text = "\(capital), \(stringDate)"
+            
+        }
+        
+        return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // Get the new view controller using [segue destinationViewController].
+        var detailScene = segue.destinationViewController as! SearchDetailViewController
+        
+        // Pass the selected object to the destination view controller.
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            let row = Int(indexPath.row)
+            detailScene.currentObject = (objects?[row] as! PFObject)
+        }
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        // Configure the PFQueryTableView
+        self.parseClassName = "WorkoutClasses"
+        self.textKey = "workoutClassName"
+        self.pullToRefreshEnabled = true
+        self.paginationEnabled = false
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        var subscribedClasses: [String] = PFUser.currentUser()!.objectForKey("subscribedClasses") as! [String]
-        
-        workoutClassName = []
-        instructorName = []
-        workoutIntensity = []
-        classMusicType = []
-        dateOfClass = []
-        locationOfClass = []
-        
-        for object in subscribedClasses {
-            
-            var query = PFQuery(className: "WorkoutClasses")
-            query.getObjectInBackgroundWithId(object) {
-                (objects: AnyObject?, error: NSError?) -> Void in
-                if error == nil && objects != nil {
-                    
-                    var currentDate: NSDate = NSDate()
-                    
-                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
-                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
-                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
-                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
-                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
-                    
-                    for objects in self.dateOfClass {
-                        
-                        if objects > currentDate {
-                            
-                            self.indexOfItemToRemove = find(self.dateOfClass, objects)!
-                            
-                            self.workoutClassName.removeAtIndex(self.indexOfItemToRemove)
-                            self.instructorName.removeAtIndex(self.indexOfItemToRemove)
-                            self.workoutIntensity.removeAtIndex(self.indexOfItemToRemove)
-                            self.classMusicType.removeAtIndex(self.indexOfItemToRemove)
-                            self.dateOfClass.removeAtIndex(self.indexOfItemToRemove)
-                            self.locationOfClass.removeAtIndex(self.indexOfItemToRemove)
-                            
-                        }
-                        
-                    }
-                    
-                    for objects in self.dateOfClass {
-                        
-                        var dateFormatter = NSDateFormatter()
-                        dateFormatter.dateFormat = "MM/dd/yyyy H:mm a"
-                        var dateNSDate: String = dateFormatter.stringFromDate(objects)
-                        var stringTest: String = dateNSDate
-                        self.dateOfClassString.append(stringTest)
-                        
-                    }
-                    
-                    self.tableView.reloadData()
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                    
-                } else {
-                    
-                    println(error)
-                    self.activityIndicator.stopAnimating()
-                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
-                    
-                }
-                
-                self.tableView.reloadData()
-                
-            }
-            
-        }
+        super.viewDidAppear(true)
+        self.loadObjects()
         
     }
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
+    // Define the query that will provide the data for the table view
+    override func queryForTable() -> PFQuery {
+        var query = PFQuery(className: "WorkoutClasses")
         
-        var subscribedClasses: [String] = PFUser.currentUser()!.objectForKey("subscribedClasses") as! [String]
+        // Order the results
+        query.orderByAscending("workoutClassName")
+        query.whereKey("dateOfClass", lessThan: NSDate())
         
-        workoutClassName = []
-        instructorName = []
-        workoutIntensity = []
-        classMusicType = []
-        dateOfClass = []
-        locationOfClass = []
-        dateOfClassString = []
-        
-        for object in subscribedClasses {
-            
-            var query = PFQuery(className: "WorkoutClasses")
-            query.getObjectInBackgroundWithId(object) {
-                (objects: AnyObject?, error: NSError?) -> Void in
-                if error == nil && objects != nil {
-                    
-                    var currentDate: NSDate = NSDate()
-                    
-                    self.workoutClassName.append(objects!.objectForKey("workoutClassName") as! String)
-                    self.instructorName.append(objects!.objectForKey("instructorName") as! String)
-                    self.workoutIntensity.append(objects!.objectForKey("workoutIntensity") as! String)
-                    self.classMusicType.append(objects!.objectForKey("classMusicType") as! String)
-                    self.dateOfClass.append(objects!.objectForKey("dateOfClass") as! NSDate)
-                    self.locationOfClass.append(objects!.objectForKey("locationOfClass") as! String)
-                    
-                    for objects in self.dateOfClass {
-                        
-                        if objects > currentDate {
-                            
-                            self.indexOfItemToRemove = find(self.dateOfClass, objects)!
-                            
-                            self.workoutClassName.removeAtIndex(self.indexOfItemToRemove)
-                            self.instructorName.removeAtIndex(self.indexOfItemToRemove)
-                            self.workoutIntensity.removeAtIndex(self.indexOfItemToRemove)
-                            self.classMusicType.removeAtIndex(self.indexOfItemToRemove)
-                            self.dateOfClass.removeAtIndex(self.indexOfItemToRemove)
-                            self.locationOfClass.removeAtIndex(self.indexOfItemToRemove)
-                            
-                        }
-                        
-                    }
-                    
-                    for objects in self.dateOfClass {
-                        
-                        var dateFormatter = NSDateFormatter()
-                        dateFormatter.dateFormat = "MM/dd/yyyy H:mm a"
-                        var dateNSDate: String = dateFormatter.stringFromDate(objects)
-                        var stringTest: String = dateNSDate
-                        self.dateOfClassString.append(stringTest)
-                        
-                    }
-                    
-                    self.tableView.reloadData()
-                    
-                } else {
-                    
-                    println(error)
-                    
-                }
-                
-                self.tableView.reloadData()
-                
-            }
-            
-        }
-        
-        refreshControl.endRefreshing()
-        
-    }
-    
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.workoutClassName.count
-        
-    }
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("pastTableViewCellBox") as? PastTableViewCell
-        
-        if self.workoutClassName.count > 0 {
-            
-            cell!.pastClassInstructorLabel.text = "\(workoutClassName[indexPath.row]), \(instructorName[indexPath.row])"
-            cell!.pastDateCityLabel.text = "\(dateOfClassString[indexPath.row]), \(locationOfClass[indexPath.row])"
-            cell!.pastIntensityLabel.text = "\(workoutIntensity[indexPath.row])"
-            
-        }
-        
-        return cell!
-        
+        // Return the qwuery object
+        return query
     }
     
 }

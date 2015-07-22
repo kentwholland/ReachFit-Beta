@@ -531,12 +531,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="eZI-8i-fEv">
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" showsCancelButton="YES" id="5dk-P6-9bu">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
+                            <scopeButtonTitles>
+                                <string>Title</string>
+                                <string>Title</string>
+                            </scopeButtonTitles>
                             <connections>
-                                <outlet property="delegate" destination="xv0-x3-3il" id="sou-tQ-hnn"/>
+                                <outlet property="delegate" destination="xv0-x3-3il" id="6v9-qc-iN4"/>
                             </connections>
                         </searchBar>
                         <prototypes>
@@ -574,35 +578,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="searchDisplayController" destination="ory-BI-Fno" id="lBI-UH-NBE"/>
+                        <outlet property="searchBar" destination="5dk-P6-9bu" id="jEK-SM-yxu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsV-FX-0PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="nuw-zF-cjE">
-                    <connections>
-                        <outlet property="delegate" destination="xv0-x3-3il" id="ppt-GA-R7L"/>
-                        <outlet property="searchContentsController" destination="xv0-x3-3il" id="wGw-th-xpm"/>
-                        <outlet property="searchResultsDataSource" destination="xv0-x3-3il" id="3LO-pl-PHv"/>
-                        <outlet property="searchResultsDelegate" destination="xv0-x3-3il" id="YIv-pL-Rk3"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="CZB-ww-wrP">
-                    <connections>
-                        <outlet property="delegate" destination="xv0-x3-3il" id="teE-66-scf"/>
-                        <outlet property="searchContentsController" destination="xv0-x3-3il" id="VJZ-Op-01j"/>
-                        <outlet property="searchResultsDataSource" destination="xv0-x3-3il" id="MuR-Dv-1ar"/>
-                        <outlet property="searchResultsDelegate" destination="xv0-x3-3il" id="KZW-07-vCJ"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="ory-BI-Fno">
-                    <connections>
-                        <outlet property="delegate" destination="xv0-x3-3il" id="php-LM-i6S"/>
-                        <outlet property="searchBar" destination="eZI-8i-fEv" id="0UC-0A-qNf"/>
-                        <outlet property="searchContentsController" destination="xv0-x3-3il" id="KS9-Kj-zZ9"/>
-                        <outlet property="searchResultsDataSource" destination="xv0-x3-3il" id="k6a-C3-NQr"/>
-                        <outlet property="searchResultsDelegate" destination="xv0-x3-3il" id="FJd-3w-fB7"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2827" y="-63"/>
         </scene>

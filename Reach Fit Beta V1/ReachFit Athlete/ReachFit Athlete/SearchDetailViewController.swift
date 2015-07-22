@@ -64,6 +64,9 @@ class SearchDetailViewController: UIViewController {
         if joinLeaveButton.titleLabel?.text == "Join" {
             
             println("join")
+            KSToastView.ks_showToast("Class Joined", duration: 1.5, completion: { () -> Void in
+                
+            })
             PFUser.currentUser()?.addObject(self.currentObjectID, forKey: "subscribedClasses")
             PFUser.currentUser()?.save()
             var classesQuery = PFQuery(className: "WorkoutClasses")
@@ -76,6 +79,9 @@ class SearchDetailViewController: UIViewController {
         } else if joinLeaveButton.titleLabel?.text == "Leave" {
             
             println("Leave")
+            KSToastView.ks_showToast("Class Left", duration: 1.5, completion: { () -> Void in
+                
+            })
             PFUser.currentUser()?.removeObject(self.currentObjectID, forKey: "subscribedClasses")
             PFUser.currentUser()?.save()
             var classesQuery = PFQuery(className: "WorkoutClasses")

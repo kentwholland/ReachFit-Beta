@@ -11,7 +11,9 @@ import Parse
 import ParseUI
 import Bolts
 
-class SearchTableViewController: PFQueryTableViewController {
+class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
@@ -75,11 +77,69 @@ class SearchTableViewController: PFQueryTableViewController {
         
     }
     
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        
+        // Dismiss the keyboard
+        searchBar.resignFirstResponder()
+        
+        // Force reload of table data
+        self.loadObjects()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        
+        // Dismiss the keyboard
+        searchBar.resignFirstResponder()
+        
+        // Force reload of table data
+        self.loadObjects()
+    }
+    
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        
+        // Clear any search criteria
+        searchBar.text = ""
+        
+        // Dismiss the keyboard
+        searchBar.resignFirstResponder()
+        
+        // Force reload of table data
+        self.loadObjects()
+    }
+    
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "WorkoutClasses")
+
+        if searchBar.text != "" {
+            query.whereKey("searchText", containsString: searchBar.text.lowercaseString)
+        }
+        
+        // Order the results
         query.orderByAscending("workoutClassName")
+        
+        // Return the qwuery object
         return query
+    }
+    
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            // Delete the row from the data source
+            let objectToDelete = objects?[indexPath.row] as! PFObject
+            objectToDelete.deleteInBackgroundWithBlock {
+                (success: Bool, error: NSError?) -> Void in
+                if (success) {
+                    // Force a reload of the table - fetching fresh data from Parse platform
+                    self.loadObjects()
+                } else {
+                    // There was a problem, check error.description
+                }
+            }
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
     }
     
 }

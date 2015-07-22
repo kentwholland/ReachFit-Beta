@@ -14,6 +14,7 @@ import Bolts
 class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
+    var stringDate: String = String()
     
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
@@ -39,9 +40,19 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
             }
 
         }
+        
+        if let dateObject = object?["dateOfClass"] as? NSDate {
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm a"
+            var dateNSDate: String = dateFormatter.stringFromDate(dateObject)
+            stringDate = dateNSDate
+            
+        }
+        
         if let capital = object?["locationOfClass"] as? String {
             
-            cell?.detailTextLabel?.text = "\(capital)"
+            cell?.detailTextLabel?.text = "\(capital), \(stringDate)"
 
         }
         
@@ -122,25 +133,6 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
         
         // Return the qwuery object
         return query
-    }
-    
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            let objectToDelete = objects?[indexPath.row] as! PFObject
-            objectToDelete.deleteInBackgroundWithBlock {
-                (success: Bool, error: NSError?) -> Void in
-                if (success) {
-                    // Force a reload of the table - fetching fresh data from Parse platform
-                    self.loadObjects()
-                } else {
-                    // There was a problem, check error.description
-                }
-            }
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
     }
     
 }

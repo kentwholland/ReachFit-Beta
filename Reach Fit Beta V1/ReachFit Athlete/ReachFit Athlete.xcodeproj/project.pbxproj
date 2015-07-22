@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D70F1A451B3A6956005219B5 /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A441B3A6956005219B5 /* UpcomingTableViewCell.swift */; };
 		D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */; };
 		D70F1A4E1B3B68B8005219B5 /* MyFitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4D1B3B68B8005219B5 /* MyFitnessViewController.swift */; };
 		D70F1A501B3B6E12005219B5 /* PastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4F1B3B6E12005219B5 /* PastTableViewController.swift */; };
@@ -63,7 +62,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D70F1A441B3A6956005219B5 /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewController.swift; sourceTree = "<group>"; };
 		D70F1A4D1B3B68B8005219B5 /* MyFitnessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFitnessViewController.swift; sourceTree = "<group>"; };
 		D70F1A4F1B3B6E12005219B5 /* PastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastTableViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */,
-				D70F1A441B3A6956005219B5 /* UpcomingTableViewCell.swift */,
 			);
 			name = "Upcoming SubTab 1";
 			sourceTree = "<group>";
@@ -453,7 +450,6 @@
 				D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */,
 				D77BE7701B35CA87006B82F0 /* LoginViewController.swift in Sources */,
 				D7B29A891B507A7D000537E2 /* NSDateExtensionTests.swift in Sources */,
-				D70F1A451B3A6956005219B5 /* UpcomingTableViewCell.swift in Sources */,
 				D79C94331B393F840095FCD7 /* MainProfileViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

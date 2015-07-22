@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import ParseUI
+import Bolts
 
 class SearchTableViewController: PFQueryTableViewController {
     
@@ -65,6 +66,13 @@ class SearchTableViewController: PFQueryTableViewController {
         self.textKey = "workoutClassName"
         self.pullToRefreshEnabled = true
         self.paginationEnabled = false
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(true)
+        self.loadObjects()
+        
     }
     
     // Define the query that will provide the data for the table view

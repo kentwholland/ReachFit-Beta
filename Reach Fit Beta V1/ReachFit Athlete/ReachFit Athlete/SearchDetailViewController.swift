@@ -39,21 +39,6 @@ class SearchDetailViewController: UIViewController {
         
     }
     
-    func resetData() {
-        
-        if let object = currentObject {
-            
-            usersInClass = object["classStudents"] as! [String]
-            instructorLabel.text = object["instructorName"] as? String
-            dateLabel.text = object["dateOfClass"] as? String
-            cityLabel.text = object["locationOfClass"] as? String
-            musicTypeLabel.text = object["classMusicType"] as? String
-            instensityLabel.text = object["workoutIntensity"] as? String
-            
-        }
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -86,6 +71,8 @@ class SearchDetailViewController: UIViewController {
             classesObject!.addObject(PFUser.currentUser()!.objectId!, forKey: "classStudents")
             classesObject!.save()
             
+            navigationController?.popViewControllerAnimated(true)
+            
         } else if joinLeaveButton.titleLabel?.text == "Leave" {
             
             println("Leave")
@@ -96,6 +83,7 @@ class SearchDetailViewController: UIViewController {
             classesObject!.removeObject(PFUser.currentUser()!.objectId!, forKey: "classStudents")
             classesObject!.save()
             
+            navigationController?.popViewControllerAnimated(true)
             
         } else {
             

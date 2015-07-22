@@ -32,8 +32,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-        println(locations)
-        
         var userLocation:CLLocation = locations[0] as! CLLocation
         
         var latitude:CLLocationDegrees = userLocation.coordinate.latitude

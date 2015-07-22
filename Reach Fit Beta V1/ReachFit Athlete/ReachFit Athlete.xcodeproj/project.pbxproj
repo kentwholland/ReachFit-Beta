@@ -43,6 +43,7 @@
 		D79484C71B5EE70200194D5D /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C31B5EE70200194D5D /* ParseFacebookUtils.framework */; };
 		D79484C81B5EE70200194D5D /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C41B5EE70200194D5D /* ParseFacebookUtilsV4.framework */; };
 		D79484C91B5EE70200194D5D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C51B5EE70200194D5D /* ParseUI.framework */; };
+		D79485011B5F2AFE00194D5D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79485001B5F2AFE00194D5D /* Bolts.framework */; };
 		D79C94331B393F840095FCD7 /* MainProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79C94321B393F840095FCD7 /* MainProfileViewController.swift */; };
 		D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */; };
 		D7A552721B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D7A552701B3358A2009CC6DB /* ReachFit_Athlete.xcdatamodeld */; };
@@ -101,6 +102,7 @@
 		D79484C31B5EE70200194D5D /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		D79484C41B5EE70200194D5D /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		D79484C51B5EE70200194D5D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		D79485001B5F2AFE00194D5D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../../../../../Downloads/parse-library-1.7.5/Bolts.framework"; sourceTree = "<group>"; };
 		D79C94321B393F840095FCD7 /* MainProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainProfileViewController.swift; sourceTree = "<group>"; };
 		D7A552691B3358A2009CC6DB /* ReachFit Athlete.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ReachFit Athlete.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A5526D1B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				D765A9721B351BCF0062EA27 /* Accounts.framework in Frameworks */,
 				D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */,
 				D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */,
+				D79485011B5F2AFE00194D5D /* Bolts.framework in Frameworks */,
 				D765A96F1B351B1A0062EA27 /* ParseUI.framework in Frameworks */,
 				D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */,
 			);
@@ -301,6 +304,7 @@
 		D7A5526C1B3358A2009CC6DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D79485001B5F2AFE00194D5D /* Bolts.framework */,
 				D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */,
 				D79484C31B5EE70200194D5D /* ParseFacebookUtils.framework */,
 				D79484C41B5EE70200194D5D /* ParseFacebookUtilsV4.framework */,
@@ -596,6 +600,7 @@
 					"V1/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/ReachFit",
 					Athlete,
+					"/Users/stefandeclerck/Downloads/parse-library-1.7.5",
 				);
 				INFOPLIST_FILE = "ReachFit Athlete/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -616,6 +621,7 @@
 					"V1/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/ReachFit",
 					Athlete,
+					"/Users/stefandeclerck/Downloads/parse-library-1.7.5",
 				);
 				INFOPLIST_FILE = "ReachFit Athlete/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

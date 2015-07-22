@@ -32,10 +32,10 @@
 		D765A9881B351C0B0062EA27 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9871B351C0B0062EA27 /* libz.dylib */; };
 		D765A98A1B351C130062EA27 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D765A9891B351C130062EA27 /* libsqlite3.dylib */; };
 		D765A98C1B35C7BC0062EA27 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D765A98B1B35C7BC0062EA27 /* StartingViewController.swift */; };
+		D76E30401B604D3A00A020D7 /* PastDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76E303F1B604D3A00A020D7 /* PastDetailViewController.swift */; };
 		D77BE73D1B35CA67006B82F0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BE73C1B35CA67006B82F0 /* SignUpViewController.swift */; };
 		D77BE7701B35CA87006B82F0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BE76F1B35CA87006B82F0 /* LoginViewController.swift */; };
 		D77BE7721B35D3AF006B82F0 /* SignUpTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BE7711B35D3AF006B82F0 /* SignUpTwoViewController.swift */; };
-		D77BE7741B35DA30006B82F0 /* CurrentUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77BE7731B35DA30006B82F0 /* CurrentUserInfo.swift */; };
 		D78E6B821B4336E3003AEAAC /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E6B811B4336E3003AEAAC /* SearchDetailViewController.swift */; };
 		D79484C61B5EE70200194D5D /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */; };
 		D79484C91B5EE70200194D5D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79484C51B5EE70200194D5D /* ParseUI.framework */; };
@@ -86,10 +86,10 @@
 		D765A9871B351C0B0062EA27 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		D765A9891B351C130062EA27 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D765A98B1B35C7BC0062EA27 /* StartingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
+		D76E303F1B604D3A00A020D7 /* PastDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastDetailViewController.swift; sourceTree = "<group>"; };
 		D77BE73C1B35CA67006B82F0 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D77BE76F1B35CA87006B82F0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D77BE7711B35D3AF006B82F0 /* SignUpTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTwoViewController.swift; sourceTree = "<group>"; };
-		D77BE7731B35DA30006B82F0 /* CurrentUserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserInfo.swift; sourceTree = "<group>"; };
 		D78E6B811B4336E3003AEAAC /* SearchDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		D79484C21B5EE70200194D5D /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		D79484C51B5EE70200194D5D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
@@ -169,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				D70F1A4F1B3B6E12005219B5 /* PastTableViewController.swift */,
+				D76E303F1B604D3A00A020D7 /* PastDetailViewController.swift */,
 			);
 			name = "Past SubTab 2";
 			sourceTree = "<group>";
@@ -247,7 +248,6 @@
 		D79C94311B3937160095FCD7 /* My Profile */ = {
 			isa = PBXGroup;
 			children = (
-				D77BE7731B35DA30006B82F0 /* CurrentUserInfo.swift */,
 				D79C94321B393F840095FCD7 /* MainProfileViewController.swift */,
 				D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */,
 			);
@@ -430,7 +430,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70F1A4E1B3B68B8005219B5 /* MyFitnessViewController.swift in Sources */,
-				D77BE7741B35DA30006B82F0 /* CurrentUserInfo.swift in Sources */,
 				D78E6B821B4336E3003AEAAC /* SearchDetailViewController.swift in Sources */,
 				D7A5526F1B3358A2009CC6DB /* AppDelegate.swift in Sources */,
 				D765A98C1B35C7BC0062EA27 /* StartingViewController.swift in Sources */,
@@ -441,6 +440,7 @@
 				D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */,
 				D77BE73D1B35CA67006B82F0 /* SignUpViewController.swift in Sources */,
 				D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */,
+				D76E30401B604D3A00A020D7 /* PastDetailViewController.swift in Sources */,
 				D79B17701B6000BD00B1CDD5 /* KSToastView.m in Sources */,
 				D77BE7721B35D3AF006B82F0 /* SignUpTwoViewController.swift in Sources */,
 				D70F1A601B3B95C7005219B5 /* MapViewController.swift in Sources */,

@@ -13,6 +13,8 @@ import Bolts
 
 class UpcomingTableViewController: PFQueryTableViewController {
     
+    var stringDate: String = String()
+    
     // Initialise the PFQueryTable tableview
     override init(style: UITableViewStyle, className: String!) {
         super.init(style: style, className: className)
@@ -31,9 +33,22 @@ class UpcomingTableViewController: PFQueryTableViewController {
     // Define the query that will provide the data for the table view
     override func queryForTable() -> PFQuery {
         var query = PFQuery(className: "WorkoutClasses")
+        query.whereKey("dateOfClass", greaterThan: NSDate())
+        query.whereKey("classStudents", equalTo: PFUser.currentUser()?.objectId! as String!)
         query.orderByAscending("workoutClassName")
-        query.whereKey("classStudents", containsString: PFUser.currentUser()?.objectId! as String!)
         return query
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // Get the new view controller using [segue destinationViewController].
+        var detailScene = segue.destinationViewController as! SearchDetailViewController
+        
+        // Pass the selected object to the destination view controller.
+        if let indexPath = self.tableView.indexPathForSelectedRow() {
+            let row = Int(indexPath.row)
+            detailScene.currentObject = (objects?[row] as! PFObject)
+        }
     }
     
     //override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -44,12 +59,29 @@ class UpcomingTableViewController: PFQueryTableViewController {
             cell = PFTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         }
         
-        // Extract values from the PFObject to display in the table cell
-        if let className = object?["workoutClassName"] as? String {
-            cell?.textLabel?.text = className
+        if let dateObject = object?["dateOfClass"] as? NSDate {
+            
+            var dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yyyy HH:mm a"
+            var dateNSDate: String = dateFormatter.stringFromDate(dateObject)
+            stringDate = dateNSDate
+            
         }
-        if let locationOfClass = object?["locationOfClass"] as? String {
-            cell?.detailTextLabel?.text = locationOfClass
+        
+        // Extract values from the PFObject to display in the table cell
+        if let nameEnglish = object?["workoutClassName"] as? String {
+            
+            if let instructorName = object?["instructorName"] as? String {
+                
+                cell?.textLabel?.text = "\(nameEnglish), \(instructorName)"
+                
+            }
+            
+        }
+        if let capital = object?["locationOfClass"] as? String {
+            
+            cell?.detailTextLabel?.text = "\(capital), \(stringDate)"
+            
         }
         
         return cell

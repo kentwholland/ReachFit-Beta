@@ -63,9 +63,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
-                CurrentUserInfo.currentUserEmail = self.emailTextField.text
-                CurrentUserInfo.currentUserFirstName = self.firstNameTextField.text
-                CurrentUserInfo.currentUserLastName = self.lastNameTextField.text
                 println("success")
                 self.performSegueWithIdentifier("finishSignUp", sender:self)
             }

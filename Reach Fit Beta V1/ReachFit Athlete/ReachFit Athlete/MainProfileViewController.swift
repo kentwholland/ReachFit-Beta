@@ -69,15 +69,18 @@ class MainProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fitnessLevelNumber.text = "Your Fitness Level: \(CurrentUserInfo.currentUserFitnessLevel)"
-        fitnessGoalLabels.text = "\(CurrentUserInfo.currentUserFitnessGoals)"
+        fitnessLevelNumber.text = PFUser.currentUser()?.objectForKey("fitnessLevelNumber") as? String
+        fitnessGoalLabels.text = PFUser.currentUser()?.objectForKey("fitnessGoal") as? String
         profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
         profileImageView.clipsToBounds = true;
         profileImageView.userInteractionEnabled = true
         
-        self.userNameLabel.text = "\(CurrentUserInfo.currentUserFirstName) \(CurrentUserInfo.currentUserLastName)"
+        var firstName: String = PFUser.currentUser()?.objectForKey("firstName") as! String
+        var lastName: String = PFUser.currentUser()?.objectForKey("lastName") as! String
         
-        let pictureObject: AnyObject? = CurrentUserInfo.currentUserProfilePic
+        self.userNameLabel.text = "\(firstName) \(lastName)"
+        
+        let pictureObject: AnyObject? = PFUser.currentUser()?.objectForKey("profilePicture") as! PFFile
         pictureObject!.getDataInBackgroundWithBlock { (imageData: NSData?, error:NSError?) -> Void in
             if error == nil {
                 let image = UIImage(data: imageData!)

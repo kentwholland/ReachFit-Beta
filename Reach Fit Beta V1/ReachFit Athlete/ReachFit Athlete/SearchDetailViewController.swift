@@ -12,6 +12,7 @@ import ParseUI
 
 class SearchDetailViewController: UIViewController {
     
+    var stringDate: String = String()
     var currentObject : PFObject?
     
     var usersInClass: [String] = [String]()
@@ -42,20 +43,30 @@ class SearchDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var timer: NSTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: Selector("checkUserState"), userInfo: nil, repeats: true)
-        
         if let object = currentObject {
+            
+            if let dateObject = object["dateOfClass"] as? NSDate {
+                
+                var dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yyyy HH:mm a"
+                var dateNSDate: String = dateFormatter.stringFromDate(dateObject)
+                stringDate = dateNSDate
+                
+            }
             
             currentObjectID = object.objectId! as String!
             usersInClass = object["classStudents"] as! [String]
             self.navigationItem.title = object["workoutClassName"] as? String
             instructorLabel.text = object["instructorName"] as? String
-            dateLabel.text = object["dateOfClass"] as? String
+            dateLabel.text = stringDate
             cityLabel.text = object["locationOfClass"] as? String
             musicTypeLabel.text = object["classMusicType"] as? String
             instensityLabel.text = object["workoutIntensity"] as? String
             
         }
+        
+        checkUserState()
+
         
     }
     

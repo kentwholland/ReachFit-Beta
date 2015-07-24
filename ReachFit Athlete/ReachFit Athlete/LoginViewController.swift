@@ -24,6 +24,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 println("success")
                 self.performSegueWithIdentifier("finishLogin", sender: self)
             } else {
+                
+                var myError: String = error?.userInfo!["error"] as! String
+                KSToastView.ks_showToast("\(myError)", duration: 2.0, completion: { () -> Void in
+                    
+                    
+                })
                 println("Failure")
         
             }

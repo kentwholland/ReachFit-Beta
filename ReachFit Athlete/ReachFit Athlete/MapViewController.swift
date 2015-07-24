@@ -9,70 +9,51 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Parse
+import ParseUI
+import Bolts
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+var currentLoc: PFGeoPoint = PFGeoPoint()
+
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    
+    var query: PFQuery = PFQuery()
     var manager:CLLocationManager!
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        query = PFQuery(className: "WorkoutClasses")
+        query.whereKey("dateOfClass", greaterThanOrEqualTo: NSDate())
+        query.whereKey("classes", nearGeoPoint: currentLoc, withinMiles: 400)
+        
+        query.findObjectsInBackgroundWithBlock {
+            (posts, error) -> Void in
+            if error == nil {
+                
+                let myPosts = posts as! [PFObject]
+                
+                for post in myPosts {
+                    let point = post["classes"] as! PFGeoPoint
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
+                    self.mapView.addAnnotation(annotation)
+                }
+            } else {
+                // Log details of the failure
+                println("Error: \(error)")
+            }
+        }
+        
+        println(currentLoc)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        manager = CLLocationManager()
-        manager.delegate = self
-        manager.desiredAccuracy - kCLLocationAccuracyBest
-        manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
-        
         
     }
-    
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        
-        var userLocation:CLLocation = locations[0] as! CLLocation
-        
-        var latitude:CLLocationDegrees = userLocation.coordinate.latitude
-        
-        var longitude:CLLocationDegrees = userLocation.coordinate.longitude
-        
-        var latDelta:CLLocationDegrees = 0.05
-        
-        var lonDelta:CLLocationDegrees = 0.05
-        
-        var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
-        
-        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        var region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-        
-        mapView.setRegion(region, animated: false)
-        
-    }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

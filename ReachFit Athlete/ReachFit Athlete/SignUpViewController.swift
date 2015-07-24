@@ -58,13 +58,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error{
-                let alertController = UIAlertController(title: "Alert", message:
-                    "There is a problem with the given information", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
+                
+                var myError: String = error.userInfo!["error"] as! String
+                KSToastView.ks_showToast("\(myError)", duration: 2.0, completion: { () -> Void in
+                    
+                    
+                })
+                
             } else {
+                
                 println("success")
                 self.performSegueWithIdentifier("finishSignUp", sender:self)
+                
             }
         }
 
@@ -86,7 +91,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("checkInputComplete"), userInfo: nil, repeats: true)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.2, target: self, selector: Selector("checkInputComplete"), userInfo: nil, repeats: true)
 
         self.firstNameTextField.becomeFirstResponder()
 

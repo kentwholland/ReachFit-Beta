@@ -65,6 +65,8 @@ class SearchDetailViewController: UIViewController {
             
         }
         
+        println(currentObject)
+        
         checkUserState()
 
         

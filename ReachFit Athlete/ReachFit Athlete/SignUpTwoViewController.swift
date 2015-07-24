@@ -42,14 +42,11 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
         println(fitnessGoalTextViewText)
         
         if fitnessGoalTextView.text == "Describe your fitness goal!" || profileImage.image == nil{
-            var alert = UIAlertController(title: "Error", message: "Make sure to complete all inputs", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-                
-                alert.dismissViewControllerAnimated(true, completion: nil)
-                
-            })))
             
-            self.presentViewController(alert, animated: true, completion: nil)
+            KSToastView.ks_showToast("Make sure to complete all input", duration: 2.0, completion: { () -> Void in
+                
+                
+            })
             
         } else {
             
@@ -64,14 +61,11 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
                     
                 } else {
                     
-                    var alert = UIAlertController(title: "Error", message: "Could not set user information", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                    var myError: String = error?.userInfo!["error"] as! String
+                    KSToastView.ks_showToast("\(myError)", duration: 2.0, completion: { () -> Void in
                         
-                        alert.view.hidden = true
                         
-                    })))
-                    
-                    self.presentViewController(alert, animated: true, completion: nil)
+                    })
                     
                 }
                 
@@ -117,14 +111,11 @@ class SignUpTwoViewController: UIViewController, UINavigationControllerDelegate,
                 
             } else {
              
-                var alert = UIAlertController(title: "Error", message: "Could not set profile picture", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction((UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+                var myError: String = error?.userInfo!["error"] as! String
+                KSToastView.ks_showToast("\(myError)", duration: 2.0, completion: { () -> Void in
                     
-                    self.dismissViewControllerAnimated(true, completion: nil)
                     
-                })))
-                
-                self.presentViewController(alert, animated: true, completion: nil)
+                })
                 
             }
         }

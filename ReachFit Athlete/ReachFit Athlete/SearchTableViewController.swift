@@ -130,6 +130,7 @@ class SearchTableViewController: PFQueryTableViewController, UISearchBarDelegate
         // Order the results
         query.orderByAscending("workoutClassName")
         query.whereKey("dateOfClass", greaterThan: NSDate())
+        query.whereKey("classes", nearGeoPoint: currentLoc, withinMiles: 400)
         
         // Return the qwuery object
         return query

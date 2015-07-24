@@ -22,12 +22,19 @@ class UserSettingsViewController: UIViewController {
         var availableUser = PFUser.currentUser()
         
         if availableUser == nil {
+            
             self.performSegueWithIdentifier("userLogout", sender: self)
             println("logout success")
+            KSToastView.ks_showToast("Logout Success", duration: 1.5, completion: { () -> Void in
+                
+            })
             
         } else if availableUser != nil {
             
             println("logout fail")
+            KSToastView.ks_showToast("Logout Attempt Fqailed", duration: 1.5, completion: { () -> Void in
+                
+            })
             
         }
         

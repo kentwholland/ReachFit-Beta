@@ -18,6 +18,7 @@ class UserSettingsViewController: UIViewController {
     }
 
     @IBAction func logout(sender: AnyObject) {
+        
         PFUser.logOut()
         var availableUser = PFUser.currentUser()
         
@@ -32,7 +33,7 @@ class UserSettingsViewController: UIViewController {
         } else if availableUser != nil {
             
             println("logout fail")
-            KSToastView.ks_showToast("Logout Attempt Fqailed", duration: 1.5, completion: { () -> Void in
+            KSToastView.ks_showToast("Logout Attempt Failed", duration: 1.5, completion: { () -> Void in
                 
             })
             

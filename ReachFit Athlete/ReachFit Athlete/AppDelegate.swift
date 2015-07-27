@@ -14,12 +14,17 @@ import MapKit
 import CoreLocation
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
+    let stripePublishableKey: String = "pk_test_fCWbkrhPnus6sQftk6yX47Qk"
+    
     var window: UIWindow?
     var locationManager: CLLocationManager!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Stripe.setDefaultPublishableKey(stripePublishableKey)
         
         Parse.setApplicationId("sCsLLNAEyIqKPb7CtvGwAqNYQWR3XRUku6n6D9ew", clientKey: "Rm9kqIGX9othZGwn1hrEXEKcly1uF0kUZhy2TeH1")
         

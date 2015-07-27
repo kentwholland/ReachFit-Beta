@@ -3,3 +3,4 @@
 //
 
 #import "KSToastView.h"
+#import <Stripe/Stripe.h>

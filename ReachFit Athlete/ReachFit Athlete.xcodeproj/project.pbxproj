@@ -46,8 +46,11 @@
 		D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A552781B3358A2009CC6DB /* Images.xcassets */; };
 		D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */; };
 		D7A552881B3358A2009CC6DB /* ReachFit_AthleteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */; };
+		D7AC27841B62EE40003B7384 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AC27831B62EE40003B7384 /* MapPin.swift */; };
 		D7B29A891B507A7D000537E2 /* NSDateExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B29A881B507A7D000537E2 /* NSDateExtensionTests.swift */; };
 		D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */; };
+		D7F5DBDD1B63E27200379140 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F5DBDC1B63E27200379140 /* PassKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D7F5DBDF1B63E2AE00379140 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F5DBDE1B63E2AE00379140 /* Stripe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +109,11 @@
 		D7A552811B3358A2009CC6DB /* ReachFit AthleteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ReachFit AthleteTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A552861B3358A2009CC6DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A552871B3358A2009CC6DB /* ReachFit_AthleteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachFit_AthleteTests.swift; sourceTree = "<group>"; };
+		D7AC27831B62EE40003B7384 /* MapPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		D7B29A881B507A7D000537E2 /* NSDateExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensionTests.swift; sourceTree = "<group>"; };
 		D7DDE7CE1B39E94E00CE3F39 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		D7F5DBDC1B63E27200379140 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		D7F5DBDE1B63E2AE00379140 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,7 @@
 				D765A9821B351BF60062EA27 /* Social.framework in Frameworks */,
 				D765A9801B351BF20062EA27 /* Security.framework in Frameworks */,
 				D765A97E1B351BED0062EA27 /* QuartzCore.framework in Frameworks */,
+				D7F5DBDD1B63E27200379140 /* PassKit.framework in Frameworks */,
 				D79484C91B5EE70200194D5D /* ParseUI.framework in Frameworks */,
 				D765A97C1B351BE90062EA27 /* MobileCoreServices.framework in Frameworks */,
 				D765A97A1B351BE30062EA27 /* CoreLocation.framework in Frameworks */,
@@ -131,6 +138,7 @@
 				D765A9741B351BD30062EA27 /* AudioToolbox.framework in Frameworks */,
 				D765A9721B351BCF0062EA27 /* Accounts.framework in Frameworks */,
 				D765A96D1B351B1A0062EA27 /* Parse.framework in Frameworks */,
+				D7F5DBDF1B63E2AE00379140 /* Stripe.framework in Frameworks */,
 				D765A96E1B351B1A0062EA27 /* ParseCrashReporting.framework in Frameworks */,
 				D765A96F1B351B1A0062EA27 /* ParseUI.framework in Frameworks */,
 				D765A96C1B351B1A0062EA27 /* Bolts.framework in Frameworks */,
@@ -212,6 +220,8 @@
 		D765A9701B351BAD0062EA27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7F5DBDE1B63E2AE00379140 /* Stripe.framework */,
+				D7F5DBDC1B63E27200379140 /* PassKit.framework */,
 				D765A9891B351C130062EA27 /* libsqlite3.dylib */,
 				D765A9871B351C0B0062EA27 /* libz.dylib */,
 				D765A9851B351C010062EA27 /* SystemConfiguration.framework */,
@@ -300,6 +310,7 @@
 				D7A5527A1B3358A2009CC6DB /* LaunchScreen.xib */,
 				D7A5526D1B3358A2009CC6DB /* Info.plist */,
 				D79B176D1B6000BC00B1CDD5 /* ReachFit Athlete-Bridging-Header.h */,
+				D7AC27831B62EE40003B7384 /* MapPin.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -440,6 +451,7 @@
 				D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */,
 				D77BE73D1B35CA67006B82F0 /* SignUpViewController.swift in Sources */,
 				D7DDE7CF1B39E94E00CE3F39 /* UserSettingsViewController.swift in Sources */,
+				D7AC27841B62EE40003B7384 /* MapPin.swift in Sources */,
 				D76E30401B604D3A00A020D7 /* PastDetailViewController.swift in Sources */,
 				D79B17701B6000BD00B1CDD5 /* KSToastView.m in Sources */,
 				D77BE7721B35D3AF006B82F0 /* SignUpTwoViewController.swift in Sources */,

@@ -300,14 +300,23 @@
                     <view key="view" contentMode="scaleToFill" id="ufb-wP-lfy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kV8-GH-fSf">
+                                <rect key="frame" x="0.0" y="475" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem width="241" style="plain" systemItem="fixedSpace" id="reA-al-OKN"/>
+                                    <barButtonItem title="Logout" id="GdT-v7-uWZ">
+                                        <connections>
+                                            <action selector="logout:" destination="j44-gh-mx2" id="Q2Y-2M-J8w"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Nfa-ui-s3k">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="GdT-v7-uWZ">
-                            <connections>
-                                <action selector="logout:" destination="j44-gh-mx2" id="Q2Y-2M-J8w"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Payment" id="7j9-qQ-NG2"/>
                     </navigationItem>
                     <connections>
                         <segue destination="zr8-Mg-S2q" kind="modal" identifier="userLogout" id="0Hl-Jj-5bB"/>
@@ -804,7 +813,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5E2-6i-es5">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5E2-6i-es5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="426"/>
                             </mapView>
                         </subviews>

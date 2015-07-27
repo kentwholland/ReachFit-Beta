@@ -35,10 +35,27 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 let myPosts = posts as! [PFObject]
                 
                 for post in myPosts {
+                    
+                    var subtitleString: String = String()
+                    
+                    if let dateObject = post["dateOfClass"] as? NSDate {
+                        
+                        var dateFormatter = NSDateFormatter()
+                        dateFormatter.dateFormat = "MM/dd/yyyy HH:mm a"
+                        var dateNSDate: String = dateFormatter.stringFromDate(dateObject)
+                        subtitleString = dateNSDate
+                        
+                    }
+                    
                     let point = post["classes"] as! PFGeoPoint
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = CLLocationCoordinate2DMake(point.latitude, point.longitude)
+                    
+                    var coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude)
+                    var workoutClassName: String = post.objectForKey("workoutClassName") as! String
+                    var workoutClassInstructor: String = post.objectForKey("instructorName") as! String
+                    var objectsID: String = post.objectId! as String
+                    var annotation: MapPin = MapPin(coordinate: coordinate, title: "\(workoutClassName), \(workoutClassInstructor)", subtitle: "\(subtitleString)", annotationID: "\(objectsID)")
                     self.mapView.addAnnotation(annotation)
+                    
                 }
             } else {
                 // Log details of the failure
@@ -52,6 +69,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mapView.showsUserLocation = true
+        
+        var latitude: CLLocationDegrees = currentLoc.latitude
+        
+        var longitude: CLLocationDegrees = currentLoc.longitude
+        
+        var latDelta:CLLocationDegrees = 0.7
+        
+        var lonDelta:CLLocationDegrees = 0.7
+        
+        var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        mapView.setRegion(region, animated: false)
         
     }
     

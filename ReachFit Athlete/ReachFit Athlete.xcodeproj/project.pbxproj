@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3DB7D26F1B67F36D00389ACC /* ReachFit logo_dload from web.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DB7D26E1B67F36D00389ACC /* ReachFit logo_dload from web.png */; };
 		D70F1A4C1B3B6848005219B5 /* UpcomingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */; };
 		D70F1A4E1B3B68B8005219B5 /* MyFitnessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4D1B3B68B8005219B5 /* MyFitnessViewController.swift */; };
 		D70F1A501B3B6E12005219B5 /* PastTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70F1A4F1B3B6E12005219B5 /* PastTableViewController.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3DB7D26E1B67F36D00389ACC /* ReachFit logo_dload from web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ReachFit logo_dload from web.png"; sourceTree = "<group>"; };
 		D70F1A4B1B3B6848005219B5 /* UpcomingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewController.swift; sourceTree = "<group>"; };
 		D70F1A4D1B3B68B8005219B5 /* MyFitnessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFitnessViewController.swift; sourceTree = "<group>"; };
 		D70F1A4F1B3B6E12005219B5 /* PastTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastTableViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		D7A5526B1B3358A2009CC6DB /* ReachFit Athlete */ = {
 			isa = PBXGroup;
 			children = (
+				3DB7D26E1B67F36D00389ACC /* ReachFit logo_dload from web.png */,
 				D7A5526E1B3358A2009CC6DB /* AppDelegate.swift */,
 				D7A552751B3358A2009CC6DB /* Main.storyboard */,
 				D76CC5E81B38B84000782E2D /* Login/Sign Up */,
@@ -422,6 +425,7 @@
 			files = (
 				D7A552771B3358A2009CC6DB /* Main.storyboard in Resources */,
 				D7A5527C1B3358A2009CC6DB /* LaunchScreen.xib in Resources */,
+				3DB7D26F1B67F36D00389ACC /* ReachFit logo_dload from web.png in Resources */,
 				D7A552791B3358A2009CC6DB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
